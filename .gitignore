@@ -1,0 +1,22 @@
+# Local Python environment
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Secrets and local configuration
+.env
+
+# Generated pipeline data
+text/
+sections/
+index/
+eval/results/
+
+# Local tooling and OS files
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+
