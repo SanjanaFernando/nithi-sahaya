@@ -9,6 +9,7 @@ __pycache__/
 
 # Generated pipeline data
 text/
+ocr_pdfs/
 sections/
 index/
 eval/results/
