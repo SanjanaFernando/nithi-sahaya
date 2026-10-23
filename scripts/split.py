@@ -82,6 +82,14 @@ def title_from_text(text: str, filename: str) -> str:
         for line in candidates[:100]
         if not any(token in line.lower() for token in ("downloaded from", "www.", "printed at", "purchased at"))
     ]
+    cited_as = re.compile(
+        r"cited\s+as\s+(?:the\s+)?(.+?)(?:,\s*No\.?\s*[\w./-]+\s+of\s+\d{4}|\.$|$)",
+        re.IGNORECASE,
+    )
+    for line in candidates:
+        match = cited_as.search(line)
+        if match and len(match.group(1).strip()) >= 5:
+            return re.sub(r"\s+", " ", match.group(1)).strip()
     preferred = re.compile(
         r"\b(?:ACT|ORDINANCE)\b(?:\s*,?\s*NO\.?|\s+NO\.?|\s+OF\s+\d{4})",
         re.IGNORECASE,
@@ -100,7 +108,7 @@ def title_from_text(text: str, filename: str) -> str:
 
 def act_number_year(text: str) -> str:
     patterns = [
-        r"((?:Act|Ordinance)[^\n]{0,80}?No\.\s*[\w./-]+\s+of\s+\d{4})",
+        r"((?:Act|Ordinance)\s*,?\s*No\.\s*[\w./-]+\s+of\s+\d{4})",
         r"(No\.\s*[\w./-]+\s+of\s+\d{4})",
         r"(Law\s+No\.\s*[\w./-]+\s+of\s+\d{4})",
     ]
@@ -196,6 +204,7 @@ def make_records(text: str, source_file: str) -> tuple[list[dict[str, object]], 
                     "source_file": Path(source_file).with_suffix(".pdf").name,
                     "source_page": piece.page,
                     "topics": [],
+                    "conflicts_with": [],
                     "status": "verify",
                 }
             )
