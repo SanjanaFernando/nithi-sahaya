@@ -2,7 +2,7 @@
 
 Goal: turn 44 clear English PDFs (Department of Labour compiled labour code) into a legal-information assistant with a website, using free tools.
 
-## Re-audit update — 24 October 2026
+## Re-audit update — 25 October 2026
 
 This is a working status snapshot after rechecking Phases 1–6. A checked box means
 the repository artifact exists and its automated checks passed; it does not mean
@@ -11,18 +11,17 @@ the legal content has been approved for public use.
 | Phase | Status | Current finding |
 |---|---|---|
 | 0 Setup | Done locally | The project environment and required Python packages are present. |
-| 1 Extract | Done, with source review recorded | 44 PDFs have 44 text extracts. The six pages flagged as sparse contain page labels or running heads; five sample extracts contain readable legal text. |
-| 2 Clean and split | Partial | Reworked splitting to preserve schedules and the omitted Industrial Disputes Act s.31D provision. 2,094 records are produced. QC still flags 158 short records; `scope_notes` and `topics` remain unfilled, and 31 records lack an Act number/year. |
-| 3 Legal checks | Not complete | Two known deadline conflicts remain for lawyer review. Current-law/amendment verification and approved plain-language summaries are outstanding. |
-| 4 Search index | Partial | The resumable checkpoint currently contains 1,921 of 2,094 vectors (173 remain). The complete FAISS index still contains 2,148 records from the earlier section set; it remains usable for that old set, but is not the corrected index. |
+| 1 Extract | Inventory passed; sparse-page dispositions recorded | On 25 October 2026, 44 source PDFs matched 44 text extracts by filename; the extraction report records 44 original-source SHA-256 hashes and zero duplicate groups. The 82 short-page warnings are dispositioned: 74 repaired using matching OCR copies, 8 verified as chapter contents/divider or running-header pages. OCR accuracy still needs proofreading before legal use. |
+| 2 Clean and split | Partial; warning and metadata reviews complete | 2,094 records are produced. All 158 fewer-than-10-word warnings have source-linked dispositions in `audit/short_section_review.json`; warnings remain visible in QC. The 31 missing Act identifiers are filled with title-page evidence in `audit/act_number_year_review.json`. `scope_notes` and `topics` are populated for all records with source-linked method and evidence in `audit/scope_topics_review.json`; Act-wide scope has not been inferred. |
+| 3 Legal checks | Not complete; current-law review underway | Targeted official-source checks found later amendments to employment-of-women, national-minimum-wage, budgetary-relief, factories, EPF, termination, industrial-disputes, and shop-and-office laws, plus updated subsidiary instruments. The corpus needs updates and a complete amendment/Gazette review. Two known deadline conflicts and lawyer-approved summaries remain open. |
+| 4 Search index | Built; retrieval review pending | The corrected index now contains 2,094 records and 2,094 normalized, 3,072-dimensional vectors using `gemini-embedding-001`. The checkpoint is complete. Representative semantic-search checks still need review. |
 | 5 Answer engine | Implemented, not fully evaluated | The answer engine exists, but it must be evaluated after Phase 4 completes. |
 | 6 Evaluation | Test set improved; full run pending | There are 42 questions, 10 in Sinhala, Tamil, or Singlish, each with a reference answer. The keyword baseline retrieved an expected section for 18 of 37 in-scope questions. Generated-answer, citation, and refusal evaluation must be rerun against the rebuilt index. |
 
-The Gemini free-tier embedding quota was reached during the re-index. The API
-reported both daily and per-minute quota limits during the re-index;
-`scripts/build_index.py` can resume from `index/embedding_checkpoint.npy`
-without repeating completed embeddings. Do not launch the public pilot until
-the completion gate below and Phase 3 review are complete.
+The Gemini free-tier daily and per-minute embedding quotas slowed the re-index.
+The complete checkpoint is saved, and the corrected index has now been built.
+Do not launch the public pilot until the completion gate below and Phase 3
+review are complete.
 
 Approach: **RAG (retrieval-augmented generation)**. You do not train a model. For each question, the system finds the most relevant sections from your PDFs and gives them to Gemini, which writes a plain-language answer with citations.
 
@@ -248,22 +247,48 @@ evidence that this gate has passed.
 
 ### 6A.1 Close Phase 1 and Phase 2 data-quality gaps
 
-1. Re-run extraction inventory: confirm 44 source PDFs, 44 text extracts, and
-   matching source names. Keep the PDFs read-only and record hashes in the
-   extraction report.
-2. Review all 158 short-section warnings against the source PDF. For each,
-   either repair the extracted/split text or mark why the short record is a
-   valid heading, repeal note, schedule entry, or other legitimate short item.
-   Save a review disposition for every warning; do not suppress warnings just
-   to make the count zero.
-3. Fill `act_number_year` for the 31 records that lack it using the source Act
-   title page or an official copy. Record `unknown` with a reason when the
-   source does not establish it; do not infer an Act number.
-4. Populate `scope_notes` and `topics` at Act/section level from the source
-   text. Mark uncertain scope explicitly and keep unsupported assumptions out.
-5. Re-run the splitter and validator, then compare record counts, section
-   numbers, source page references, and required metadata. Save updated QC and
-   split reports.
+1. **Done 25 October 2026:** Re-ran `scripts/extract.py`. Confirmed 44 source
+   PDFs, 44 text extracts, matching source names, 44 SHA-256 hashes, and zero
+   exact duplicate groups. The source PDFs were only read; extraction outputs
+   and `text/extraction_report.json` were written under `text/`.
+2. **Done 25 October 2026:** Reviewed all 82 source-page warnings and saved
+   per-page evidence/dispositions in `audit/short_page_review.json`. Re-extracted
+   74 image-only pages from matching OCR copies; visually checked and recorded
+   the other 8 as chapter contents/dividers or running headers. Reviewed all
+   158 short section records against their source pages and saved a disposition
+   and source-page evidence for each in `audit/short_section_review.json`.
+   These warnings remain in QC; the review records why they are legitimate
+   short titles, contents entries, form fields, schedule rows, cross-references,
+   or complete short provisions. OCR accuracy proofreading remains part of
+   legal review.
+3. **Done 25 October 2026:** Filled `act_number_year` for all 31 affected
+   records from the two source title pages. No identifier was marked unknown:
+   the Minimum Wages (Indian Labour) Ordinance is No. 27 of 1927, and the
+   Service Contracts Ordinance is No. 11 of 1865. Evidence, source hashes, and
+   every updated record ID are in `audit/act_number_year_review.json`; the
+   active index metadata was synchronized without changing vectors.
+4. **Done 25 October 2026:** Populated `topics`, `scope_notes`, and
+   `scope_status` for all 2,094 records; synchronized the active index metadata
+   without rebuilding vectors. Topics use a reviewed Act-domain tag plus
+   source-word matches. Scope clauses are quoted only when explicit applicability
+   or exemption wording is present; otherwise notes say scope is not established
+   or is unclear in that record. Evidence and per-record annotations are in
+   `audit/scope_topics_review.json`.
+5. **Done 25 October 2026:** Re-ran `scripts/split.py` into
+   `audit/split_candidate/`, compared and merged the reviewed metadata, and
+   synchronized `index/records.json` without rebuilding vectors. The fresh
+   split and reviewed corpus both contain 2,094 records with matching IDs and
+   per-source counts. All 2,094 section numbers and source page references
+   match; every page reference is within its extracted source's page range.
+   Required metadata gaps: 0. The refreshed split report is
+   `sections/split_report.json`; detailed comparisons are in
+   `audit/split_comparison.json`.
+6. **Pass 25 October 2026:** Re-ran `scripts/validate_sections.py` and saved
+   `sections/qc_report.json`. It reports 158 warnings, all with matching
+   dispositions, 0 unreviewed warnings, 0 stale dispositions, and 0 required
+   metadata gaps. `phase_2_closeout_pass` is true. The warnings remain visible
+   for auditability; the two known deadline conflicts still require the Phase 3
+   legal review listed below.
 
 **Pass condition:** every short-record warning has a disposition, every
 metadata gap is resolved or explicitly justified, and the validator has no
@@ -271,15 +296,39 @@ unreviewed errors.
 
 ### 6A.2 Close Phase 3 legal-review gaps
 
-1. Build a source register for all 44 Acts with official source link, title,
-   Act number/year, source date, amendments checked, and reviewer/date.
-2. Check each Act and any relevant amendment or Gazette notice against current
-   official sources. Record the applicable date and any unresolved uncertainty.
-3. Put the two known deadline conflicts in a conflict register with both
-   provisions quoted, their source links, the issue, and the proposed handling.
-4. Have a Sri Lankan labour-law reviewer decide each conflict and approve the
-   plain-language summaries and exclusions used in answers. Record their
-   sign-off and the corpus/version reviewed.
+1. **Register assembled 25 October 2026; legal verification pending:**
+   `audit/source_register.csv` and `.json` list all 44 corpus instruments,
+   catalogue titles, official source links, principal Act identifiers, source
+   hashes, source-date limitations, amendment-check status, and inventory
+   reviewer/date. Thirteen principal identifiers were verified or corrected
+   from official publications; the rest remain flagged for verification. The
+   downloaded compiled copies do not consistently state an edition date. The
+   targeted amendment findings and unresolved current-law checks are recorded
+   in `audit/current_law_review.csv` and `.json`; a human legal reviewer remains
+   outstanding.
+2. **Targeted source review recorded 25 October 2026; not a legal closeout:**
+   `audit/current_law_review.csv` and `.json` contain entries for all 44 source
+   instruments, a review cutoff date, findings and links from the official
+   Department of Labour, Parliament, and Government Printer sources, and
+   explicit uncertainty notes. The review found 10 corpus instruments that
+   need updating, 13 partial amendment histories, and 21 instruments whose
+   later amendments/current status were not confirmed. For example, the
+   Employment of Women, Young Persons and Children (Amendment) Act No. 21 of
+   2026 was certified 8 September 2026; the National Minimum Wage and
+   Budgetary Relief Allowance amendment Acts are both No. 11/2025 and No.
+   10/2025 respectively; further Act and Gazette findings are in the report.
+   Search non-results are not evidence that no amendment exists. A complete
+   amendment/repeal and subsidiary-Gazette history, commencement check, and
+   human legal review remain outstanding.
+3. **Conflict register assembled 25 October 2026:**
+   `audit/deadline_conflict_register.md` records both pairs of provisions with
+   quoted deadline text, official source links, commencement date evidence,
+   the four-to-six-month and two-to-three-month differences, and conservative
+   handling proposals. Both shorter periods are recommended only as internal
+   planning targets; the register does not resolve statutory interpretation.
+   Sri Lankan labour-law reviewer sign-off remains outstanding.
+4. **Reviewer packet prepared 25 October 2026; sign-off pending:** `audit/legal_review_packet.md` records the exact corpus/runtime hashes, review gaps, conflict decisions required, and approval fields. `audit/legal_reviewer_act_decisions.csv` provides a decision row for every instrument. The answer engine has no curated `plain_summary` corpus, and currently does not pass `scope_notes`/`scope_status` to generation; reviewer approval of implemented summaries/exclusions must wait until representative samples and scope handling are available. A qualified Sri Lankan labour-law reviewer must decide both conflicts, approve the launch subset and answer summaries/exclusions, and complete the decision sheet with credentials, date, rationale, and corpus/version acknowledged.
+5. **AI operational dispositions recorded 25 October 2026:** `audit/ai_operational_law_dispositions.csv` records a safe answer policy for all 44 instruments. Ten known-stale sources are refused until their corpus text is updated. Thirteen partial-history and 21 unconfirmed sources require citations and a warning that AI answers may be wrong/incomplete or may not reflect a later Act, amendment, or Gazette notice; the model must not claim those sources are confirmed current. The two conflicts use four-month and two-month internal escalation targets respectively, with both statutory periods cited and no claim that either provision legally overrides the other. These are AI safeguards, not legal verification or qualified-review sign-off.
 
 **Pass condition:** every Act planned for the pilot has a dated legal check,
 the conflicts have a documented resolution, and a qualified reviewer has
@@ -288,24 +337,12 @@ human legal review.
 
 ### 6A.3 Finish Phase 4 using the saved vectors
 
-1. Keep the existing 2,148-record index intact as the rollback copy. It is
-   complete for its earlier corpus only.
-2. Resume `index/embedding_checkpoint.npy`; it currently has 1,921 of 2,094
-   current vectors, leaving 173. Reuse exact-text vectors already in the old
-   index/checkpoint. Do not re-embed records whose text and model match.
-3. When Gemini quota is available, finish the remaining records in paced
-   batches. Keep `EMBED_MODEL` unchanged while resuming; a model change requires
-   a complete, consistent vector set.
-4. Build and verify the replacement index only after all 2,094 vectors exist.
-   Confirm record order, dimensions, model, fingerprint, and FAISS/vector/JSON
-   counts agree before replacing the active index. Save build metadata.
-5. Run representative semantic searches, including retirement age, wages,
-   gratuity, dismissal, and a question outside the collection. Record the top
-   sections and whether they are appropriate.
+1. **Backup created 25 October 2026 before future rebuilds:** `index/backups/2026-10-25_073700/` contains the current corrected index artifacts and `backup_manifest.json`. The manifest records SHA-256 hashes, sizes, and successful source-to-backup comparisons for all six files. The earlier 2,148-record index is still unavailable; this backup preserves the current 2,094-record index only.
+2. **Verified 25 October 2026:** `index/embedding_checkpoint.npy` and the active vectors both contain 2,094 vectors of 3,072 dimensions for 2,094 records. `.env` `EMBED_MODEL`, the checkpoint model, and active index metadata all match `gemini-embedding-001`. No partial build remains to resume; retain this model setting if a future partial build is needed.
+3. **Verified 25 October 2026:** source-section order, active `records.json` order, and checkpoint `record_ids` match exactly. Recomputed record fingerprint matches the checkpoint: `9960e99fd1438c8856ee48b664cc199e6a19d1dd5ce92bdbfa1b41e201398864`. Configured model, checkpoint, and metadata all agree on `gemini-embedding-001`; JSON, vector matrix, checkpoint, and FAISS each contain 2,094 records at 3,072 dimensions. FAISS reconstructed vectors match `vectors.npy` exactly; active vector norms differ from 1 by at most 2.4e-7. The checkpoint vectors differ from final normalized vectors by at most 4.5e-8, consistent with final normalization. All index consistency checks passed.
+4. **Representative semantic searches and scope check passed on 25 October 2026:** queries covered retirement age, current minimum wage, gratuity, TEWA dismissal, and out-of-scope child adoption. Full top-8 rankings and relevance judgments are in `audit/semantic_search_review.md` and `.json`. Retirement, gratuity, and TEWA dismissal retrieved relevant provisions at rank 1. The wage query retrieved the correct Act but its section contains a superseded amount; the stale-source refusal path was verified. Adoption retrieved unrelated labour provisions at scores 0.6198-0.6311, so a fail-closed Gemini scope check was added before retrieval. Live smoke checks classified the four labour queries in scope, classified adoption out of scope, and verified `AnswerEngine.ask` refused it before retrieval. Classifier failure/malformed output also fails closed. This is a targeted AI smoke check, not a guarantee against every misclassification.
 
-**Pass condition:** the corrected records and vectors match 2,094-to-2,094,
-the new FAISS index loads, and the saved search examples retrieve the expected
-legal provisions. The old index remains available until this passes.
+**Pass condition:** met on 25 October 2026 for index integrity and the representative retrieval/scope smoke set. Corrected records and vectors match 2,094-to-2,094, FAISS loads with matching count/dimension, record order and fingerprint agree, and saved search examples retrieve expected in-scope provisions. The stale wage source is refused; the out-of-scope adoption query is refused before retrieval. This sample does not establish error-free behavior for all queries.
 
 ### 6A.4 Close Phase 5 answer-engine checks
 
@@ -332,10 +369,12 @@ response.
    legal or language error.
 4. Have the legal reviewer approve answer samples in all supported languages
    and sign off on the final evaluation report.
+5. **Phase 5 fixes applied; live retest blocked by Gemini quota (25 October 2026):** `scripts/ask.py` now requests structured JSON claims with source IDs, validates IDs against retrieved records, and renders citation markers only for valid IDs. It recognizes the tested Sinhala/Tamil/Singlish retirement phrases locally, fails closed on uncertain scope, and only blocks a stale source when it is among the top three and within 0.05 of the top retrieval score. Local path checks and Python compilation pass. The post-fix live attempt reached English generation but Gemini returned its free-tier daily `generate_content` quota error. A probe using stable `gemini-3.7-flash` reported the same daily-quota exhaustion, so the configured model was left unchanged. The remaining languages were not rerun after the fixes. Previous live outcomes remain in `audit/multilingual_answer_smoke.json`; post-fix details and index/model/code versions are in `audit/phase5_multilingual_answer_run.json`. **Pass condition not met:** rerun English, Sinhala, Tamil, Singlish, and unsupported queries after quota reset; verify generated answers, cited IDs, source text mappings, and safe refusals.
 
-**Pass condition:** no fabricated citations, all expected sections are
-retrieved/cited or the case is corrected and rerun, refusals are correct for
-out-of-scope questions, and the legal reviewer approves the pilot answers.
+6. **42-question retrieval pass run 25 October 2026 after correcting test data:** `eval/results/phase6_vector_retrieval_corrected.json` records all top-8 vector results, expected references, model/index fingerprints, and question hash. Expected section retrieval is 37/37 for in-scope questions. q05 had incorrect expected sections; q41/q42 had corrupted Sinhala/Tamil text; reference apostrophes were also repaired. The original test set is preserved at `eval/questions.pre_phase6_repair.json`; corrections and remaining failures are in `eval/results/phase6_failure_log.md`.
+7. **Generated-answer evaluation and legal approval remain open:** Gemini daily generation quota is exhausted, so reference-answer comparison, 5 refusal checks, and citation/source-text validation for generated answers were not run. No qualified reviewer sign-off is present. Rerun `eval/run.py --api` after quota reset, inspect every answer and citation, fix failures, and obtain the required human review.
+
+**Pass condition: NOT MET.** Retrieval now finds the expected section for all 37 in-scope questions after test-data corrections, but generated answers, citations, and all five should-refuse decisions remain unevaluated because the Gemini generation quota is exhausted. Qualified legal reviewer approval is also outstanding. Close only after the API evaluation and human sign-off are recorded.
 
 ### Phase 6A completion gate
 
@@ -422,7 +461,7 @@ About 4 to 6 weeks to a pilot, depending on how fast the legal review goes.
 |---|---|
 | Wrong or invented legal answers | Citation check, "not sure" fallback, lawyer review, test set |
 | Outdated law or amounts | `status: verify`, dated Gazette collection, quarterly updates |
-| Conflicting time limits between Acts | `conflicts_with` field, later Act controls, lawyer sign-off |
+| Conflicting time limits between Acts | `conflicts_with` field and `audit/deadline_conflict_register.md`; legal interaction unresolved pending qualified reviewer decision. Use only the register's conservative internal target meanwhile; do not claim which provision controls. |
 | Splitting errors in compiled text | Automatic numbering checks, manual spot checks per Act |
 | Free quota runs out | Cache, rate limits, CAPTCHA, FAQ answers prepared in advance |
 | Privacy | No accounts, no question logging, no document uploads on the free tier |

@@ -127,7 +127,10 @@ def main() -> int:
     old_vectors_path = args.destination / "vectors.npy"
     if old_records_path.exists() and old_vectors_path.exists():
         old_records = json.loads(old_records_path.read_text(encoding="utf-8"))
-        old_vectors = np.load(old_vectors_path, mmap_mode="r")
+        # Load and close the file instead of keeping a read-only memory map.
+        # On Windows, replacing vectors.npy while its mmap is still open fails
+        # with OSError: [Errno 22] Invalid argument.
+        old_vectors = np.load(old_vectors_path)
         old_by_text = {
             embedding_text(record): old_vectors[index]
             for index, record in enumerate(old_records)
@@ -155,9 +158,14 @@ def main() -> int:
                 if target is None or row >= len(saved_vectors):
                     continue
                 unchanged = exact_checkpoint or checkpoint.get("content_fingerprint") is None
-                # The legacy partial checkpoint was generated from this same split output;
-                # the one section whose text changed in the reconstruction is re-embedded.
-                if unchanged and record_id != "ch01_industrial_disputes_act_s31c":
+                # Only exclude this record from a legacy, un-fingerprinted partial
+                # checkpoint. A full fingerprint match proves its saved vector is
+                # for the current text and must be reused.
+                legacy_changed_record = (
+                    checkpoint.get("content_fingerprint") is None
+                    and record_id == "ch01_industrial_disputes_act_s31c"
+                )
+                if unchanged and not legacy_changed_record:
                     completed[target] = np.asarray(saved_vectors[row], dtype="float32").tolist()
             print(f"Reused {len(completed):,} exact or checkpointed embeddings")
         else:

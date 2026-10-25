@@ -15,6 +15,7 @@ from pathlib import Path
 
 SECTIONS = Path("sections")
 REPORT = SECTIONS / "qc_report.json"
+SHORT_REVIEW = Path("audit") / "short_section_review.json"
 SHORT_WORD_LIMIT = 10
 ODD_SYMBOLS = re.compile(r"[�]|Â§|â€“|â€”|â€™|â€œ|â€")
 HEADER_LIKE = re.compile(r"^\d{1,4}\s+[A-Z][A-Z &(),.'-]{4,}$")
@@ -36,7 +37,9 @@ def add_conflict(records: list[dict], ids: list[str], description: str) -> None:
                 if other != record["id"] and other not in record["conflicts_with"]:
                     record["conflicts_with"].append(other)
             record["conflict_status"] = "lawyer_review_required"
-            record.setdefault("conflict_notes", []).append(description)
+            notes = record.setdefault("conflict_notes", [])
+            if description not in notes:
+                notes.append(description)
 
 
 def main() -> int:
@@ -51,6 +54,12 @@ def main() -> int:
 
     warnings: list[dict] = []
     seen_ids: Counter[str] = Counter(record["id"] for record in records)
+    reviewed_items = {}
+    if SHORT_REVIEW.exists():
+        reviewed_items = {
+            item["record_id"]: item
+            for item in json.loads(SHORT_REVIEW.read_text(encoding="utf-8"))["items"]
+        }
     for record in records:
         text = record.get("text", "")
         issues: list[str] = []
@@ -68,7 +77,39 @@ def main() -> int:
         if seen_ids[record["id"]] > 1:
             issues.append("duplicate_id")
         if issues:
-            warnings.append({"id": record["id"], "source_file": record["source_file"], "issues": issues})
+            warning = {
+                "id": record["id"],
+                "source_file": record["source_file"],
+                "source_page": record.get("source_page"),
+                "issues": issues,
+            }
+            disposition = reviewed_items.get(record["id"])
+            if (
+                disposition
+                and disposition.get("source_pdf") == record.get("source_file")
+                and disposition.get("source_page") == record.get("source_page")
+            ):
+                warning["review_disposition"] = disposition.get("disposition")
+                warning["review_rationale"] = disposition.get("rationale")
+            warnings.append(warning)
+
+    warning_ids = {warning["id"] for warning in warnings}
+    unreviewed_warnings = [
+        warning["id"] for warning in warnings if "review_disposition" not in warning
+    ]
+    stale_dispositions = sorted(set(reviewed_items) - warning_ids)
+
+    required_fields = (
+        "act_name", "act_number_year", "doc_type", "section_number", "text",
+        "source_file", "source_page", "scope_notes", "scope_status", "topics", "status",
+    )
+    metadata_gaps: list[dict] = []
+    for record in records:
+        for field in required_fields:
+            value = record.get(field)
+            missing = value is None or value == "" or (field == "topics" and not value)
+            if missing:
+                metadata_gaps.append({"id": record["id"], "field": field})
 
     # These are intentionally unresolved links; a lawyer must determine which
     # rule controls for the user's facts and the applicable edition/amendments.
@@ -102,6 +143,14 @@ def main() -> int:
         "files_checked": len(files),
         "records_checked": len(records),
         "warning_count": len(warnings),
+        "reviewed_warning_count": len(warnings) - len(unreviewed_warnings),
+        "unreviewed_warning_count": len(unreviewed_warnings),
+        "unreviewed_warning_ids": unreviewed_warnings,
+        "stale_disposition_count": len(stale_dispositions),
+        "stale_disposition_ids": stale_dispositions,
+        "metadata_gap_count": len(metadata_gaps),
+        "metadata_gaps": metadata_gaps,
+        "phase_2_closeout_pass": not unreviewed_warnings and not stale_dispositions and not metadata_gaps,
         "warnings": warnings,
         "known_conflicts": [
             {"record_ids": ids, "description": description, "status": "lawyer_review_required"}
@@ -119,6 +168,9 @@ def main() -> int:
     REPORT.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Checked {len(files)} files and {len(records):,} records")
     print(f"Warnings: {len(warnings):,}")
+    print(f"Reviewed warnings: {len(warnings) - len(unreviewed_warnings):,}; unreviewed: {len(unreviewed_warnings):,}")
+    print(f"Required metadata gaps: {len(metadata_gaps):,}")
+    print(f"Phase 2 closeout pass: {'yes' if report['phase_2_closeout_pass'] else 'no'}")
     print(f"Known conflicts linked for legal review: {len(conflicts)}")
     print("Manual legal review required: yes")
     return 0

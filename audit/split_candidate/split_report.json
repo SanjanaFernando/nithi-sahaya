@@ -1,0 +1,302 @@
+[
+  {
+    "source_file": "ch00_minimum_retirement_age_of_workers.txt",
+    "output_file": "ch00_minimum_retirement_age_of_workers.json",
+    "records": 21,
+    "warnings": []
+  },
+  {
+    "source_file": "ch01_employees_councils.txt",
+    "output_file": "ch01_employees_councils.json",
+    "records": 54,
+    "warnings": []
+  },
+  {
+    "source_file": "ch01_employees_councils_regulations.txt",
+    "output_file": "ch01_employees_councils_regulations.json",
+    "records": 20,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch01_industrial_disputes_act.txt",
+    "output_file": "ch01_industrial_disputes_act.json",
+    "records": 92,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch01_industrial_disputes_hearing_and_determination_of_proceeding.txt",
+    "output_file": "ch01_industrial_disputes_hearing_and_determination_of_proceeding.json",
+    "records": 19,
+    "warnings": []
+  },
+  {
+    "source_file": "ch01_termination_of_employment_of_workmen.txt",
+    "output_file": "ch01_termination_of_employment_of_workmen.json",
+    "records": 23,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch01_trade_unions_ordinance.txt",
+    "output_file": "ch01_trade_unions_ordinance.json",
+    "records": 76,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_1.txt",
+    "output_file": "ch02_budgetary_relief_allowance_of_workers_act_no_1.json",
+    "records": 11,
+    "warnings": []
+  },
+  {
+    "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_2.txt",
+    "output_file": "ch02_budgetary_relief_allowance_of_workers_act_no_2.json",
+    "records": 11,
+    "warnings": []
+  },
+  {
+    "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_3.txt",
+    "output_file": "ch02_budgetary_relief_allowance_of_workers_act_no_3.json",
+    "records": 11,
+    "warnings": []
+  },
+  {
+    "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_4_of_2016.txt",
+    "output_file": "ch02_budgetary_relief_allowance_of_workers_act_no_4_of_2016.json",
+    "records": 25,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch02_employment_of_trainees_private_sector.txt",
+    "output_file": "ch02_employment_of_trainees_private_sector.json",
+    "records": 16,
+    "warnings": []
+  },
+  {
+    "source_file": "ch02_national_minimum_wage_of_workers_act_no_3_of_2016.txt",
+    "output_file": "ch02_national_minimum_wage_of_workers_act_no_3_of_2016.json",
+    "records": 15,
+    "warnings": []
+  },
+  {
+    "source_file": "ch02_shop_and_office_employees.txt",
+    "output_file": "ch02_shop_and_office_employees.json",
+    "records": 107,
+    "warnings": []
+  },
+  {
+    "source_file": "ch02_shop_and_office_employees_regulations.txt",
+    "output_file": "ch02_shop_and_office_employees_regulations.json",
+    "records": 74,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch02_wages_boards_ordinance.txt",
+    "output_file": "ch02_wages_boards_ordinance.json",
+    "records": 106,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch03_employment_of_female_in_mines_ordinance.txt",
+    "output_file": "ch03_employment_of_female_in_mines_ordinance.json",
+    "records": 9,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch03_employment_of_women_young_person_and_children.txt",
+    "output_file": "ch03_employment_of_women_young_person_and_children.json",
+    "records": 37,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch03_employment_of_women_young_person_and_children_regulations.txt",
+    "output_file": "ch03_employment_of_women_young_person_and_children_regulations.json",
+    "records": 13,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch03_maternity_benefits_ordinance.txt",
+    "output_file": "ch03_maternity_benefits_ordinance.json",
+    "records": 27,
+    "warnings": []
+  },
+  {
+    "source_file": "ch03_maternity_benefits_ordinance_regulations.txt",
+    "output_file": "ch03_maternity_benefits_ordinance_regulations.json",
+    "records": 11,
+    "warnings": []
+  },
+  {
+    "source_file": "ch04_factories_ordinance.txt",
+    "output_file": "ch04_factories_ordinance.json",
+    "records": 209,
+    "warnings": []
+  },
+  {
+    "source_file": "ch04_factories_ordinance_regulations_and_forms_1_13.txt",
+    "output_file": "ch04_factories_ordinance_regulations_and_forms_1_13.json",
+    "records": 252,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch04_workmens_compensation.txt",
+    "output_file": "ch04_workmens_compensation.json",
+    "records": 73,
+    "warnings": []
+  },
+  {
+    "source_file": "ch04_workmens_compensation_regulations.txt",
+    "output_file": "ch04_workmens_compensation_regulations.json",
+    "records": 83,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch05_employees_provident_fund.txt",
+    "output_file": "ch05_employees_provident_fund.json",
+    "records": 67,
+    "warnings": []
+  },
+  {
+    "source_file": "ch05_employees_provident_fund_regulations.txt",
+    "output_file": "ch05_employees_provident_fund_regulations.json",
+    "records": 94,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch05_employees_provident_fund_regulations_part_2.txt",
+    "output_file": "ch05_employees_provident_fund_regulations_part_2.json",
+    "records": 41,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch05_employees_provident_fund_special_provisions.txt",
+    "output_file": "ch05_employees_provident_fund_special_provisions.json",
+    "records": 6,
+    "warnings": []
+  },
+  {
+    "source_file": "ch05_employees_trust_fund.txt",
+    "output_file": "ch05_employees_trust_fund.json",
+    "records": 47,
+    "warnings": []
+  },
+  {
+    "source_file": "ch05_employees_trust_fund_regulations.txt",
+    "output_file": "ch05_employees_trust_fund_regulations.json",
+    "records": 44,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch05_employees_trust_fund_special_provisions.txt",
+    "output_file": "ch05_employees_trust_fund_special_provisions.json",
+    "records": 7,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch05_payment_of_gratuity.txt",
+    "output_file": "ch05_payment_of_gratuity.json",
+    "records": 23,
+    "warnings": []
+  },
+  {
+    "source_file": "ch06_fee_charging_employment_agencies.txt",
+    "output_file": "ch06_fee_charging_employment_agencies.json",
+    "records": 16,
+    "warnings": []
+  },
+  {
+    "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.txt",
+    "output_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.json",
+    "records": 85,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act_regulations.txt",
+    "output_file": "ch06_sri_lanka_bureau_of_foreign_employment_act_regulations.json",
+    "records": 26,
+    "warnings": []
+  },
+  {
+    "source_file": "ch07_allowances_to_plantation_workers.txt",
+    "output_file": "ch07_allowances_to_plantation_workers.json",
+    "records": 14,
+    "warnings": []
+  },
+  {
+    "source_file": "ch07_estate_labour_indian.txt",
+    "output_file": "ch07_estate_labour_indian.json",
+    "records": 30,
+    "warnings": []
+  },
+  {
+    "source_file": "ch07_estates_quarters.txt",
+    "output_file": "ch07_estates_quarters.json",
+    "records": 4,
+    "warnings": []
+  },
+  {
+    "source_file": "ch07_indian_immigrant_labour.txt",
+    "output_file": "ch07_indian_immigrant_labour.json",
+    "records": 73,
+    "warnings": []
+  },
+  {
+    "source_file": "ch07_medical_wants.txt",
+    "output_file": "ch07_medical_wants.json",
+    "records": 90,
+    "warnings": [
+      "contains section text shorter than 10 words"
+    ]
+  },
+  {
+    "source_file": "ch07_minimum_wages.txt",
+    "output_file": "ch07_minimum_wages.json",
+    "records": 15,
+    "warnings": []
+  },
+  {
+    "source_file": "ch07_service_contracts.txt",
+    "output_file": "ch07_service_contracts.json",
+    "records": 16,
+    "warnings": []
+  },
+  {
+    "source_file": "ch07_trade_union_representatives_entry_into_estates.txt",
+    "output_file": "ch07_trade_union_representatives_entry_into_estates.json",
+    "records": 1,
+    "warnings": []
+  }
+]

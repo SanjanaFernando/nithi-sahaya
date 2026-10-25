@@ -30,7 +30,10 @@ def sha256(path: Path) -> str:
 
 
 def extract_pdf(
-    pdf_path: Path, destination: Path, source_name: str | None = None
+    pdf_path: Path,
+    destination: Path,
+    source_name: str | None = None,
+    source_path: Path | None = None,
 ) -> dict[str, object]:
     with fitz.open(pdf_path) as document:
         pages = [page.get_text("text") for page in document]
@@ -40,6 +43,7 @@ def extract_pdf(
 
     page_lengths = [len(page.strip()) for page in pages]
     short_pages = sum(length < 200 for length in page_lengths)
+    original_pdf = source_path or pdf_path
     return {
         "source_file": source_name or pdf_path.name,
         "extracted_from": pdf_path.name,
@@ -47,7 +51,11 @@ def extract_pdf(
         "pages": len(pages),
         "characters": sum(page_lengths),
         "short_pages": short_pages,
-        "sha256": sha256(pdf_path),
+        # Keep sha256 tied to the original source PDF even when an OCR-derived
+        # copy supplies the searchable text. Record both hashes for provenance.
+        "sha256": sha256(original_pdf),
+        "extraction_pdf_sha256": sha256(pdf_path),
+        "used_ocr_override": pdf_path.resolve() != original_pdf.resolve(),
     }
 
 
@@ -77,7 +85,14 @@ def main() -> int:
             ocr_pdf = args.ocr_source / pdf.name
             if ocr_pdf.exists():
                 input_pdf = ocr_pdf
-        reports.append(extract_pdf(input_pdf, args.destination, source_name=pdf.name))
+        reports.append(
+            extract_pdf(
+                input_pdf,
+                args.destination,
+                source_name=pdf.name,
+                source_path=pdf,
+            )
+        )
     report_path = args.destination / "extraction_report.json"
     report_path.write_text(
         json.dumps(reports, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"

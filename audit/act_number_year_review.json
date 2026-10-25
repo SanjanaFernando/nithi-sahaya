@@ -1,0 +1,261 @@
+{
+  "review_date": "2026-10-25",
+  "field": "act_number_year",
+  "records_updated": 31,
+  "unknown_records": [],
+  "sources": {
+    "ch07_minimum_wages.pdf": {
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "assigned_value": "Ordinance No. 27 of 1927",
+      "source_pdf": "raw_pdfs/ch07_minimum_wages.pdf",
+      "source_pdf_sha256": "68ee6308d0fb6f551cfa10960a9407ef3ab6ac3d4e0cb8fd4a2b8bd9add130f2",
+      "title_page": 1,
+      "title_page_identifiers": [
+        "Ordinance No. 27 of 1927",
+        "Ordinance No. 34 of 1935",
+        "Act No. 25 of 2000"
+      ],
+      "title_page_text_excerpt": "624\nMINIMUM WAGES\nMINIMUM  WAGES\nAN ORDINANCE TO AMEND THE LAW RELATING TO INDIAN LABOURERS\n[9th December, 1927.]\n1.  This Ordinance may be cited as the Minimum Wages (Indian Labour) Ordinance.\n2.   This Ordinance shall be read and construed as one with the Service Contracts Ordinance,\nthe Estate Labour (Indian) Ordinance, and the Indian Immigrant Labour Ordinance.\n3.  (1)  Where a labourer is employed at work other than time-work for a day or a successive\nnumber of days within any calendar month, the wages payable to him for that day or successive\nnumber of days, shall not be less than the wages payable to such labourer for such period at the\nminimum rates of wages prescribed under this Ordinance.\n(2)  In the case of a labourer paid by the day, any period of work performed by such person\nexceeding nine hours per day (including time not exceeding one hour taken for the midday meal) shall\nbe paid for at overtime rates, and shall be in addition to the minimum rates of wages payable to the\nlabourer for a day’s work. Such overtime rates shall not be less per hour then one-eighth of the\nminimum rates of wages prescribed under this Ordinance.\n4.  No employer shall knowingly employ for work on estates any child below the age of\nfourteen years, or knowingly permit such child to be employed.\n5.\n (1)  It shall be lawful for the Minister by notification in the Gazette to appoint for\nany administrative district an Estate Wages Board composed of five members, none of whom shall be\nmembers",
+      "official_reference": "https://labourdept.gov.lk/downloads/labour_code/62.pdf",
+      "reason": "The official Department of Labour copy lists Ordinances Nos. 27 of 1927 and 34 of 1935, and Act No. 25 of 2000; the original ordinance identifier is 27 of 1927."
+    },
+    "ch07_service_contracts.pdf": {
+      "act_name": "Service Contracts Ordinance",
+      "assigned_value": "Ordinance No. 11 of 1865",
+      "source_pdf": "raw_pdfs/ch07_service_contracts.pdf",
+      "source_pdf_sha256": "0a5831db8c980c8fedc372efd376cdb50e40ade547687e531eb79b122d6ca07f",
+      "title_page": 1,
+      "title_page_identifiers": [
+        "Ordinance No. 11 of 1865",
+        "Ordinance No. 16 of 1884",
+        "Ordinance No. 16 of 1905",
+        "Ordinance No. 23 of 1912",
+        "Ordinance No. 41 of 1916",
+        "Ordinance No. 43 of 1921",
+        "Ordinance No. 27 of 1927"
+      ],
+      "title_page_text_excerpt": "635\nSERVICE  CONTRACTS\nSERVICE  CONTRACTS\nAN  ORDINANCE TO AMEND AND CONSOLIDATE THE LAW RELATING TO SERVANTS,\nLABOURERS, AND JOURNEYMEN ARTIFICERS uNDER CONTRACTS OF HIRE AND SERVICE.\n[1st July 1866.]\n1. This Ordinance may be cited  as the Service Contracts Ordinance.\n2. The word “servant” shall, unless otherwise expressly qualified, extend to and include\nmenial, domestic, and other like servants, pioneers, kanganies, and other labourers, whether employed\nin agricultural, road, railway, or other like work.\n3. Every verbal contract for the hire of any servant, except for work usually performed by the\nday, or by the job, or by the journey, shall (unless otherwise expressly stipulated, and notwithstanding\nthat the wages under such contract shall be payable at a daily rate) be deemed and taken in law to be\na contract for hire and service for the period of one month, and to be renewable from month to month,\nand shall be deemed and taken in law to be so renewed, unless one month’s previous notice or\nwarning be given by either party to the other of his intention to determine the same at the expiry of\na month from the day of giving such notice.\n4.  (1) The wages of such servant shall be payable monthly, except where the service shall\nhave been determined by notice on a day other than the last day of the month, in which case the\nwages for the broken period shall be payable to the day the service is so determined, and such\nwages, where the same shall not be payable at a monthly rate, ",
+      "official_reference": "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+      "reason": "The source title page lists Ordinances Nos. 11 of 1865, 16 of 1884, 16 of 1905, 23 of 1912, 41 of 1916, 43 of 1921, and 27 of 1927. The original ordinance identifier is 11 of 1865; the separately printed 1 July 1866 date is not its number/year."
+    }
+  },
+  "records": [
+    {
+      "record_id": "ch07_minimum_wages_s10",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s11",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s12",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s13",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s14",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s15",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s16",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s17",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s2",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s3",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s4",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s5",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s6",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s7",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_minimum_wages_s8",
+      "source_pdf": "ch07_minimum_wages.pdf",
+      "act_name": "Minimum Wages (Indian Labour) Ordinance",
+      "value": "Ordinance No. 27 of 1927",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s10",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s11",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s12",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s13",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s14",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s15",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s16",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s17",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s2",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s3",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s4",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s5",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s6",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s7",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s8",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    },
+    {
+      "record_id": "ch07_service_contracts_s9",
+      "source_pdf": "ch07_service_contracts.pdf",
+      "act_name": "Service Contracts Ordinance",
+      "value": "Ordinance No. 11 of 1865",
+      "evidence_page": 1
+    }
+  ]
+}

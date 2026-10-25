@@ -1,0 +1,723 @@
+{
+  "review_date": "2026-10-25",
+  "applicable_date_cutoff": "2026-10-25",
+  "source_count": 44,
+  "method": "Compared the Department of Labour Labour Code catalogue and source copies with targeted searches of Parliament Acts and Department of Government Printing Acts/Gazette records. Search non-results are not treated as proof that no amendment exists.",
+  "status_counts": {
+    "not_confirmed": 21,
+    "partial": 13,
+    "corpus_update_required": 10
+  },
+  "review_scope_limitations": [
+    "No exhaustive title-by-title historic amendment chain was established for every principal Act.",
+    "Subsidiary legislation, annual or trade-specific rates, commencement orders, revocations, and corrections require Gazette-by-Gazette verification.",
+    "Official source copies and amendment entries were not reconciled clause-by-clause for all instruments.",
+    "This is a research inventory, not a legal opinion or confirmation that any law is in force."
+  ],
+  "sources": [
+    {
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "title": "Minimum Retirement Age of Workers Act, No. 28 of 2021",
+      "principal_act_number_year": "ACT, No. 28 OF 2021",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment confirmed in this targeted review. The principal Act is dated 2021; check commencement orders and any later Gazette notices.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch01_employees_councils.pdf",
+      "title": "Employees' Councils Act",
+      "principal_act_number_year": "Act No. 32 of 1979",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://www.documents.gov.lk/view/act/acts_1984.html",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "The official Acts listing identifies Employees' Councils (Amendment) Act No. 5 of 1984. No later amending Act was confirmed here.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch01_employees_councils_regulations.pdf",
+      "title": "Employees' Councils (Orders and Regulations)",
+      "principal_act_number_year": "ACT, NO. 32 OF 1979",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "Source is subsidiary instruments/orders under the Employees' Councils Act. No complete current Gazette-by-Gazette instrument history was established.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch01_industrial_disputes_act.pdf",
+      "title": "Industrial Disputes Act",
+      "principal_act_number_year": "Act, No.43 of 1950",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/2022/9/22-2022_E.pdf",
+        "https://documents.gov.lk/view/acts/1999/12/56-1999_E.pdf",
+        "https://www.documents.gov.lk/view/act/acts_2003.html"
+      ],
+      "amendment_and_gazette_findings": "Official records confirm Industrial Disputes (Amendment) Act No. 22 of 2022 (sections 31DD) and older amendments including Nos. 56/1999 and 11/2003. Full amendment chain and commencement/cross-reference check remain open.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch01_industrial_disputes_hearing_and_determination_of_proceeding.pdf",
+      "title": "Industrial Disputes (Hearing and Determination of Proceedings) (Special Provisions) Act",
+      "principal_act_number_year": "Act, No. 13 of 2003",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://www.documents.gov.lk/view/act/acts_2003.html"
+      ],
+      "amendment_and_gazette_findings": "The 2003 Act No. 13 is a special-provisions statute related to the Industrial Disputes Act. Later amendments, current applicability, and the two deadline conflicts in the corpus require legal review.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch01_termination_of_employment_of_workmen.pdf",
+      "title": "Termination of Employment of Workmen (Special Provisions) Act",
+      "principal_act_number_year": "Act No. 45 of 1971",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/act/2021/11/29-2021_E.pdf",
+        "https://documents.gov.lk/view/act/2003/3/12-2003_E.pdf",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official record confirms Amendment Act No. 29 of 2021, which changes section 3(1)(c) by reference to the minimum retirement age. Amendment Act No. 12 of 2003 also appears in official Acts records. Full chain and commencement orders remain open.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch01_trade_unions_ordinance.pdf",
+      "title": "Trade Unions Ordinance",
+      "principal_act_number_year": "Ordinance No. 14 of 1935",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or current consolidated text was confirmed in this targeted review; historical amendment chain remains unresolved.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_1.pdf",
+      "title": "Budgetary Relief Allowance of Workers (No. 1) Law",
+      "principal_act_number_year": "Act No. 8 of 1978",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amending Act confirmed in this targeted review. Confirm current status, duration, and any repeal/supersession against official law before use.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_2.pdf",
+      "title": "Budgetary Relief Allowance of Workers (No. 2) Law",
+      "principal_act_number_year": "Act, No. 4 of 1963",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amending Act confirmed in this targeted review. Confirm current status, duration, and any repeal/supersession against official law before use.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_3.pdf",
+      "title": "Budgetary Relief Allowance of Workers Act",
+      "principal_act_number_year": "Act, No. 36 of 2005",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://www.documents.gov.lk/view/bills/2025/5/588-2025_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "A 2025 Bill was published to amend the Budgetary Relief Allowance of Workers Act No. 36 of 2005; a Bill is not itself an enacted amendment. Current enactment/status remains unresolved in this review.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_4_of_2016.pdf",
+      "title": "Budgetary Relief Allowance of Workers Act, No. 4 of 2016",
+      "principal_act_number_year": "ACT, No. 4 OF 2016",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/2025/7/10-2025_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official record confirms Budgetary Relief Allowance of Workers (Amendment) Act No. 10 of 2025. It amends Act No. 4 of 2016 and deems the changes operative from 1 April 2025. The corpus text predates this change.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_employment_of_trainees_private_sector.pdf",
+      "title": "Employment of Trainees (Private Sector) Act",
+      "principal_act_number_year": "Act, No. 45 of 1971",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or complete current official consolidation confirmed in this targeted review; verify the principal Act identifier and any repeal/overlap with later employment laws.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_national_minimum_wage_of_workers_act_no_3_of_2016.pdf",
+      "title": "National Minimum Wage of Workers Act, No. 3 of 2016",
+      "principal_act_number_year": "ACT, No. 3 OF 2016",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/2025/7/11-2025_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official record confirms National Minimum Wage of Workers (Amendment) Act No. 11 of 2025, effective from 1 April 2025 and setting new minimums from 1 January 2026. Corpus copy predates it; check later notices/sector-specific rates.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_shop_and_office_employees.pdf",
+      "title": "Shop and Office Employees (Regulation of Employment and Remuneration) Act",
+      "principal_act_number_year": "Act No. 19 of 1954",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/act/2021/1/01-2021_E.pdf",
+        "https://www.documents.gov.lk/view/act/acts_2018.html",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official record confirms amendments including Act No. 1 of 2021 and Act No. 14 of 2018; the 2021 amendment changes the minimum age in section 10. Full consolidation/amendment chain remains open.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_shop_and_office_employees_regulations.pdf",
+      "title": "Shop and Office Employees Regulations",
+      "principal_act_number_year": "Act, No. 19. oF 1954",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://www.documents.gov.lk/view/egz/egz_2026.html"
+      ],
+      "amendment_and_gazette_findings": "The Government Printer's 2026 Gazette index lists Gazette Extraordinary No. 2473/25 dated 30 January 2026 as Shop and Office Employees Regulations. Its effect on this corpus copy has not yet been reviewed clause by clause.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch02_wages_boards_ordinance.pdf",
+      "title": "Wages Boards Ordinance",
+      "principal_act_number_year": "Ordinance No. 27 of 1941",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/bills/2019/7/31-2019_E.pdf",
+        "https://www.documents.gov.lk/view/egz/egz_2026.html",
+        "https://www.documents.gov.lk/view/egz/egz_2025.html",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official sources show a Wages Boards (Amendment) Bill in 2019, but this review did not confirm enactment of that Bill. Wage Board decisions/notices continue to be made by trade and date; the Government Printer index lists 2025–2026 notices. A current trade-specific notice review is required.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch03_employment_of_female_in_mines_ordinance.pdf",
+      "title": "Employment of Females in Mines Ordinance",
+      "principal_act_number_year": "Ordinance No. 13 of 1937",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment confirmed in this targeted review. Verify current force/repeal and interaction with later occupational and gender laws.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch03_employment_of_women_young_person_and_children.pdf",
+      "title": "Employment of Women, Young Persons and Children Act",
+      "principal_act_number_year": "Act No. 47 of 1956",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://www.parliament.lk/en/business-of-parliament/act-details/G6434",
+        "https://www.parliament.lk/uploads/acts/gbills/english/6434.pdf",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official Parliament record confirms Employment of Women, Young Persons and Children (Amendment) Act No. 21 of 2026, certified 8 September 2026. It amends sections 7, 13 and 20A penalty amounts. Corpus copy predates this Act.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "title": "Employment of Women, Young Persons and Children Regulations",
+      "principal_act_number_year": "Act, No. 47 oF 1956",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://www.parliament.lk/uploads/acts/gbills/english/6434.pdf"
+      ],
+      "amendment_and_gazette_findings": "The parent Act received Amendment Act No. 21 of 2026. This regulations compilation and the Gazette notices it contains were not individually checked for later amendments/revocations.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch03_maternity_benefits_ordinance.pdf",
+      "title": "Maternity Benefits Ordinance",
+      "principal_act_number_year": "Ordinance No. 32 of 1939",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/1981/8/52-1981_E.pdf",
+        "https://www.documents.gov.lk/view/bill/bl_2024.html",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official record confirms Maternity Benefits (Amendment) Act No. 52 of 1981. A 2024 Bill entry appears in the official Bill index, but enactment was not confirmed here. Current consolidated text and commencement history remain unresolved.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch03_maternity_benefits_ordinance_regulations.pdf",
+      "title": "Maternity Benefits Regulations",
+      "principal_act_number_year": "ORDINANCE, NO. 32 OF 1939",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No complete current Gazette amendment/revocation history for these regulations was established. Parent Ordinance amendment history is also incomplete.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch04_factories_ordinance.pdf",
+      "title": "Factories Ordinance",
+      "principal_act_number_year": "Ordinance No. 45 of 1942",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/2021/1/04-2021_E.pdf",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official record confirms Factories (Amendment) Act No. 4 of 2021, changing provisions on young persons' work hours and ages. Corpus copy predates this Act; other regulations and commencement details still need review.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch04_factories_ordinance_regulations_and_forms_1_13.pdf",
+      "title": "Factories Ordinance Regulations and Forms 1–13",
+      "principal_act_number_year": "ORDINANCE, NO. 45 OF 1942",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/2021/1/04-2021_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Parent Factories Ordinance was amended by Act No. 4 of 2021. No complete Gazette-by-Gazette review of the regulations/forms compilation, including amendments/revocations, was established.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch04_workmens_compensation.pdf",
+      "title": "Workmen's Compensation Ordinance",
+      "principal_act_number_year": "Ordinance No. 19 of 1934",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "No later amending Act confirmed in this targeted review. Verify current Act/Ordinance title, amendments, repeals and any current compensation schedules before use.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch04_workmens_compensation_regulations.pdf",
+      "title": "Workmen's Compensation Regulations",
+      "principal_act_number_year": "ORDINANCE NO. 19 OF 1934",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No complete current Gazette amendment/revocation history for the regulations or compensation schedule was established.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch05_employees_provident_fund.pdf",
+      "title": "Employees' Provident Fund Act",
+      "principal_act_number_year": "Act No. 15 of 1958",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/2021/10/23-2021_E.pdf",
+        "https://www.documents.gov.lk/view/bill/bl_2024.html",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official record confirms Employees' Provident Fund (Amendment) Act No. 23 of 2021, changing definitions in section 47. Official 2024 Bill entries propose another amendment, but enactment was not confirmed in this review. Corpus copy predates at least the 2021 Act.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch05_employees_provident_fund_regulations.pdf",
+      "title": "Employees' Provident Fund Regulations",
+      "principal_act_number_year": "ACT, No. 15 OF 1958",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/2021/10/23-2021_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Parent Act was amended by Act No. 23 of 2021. No complete Gazette-by-Gazette review of EPF regulations/orders or commencement notices was established.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch05_employees_provident_fund_regulations_part_2.pdf",
+      "title": "Employees' Provident Fund Regulations (Part 2)",
+      "principal_act_number_year": "ACT, NO. 15 OF 1958",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "corpus_update_required",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/2021/10/23-2021_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Parent Act was amended by Act No. 23 of 2021. No complete Gazette-by-Gazette review of this regulations/orders compilation or later amendments was established.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch05_employees_provident_fund_special_provisions.pdf",
+      "title": "Employees' Provident Fund (Special Provisions) Law",
+      "principal_act_number_year": "Act, No. 15 of 1958",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify principal-law identity and current force.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch05_employees_trust_fund.pdf",
+      "title": "Employees' Trust Fund Act",
+      "principal_act_number_year": "Act No. 46 of 1980",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/1980/10/46-1980_E.pdf",
+        "https://documents.gov.lk/view/acts/1980/10/46-1980_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official 1980 principal Act located; no later amending Act confirmed by this targeted search. This is not proof that no amendments or relevant Gazette orders exist.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch05_employees_trust_fund_regulations.pdf",
+      "title": "Employees' Trust Fund Regulations",
+      "principal_act_number_year": "ACT, NO. 46 OF 1980",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No complete current Gazette order/regulation history was established; instrument-by-instrument review remains open.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch05_employees_trust_fund_special_provisions.pdf",
+      "title": "Employees' Trust Fund (Special Provisions) Act",
+      "principal_act_number_year": "ACT, NO. 46 OF 1980",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify current force and relationship to the Employees' Trust Fund Act.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch05_payment_of_gratuity.pdf",
+      "title": "Payment of Gratuity Act",
+      "principal_act_number_year": "Act No. 12 of 1983",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://www.documents.gov.lk/view/act/acts_1983.html",
+        "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official Act index confirms Payment of Gratuity (Amendment) Act No. 12 of 1983. Later changes, current thresholds, amendments and relevant Gazette orders were not completely traced.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch06_fee_charging_employment_agencies.pdf",
+      "title": "Fee-Charging Employment Agencies Act",
+      "principal_act_number_year": "Act No. 37 of 1956",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/acts/1980/8/32-1980_E.pdf",
+        "https://documents.gov.lk/view/acts/1980/8/32-1980_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official Foreign Employment Agency Act No. 32 of 1980 expressly amended the Fee-Charging Employment Agencies Act No. 37 of 1956. The 1985 SLBFE Act may affect the regulatory framework; repeal/savings/current force not determined.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.pdf",
+      "title": "Sri Lanka Bureau of Foreign Employment Act",
+      "principal_act_number_year": "ACT, NO. 32 OF 1980",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amending Act confirmed in this targeted review. Regulations and fee/licensing notices are separate and require a Gazette-level review.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act_regulations.pdf",
+      "title": "Sri Lanka Bureau of Foreign Employment Act Regulations and Orders",
+      "principal_act_number_year": "ACT NO. 21 OF 1985",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "partial",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home",
+        "https://documents.gov.lk/view/extra-gazettes/2023/6/2337-27_E.pdf"
+      ],
+      "amendment_and_gazette_findings": "Official Gazette No. 2337/27 dated 23 June 2023 further amended the 1985 regulations, following an amendment in Gazette No. 1765/21 dated 6 July 2012. Later regulatory notices were not exhaustively checked.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch07_allowances_to_plantation_workers.pdf",
+      "title": "Allowances to Plantation Workers Act",
+      "principal_act_number_year": "Act, No. 72 of 1981",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amending Act confirmed in this targeted review. Check current force, statutory orders and wage/allowance Gazette notices affecting plantation workers.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch07_estate_labour_indian.pdf",
+      "title": "Estate Labour (Indian) Ordinance",
+      "principal_act_number_year": "Act No. 14 of 1978",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify current force and interaction with later labour statutes.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch07_estates_quarters.pdf",
+      "title": "Estates Quarters (Special Provisions) Act",
+      "principal_act_number_year": "Act No. 2 of 1971",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify current force and any relevant regulations/Gazette orders.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch07_indian_immigrant_labour.pdf",
+      "title": "Indian Immigrant Labour Ordinance",
+      "principal_act_number_year": "No. 9 of 1966",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify current force and interaction with immigration and foreign-employment laws.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch07_medical_wants.pdf",
+      "title": "Medical Wants Ordinance",
+      "principal_act_number_year": "Act, No. 10 of 1983",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify current force and any regulations/health notices.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch07_minimum_wages.pdf",
+      "title": "Minimum Wages (Indian Labour) Ordinance",
+      "principal_act_number_year": "Ordinance No. 27 of 1927",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify current force and related Wages Board/Gazette rates before use.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch07_service_contracts.pdf",
+      "title": "Service Contracts Ordinance",
+      "principal_act_number_year": "Ordinance No. 11 of 1865",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify current force and interaction with later employment legislation.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    },
+    {
+      "source_file": "ch07_trade_union_representatives_entry_into_estates.pdf",
+      "title": "Trade Union Representatives (Entry into Estates) Act",
+      "principal_act_number_year": "Act No. 25 of 1970",
+      "review_date": "2026-10-25",
+      "applicable_date": "2026-10-25 (review cutoff; individual amendments may have different commencement dates)",
+      "status": "not_confirmed",
+      "official_sources_checked": [
+        "https://labourdept.gov.lk/labour-code-of-sri-lanka/",
+        "https://www.parliament.lk/en/business-of-parliament/acts-listing",
+        "https://www.documents.gov.lk/home"
+      ],
+      "amendment_and_gazette_findings": "No later amendment or repeal status confirmed in this targeted review; verify current force and any relevant regulations/Gazette orders.",
+      "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required."
+    }
+  ]
+}

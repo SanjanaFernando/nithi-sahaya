@@ -10,7 +10,7 @@
       "4"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "For a worker covered by the Act, the minimum retirement age is generally 60, subject to the Act?s transitional rules, exclusions, and prescribed exceptions. A retirement at 55 needs fact-specific review."
+    "reference_answer": "For a worker covered by the Act, the minimum retirement age is generally 60, subject to the Act's transitional rules, exclusions, and prescribed exceptions. A retirement at 55 needs fact-specific review."
   },
   {
     "id": "q02",
@@ -32,7 +32,7 @@
       "4"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "A contract term setting a lower age is generally void, subject to section 3 and the Act?s exceptions."
+    "reference_answer": "A contract term setting a lower age is generally void, subject to section 3 and the Act's exceptions."
   },
   {
     "id": "q04",
@@ -43,7 +43,7 @@
       "3"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "The Act excludes the categories in Schedule II and allows prescribed occupations to be treated as exceptions. Check the worker?s exact category and current regulations."
+    "reference_answer": "The Act excludes the categories in Schedule II and allows prescribed occupations to be treated as exceptions. Check the worker's exact category and current regulations."
   },
   {
     "id": "q05",
@@ -51,11 +51,11 @@
     "language": "English",
     "expected_source_file": "ch00_minimum_retirement_age_of_workers.pdf",
     "expected_section_numbers": [
-      "10",
-      "11"
+      "3",
+      "SCHEDULE II"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "The Act?s Schedule II lists fixed-term, casual, seasonal, part-time, probationary, daily-paid, student, domestic, and assignment-based workers among exclusions. Verify the worker?s precise status and applicable amendments."
+    "reference_answer": "The Act's Schedule II lists fixed-term, casual, seasonal, part-time, probationary, daily-paid, student, domestic, and assignment-based workers among exclusions. Verify the worker's precise status and applicable amendments."
   },
   {
     "id": "q06",
@@ -66,7 +66,7 @@
       "2"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "For scheduled employment under the Act, an employer generally needs the worker?s prior written consent or the Commissioner?s prior written approval to terminate."
+    "reference_answer": "For scheduled employment under the Act, an employer generally needs the worker's prior written consent or the Commissioner's prior written approval to terminate."
   },
   {
     "id": "q07",
@@ -91,7 +91,7 @@
       "6D"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "The Commissioner?s order and the Gazette formula govern compensation. If ordered money is not paid on time, section 6C provides a court enforcement route. Confirm current formulas."
+    "reference_answer": "The Commissioner's order and the Gazette formula govern compensation. If ordered money is not paid on time, section 6C provides a court enforcement route. Confirm current formulas."
   },
   {
     "id": "q09",
@@ -124,7 +124,7 @@
       "11"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "Under section 11 of the special-provisions statute, the Commissioner is required to make the approval decision within two months of receiving the employer?s application."
+    "reference_answer": "Under section 11 of the special-provisions statute, the Commissioner is required to make the approval decision within two months of receiving the employer's application."
   },
   {
     "id": "q12",
@@ -136,7 +136,7 @@
       "6"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "The supplied special-provisions text sets a four-month period for the Tribunal?s decision and a 30-day appeal filing period, subject to its counting rules. The six-month period in the Industrial Disputes Act is a known conflict; a lawyer should determine which provision applies."
+    "reference_answer": "The supplied special-provisions text sets a four-month period for the Tribunal's decision and a 30-day appeal filing period, subject to its counting rules. The six-month period in the Industrial Disputes Act is a known conflict; a lawyer should determine which provision applies."
   },
   {
     "id": "q13",
@@ -147,7 +147,7 @@
       "4"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "The Commissioner of Labour is in charge of general administration of the EPF Act, subject to the Act?s provisions."
+    "reference_answer": "The Commissioner of Labour is in charge of general administration of the EPF Act, subject to the Act's provisions."
   },
   {
     "id": "q14",
@@ -184,7 +184,7 @@
       "8"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "Section 5 sets the eligibility conditions for gratuity, including employer-size and service thresholds. Section 7 lists exclusions. If payment is in default, section 8 allows the Commissioner to initiate a recovery process through the Magistrate?s Court."
+    "reference_answer": "Section 5 sets the eligibility conditions for gratuity, including employer-size and service thresholds. Section 7 lists exclusions. If payment is in default, section 8 allows the Commissioner to initiate a recovery process through the Magistrate's Court."
   },
   {
     "id": "q17",
@@ -195,7 +195,7 @@
       "13"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "Under section 13, gratuity may be forfeited only to the extent of the employer?s loss where termination is for fraud, misappropriation, wilful damage, or causing loss of property."
+    "reference_answer": "Under section 13, gratuity may be forfeited only to the extent of the employer's loss where termination is for fraud, misappropriation, wilful damage, or causing loss of property."
   },
   {
     "id": "q18",
@@ -232,7 +232,7 @@
       "9"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "A newly established trade union must apply for registration within three months. The application must use the prescribed form, be signed by at least seven members, and include the union?s rules and required particulars."
+    "reference_answer": "A newly established trade union must apply for registration within three months. The application must use the prescribed form, be signed by at least seven members, and include the union's rules and required particulars."
   },
   {
     "id": "q21",
@@ -369,7 +369,7 @@
       "4"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "Covered workers generally have a minimum retirement age of 60, subject to the law?s transitional rules and exclusions. Check the worker?s precise status."
+    "reference_answer": "Covered workers generally have a minimum retirement age of 60, subject to the law's transitional rules and exclusions. Check the worker's precise status."
   },
   {
     "id": "q33",
@@ -381,7 +381,7 @@
       "5"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "For scheduled employment, the employer generally needs the worker?s prior written consent or the Commissioner?s prior written approval before termination."
+    "reference_answer": "For scheduled employment, the employer generally needs the worker's prior written consent or the Commissioner's prior written approval before termination."
   },
   {
     "id": "q34",
@@ -406,7 +406,7 @@
       "7"
     ],
     "should_say_not_sure": false,
-    "reference_answer": "The Ordinance provides maternity benefit and related protections, subject to its eligibility and notice rules. Exact entitlement depends on the worker?s circumstances."
+    "reference_answer": "The Ordinance provides maternity benefit and related protections, subject to its eligibility and notice rules. Exact entitlement depends on the worker's circumstances."
   },
   {
     "id": "q36",
@@ -469,7 +469,7 @@
   },
   {
     "id": "q41",
-    "question": "??? ???????? ????? ????? ????????? ????????? ??? ??? ??????",
+    "question": "ආවරණය වන වෙළඳාම්වල සේවකයන්ට පුර පසළොස්වක පෝය දිනයේ නිවාඩු හිමිද?",
     "language": "Sinhala",
     "expected_source_file": "ch02_wages_boards_ordinance.pdf",
     "expected_section_numbers": [
@@ -480,7 +480,7 @@
   },
   {
     "id": "q42",
-    "question": "?????? ????????????? ????? ???????? ??????????? ????????? ?????",
+    "question": "வேலை விபத்து ஏற்பட்டால் இழப்பீடு கோருவதற்கான அறிவிப்பையும் கோரிக்கையையும் எப்போது சமர்ப்பிக்க வேண்டும்?",
     "language": "Tamil",
     "expected_source_file": "ch04_workmens_compensation.pdf",
     "expected_section_numbers": [

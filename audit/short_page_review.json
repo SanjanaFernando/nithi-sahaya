@@ -1,0 +1,829 @@
+{
+  "review_date": "2026-10-25",
+  "threshold_characters": 200,
+  "warning_count": 82,
+  "repaired_with_ocr": 74,
+  "valid_sparse_pages": 8,
+  "items": [
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 1,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 2210,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nSHOP AND OFFICE EMPLOYEES [REGULATION OFEMPLOYMENT AND REMUNERATION] ACT \nActs \nNos. 19 of 1954, \n60 of 1957, \n28 of 1962, \n5 of 1966, \n26 of 1966, \nLaw \nNo. \n7 of 1975. \nActs \nNos. 12 of 1978, \n53 of 1981, \n36 of 1982, \n32 of 1984, \n44 of 1985. \nShort title. \nApplication of \nPart I of this \nAct. \nRestriction of \nhours of \nemployment. \n[§ 2, Law 7 of 1975.] \nAN ACT TO PROVIDE FOR THE REGULATION OF EMPLOYMENT, Hours OF WORK AND \nREMUNERATION OF PERSONS IN SHOP AND OFFICES, AND FOR MATTERS CONNECTED \nTHEREWITH OR INCIDENTAL THERETO. \n[9th August, 1954] \n1. This Act may be cited as the Shop and Office Employees (Regulation of Employment \nand Remuneration) Act. \nPART I \nREGULATION OF Hours OF EMPLOYMENT IN SHOPS AND \nOFFICES"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 2,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3741,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n[§ 2,60 Of 1957.] \n[§ 2, Law 7 of 1975.] \nOther employment \nto be taken into. \naccount. \nThe period referred to in this subsection shall not include any interval allowed for rest or for a meal \nunder any provisions of this Act or any interruption permitted by any regulation referred to in \nsubsection (3). \n(2) Subject to the provisions of any regulation referred to in subsection (3), the period \nduring which any person is employed in or about the business of any shop or office shall consist of \none continuous period without any interruption other than such interval as may be allowed for rest \nor for a meal under any provision of this Act. \n(3) Regulations may be made - \n(a) prescribing the periods for which persons may "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 3,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4053,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nWeekly holidays. \n[§ 11, 17 of 1965.] \n*[§ 9, 29 of 1971.] \n[$ 3,60 of 1957.] \nAnnual Holiday \n& leave. \n5. (1) Every person employed in or about the business of any shop or office shall, in respect \nof each week, be allowed one whole holiday and one half-holiday. Such holidays shall be so \nallowed with full \nremuneration if such person has worked for not less than twenty-eight hours, \nexclusive of any period of overtime work, during that week : \nProvided that regulations may be made modifying the preceding provisions of this subsec- \ntion in their application to persons employed in work of any specified class or description, by the \nsubstitution, for the period of twenty-eight hours, of some shorter or longer period. \n("
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 4,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3155,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n[§ 4 ,60 of 1957.] \n[$ 4, 60 of 1957.] \nL$ 4, 60 of 1957.] \n(4) (a) The leave to which a person is entitled under subsection (3) in respect of the first \nyear of his employment may be taken in that year and shall be computed on the basis of one day for \neach complete period of two month’s service. \n(b) The leave to which a person is entitled under subsection (3) in respect of the second \nor any subsequent year of his employment may be taken in such year of employment. \n(5) For the purposes of this section, the continuity of the employment of any person shall \nbe deemed not to have been interrupted by reason of the absence of that person from work - \n(a) on holiday or on leave, with full remuneration, in accordance with "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 5,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4056,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nGrant of holidays on \npublic holidays. \n[§ 5,60 of 1957.] \n[§ 5, 60 of 1957.] \nGrant of holidays on \nFull Moon Poya day. \n*(§ 9, 29 of 1971.] \nEmployment on \nFull Moon Poya day. \n*[§ 9, 29 of 1971.] \nSpecial provisions for \npersons employed \nduring the period \nwhich includes \nmidnight. \nIntervals for \nmeals. \n[§ 6,60 of 1957.] \nProvisions relating \nto employment of \nwoman and persons \nunder eighteen. \n7 (1) Every person employed in or about the business of ashop or office shall be allowed \naholiday with full remuneration on each of such days, being public holidays within the meaning \nof the Holidays Act, as are declared by the Minister, by Order published in the Gazette, to be \nholidays for the purposes of this section, "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 6,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3273,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n[§ 9,320f 1984.] \nProvision of lighting \nand \nventilation. \nProvisions relating \nto residence and \ntaking of meals. \nProvisions of \nsanitarny \nconveniences and \nwashing facilities. \n(2) A person who has attained the age of fourteen years and who- \n(a) being a male, has not attained the age of eighteen years, or \n(b) isafemale, \nshall not be employed in or about the business of a shop or office before 6 a.m. or after 6 p.m. on any \nday: \nProvided, however, that - \n(1) \nany female who has attained the age of eighteen years may be employed \nin or about the business of a hotel or restaurant for the period, or any \npart of the period between 6 p.m. and 10 p.m.; \n(ii) any female who has attained the age of eighteen years may "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 7,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4042,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nProcedure for \nexemption of shops \nor offices from \nprovisions of \nsection 13. \nSpecial provisions \nrelating to \nprosecutions for \nbreaches of \nsection 13. \nProvided that where persons of both sexes are so employed, separate conveniences and \nfacilities as aforesaid shall be provided and maintained for the exclusive use of female employees. \n14. (1) Ifany employer by whom persons are employed in or about the business of any \nshop or office furnishes to the satisfaction of the prescribed officer proof of - \n(a) the fact that suitable and sufficient sanitary conveniences and washing \nfacilities are available, within the prescribed distance from that shop or \noffice, for the use of such persons; and \n(b) such other circumst"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 8,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3381,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \nProvision of seats for \nfemale shop \nassistants. \nEmployer to furnish \nparticulars of \nemployement. \nRecords, & c., to be \nkept or exhibited. \n[$7, 60 of 1957.] \n[$ 2, 5 of 1966.] \nApplication of \nthis Part \n{§ 7, 60 of 1957.] \nLeave in \nconsequence of \npregnancy and \nconfinement. \n[§ 7, 60 of 1957.] \n[§ 2, 53 of 1981.] \n[§ 2, 44 of 1985.] \n16. (1) In every room in which female persons are employed in the serving of customers in \nany shop, there shall be provided for the use of such persons seats behind the counter, or in such \nother position as may be suitable for the purpose, in the proportion of not less than one seat to every \nthree female persons employed in that room. \n(2) In every shop in which seats are provided"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 9,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3995,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[§ 2, 53 of 1981.] \n[§ 2, 44 of 1985.] \n[§ 2, 44 of 1985.] \nRemuneration \nfor period of \nleave in \nconsequence of \npregnancy or \nconfinement \n[§ 7, 60 of 1957.] \nWork which is \nprohibited during \nand after pregnancy \n[§ 7, 60 of 1957.] \nEmployment \nnot to be \nterminated \nbecause of \npregnancy or \nconfinement or \nof illness in \nconsequence \nthereof. \n[§ 7, 60 of 1957.] \nNo notice of \ndismissal to be \ngiven to female \nemployee when \nshe is on leave \nunder this \nPart. \n[§ 7, 60 of 1957.] \nMeanings of \n“confinement”, \n“confined” \nand “viable foetus” \n[§ 2, 50 of 1966.] \n(3) Where a female employee to whom this Part applies has worked for her employer on \nany number of days during the period of fourteen days referred to in su"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 10,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 2938,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \nLeave under \nthis Part to be \nin addition to \nany holiday or \nleave under \nany other Part. \n[§7, 60 of 1957.] \nTime and mannr & c. \nof payment of \nremuneration. \n[§ 56, 18 of 1965.] \n18H. The leave to which a female employee is entitled under this Part shall be in addition to \nany holiday or leave to which she is entitled under any other Part. \nPART II \nPAYMENT OF REMUNERATION \n19. (1) The employer shall comply with the following provisions of this section regarding \nthe payment of remuneration to each person employed in or about the business of his shop or office: \n(a) \n(b) \nHe shall, subject as hereinafter provided, pay such remuneration in legal tender \ndirectly to such person without any deduction other than an auth"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 11,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3284,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[§ 8, 60 of 1957.] \nDefinition of \nemployee. \nMinister to direct \nCommissioner to \nendeavour to make a \ndetermination as to \nthe minimum rate of \nremuneration for \nemployees with \nconsent of employers \nand employees. \nCommissioner’s \ndetermination as to \nthe minimum rate of \nremuneration for \nemployees. \nNothing in this paragraph shall in any way affect the period of notice or \nwarning necessary under any provision of written law other than this Act for \nthe termination of any contract. \n(c) Ifonany date the employer terminates the employment of any employee or any \nemployee terminates his employment, the employer shall, before the expiry of \nthe second working day after that date, pay the remuneration due to that em- \np"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 12,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3997,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \nDate on which \nCommissioner’s \ndetermination shall \ncome into force. \nRepudiation of \ndetermination \nwith consent. \n(2) Adetermination by the Commissioner shall not be made applicable to any shop or office \nunless the consent of the employees of that shop or office who will be affected by the determination, \nand the consent of the employer of such employees has been obtained to that determination. \n(3) Notwithstanding that the consent required by subsection (2) has not been obtained \nin the case of every shop or office mentioned or referred to in an Order under section 21, a determina- \ntion may be made by the Commissioner to be applicable only to each such shop or office in the case \nof which the requisite consent has "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 13,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 2808,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n(a) the Commissioner shall cause the notice of repudiation to be published in the \nGazette; and \n(b) the repudiation shall have effect on the last day of the month succeeding the \nmonth in which the notice is received by the Commissioner. \n(5) A determination which is repudiated in its entirety shall cease to be in force on the date \non which the repudiation takes effect. \n(6) A determination which is repudiated only in so far as it relates to one or some only (but \nnot all) of the shops or offices to which it is applicable shall, on the date on which the repudiation \ntakes effect, cease to be applicable to each shop or office in the case of which it is repudiated, but \nshall otherwise continue in force. \n(7) A determina"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 14,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4302,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n[§ 9, 60 of 1957.] \n[§ 9, 60 of 1957] \n[§ 9, 60 of 1957] \nCircumstances in \nwhich the Minister \nwill authoize a \nremuneration \ntribunal to make a \ndetermination. \n(7) In any case where a draft determination is authorized under section 26 to be made, the \nchairman shall select from the panel, not less than four persons, one of whom shall be himself and the \nothers shall consist of an equal number of representatives of employers and employees and an odd \nnumber of nominated members. \n(8) Where a person appointed to a remuneration tribunal to represent employers or em- \nployees or as a nominated member vacates his office for any reason whatsoever, the chairman shall \nfill that vacancy by appointing another representative o"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 15,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3573,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nDuties and powers \nof a tribunal. \nPublication of \ndraft determination \nby tribunals. \nProcedure for \napproval of \ndetermination of \ntribunals by Minister. \n(3) In any case where the Minister considers it expedient that a determination with con- \nsent should be extended so as to be applicable to any employees to whom it is not already applicable, \nthe Minister may authorize a draft determination, for the extension to such employees of the determi- \nnation with consent, to be made by a remuneration tribunal. \n(4) The Minister may of his own motion, and shall on application made to him in the \nprescribed manner, authorize a draft determination to be made by a remuneration tribunal rescinding, \nvarying or replacing a determ"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 16,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4065,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nLiability of \nemloyer to pay \nminimum \nremuneration. \nEmployer liable to \npay remuneration \nnotwithstanding \nthe change of the \nname and owner- \nship of business. \n[§ 2,12 of 1978.] \nMethod of \ncalculation of \nminimum \nremuneration. \n(2) The Minister may refer back to the tribunal for reconsideration any determination \ntransmitted to him under subsection (1), and in every such case the tribunal shall reconsider the \ndetermination and after such amendment thereof as it may consider desirable, return the determina- \ntion to the Minister. \n(3) No determination transmitted to the Minister under subsection (1) or returned to him \nunder subsection (2) shall have effect unless it has been approved by the Minister. Every determi"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 17,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4716,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nEmployee perfoming \ntwo or more classes \nof employment. \nEmployee perfoming \npiece-work. \nEmployee waiting \nfor employment on \nemployers premises \n&c. \nRemuneration of \nemplyee who works \nfor less than the \nnormalworking \nday or does \nnot work at all \non any day. \n(4) Where a determination under this Part includes provisions under the preceding \nsubsection fixing the period of employment in respect of which remuneration shall be paid to any \nemployees in a shop or office and the number of days after the end of that period within which such \nremuneration shall be paid to those employees, the provisions of paragraph (b) of section 19(1) shall, \nwith effect from the date on which that determination comes into force, cease t"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 18,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3826,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nNon - able-bodied \nemployee. \nNon-application \nof determinations \nunder this Part to \npersons employed \nin any trade or \nwork to which \nPart II of the \nWages Boards \nOrdinance has \nbeen applied. \nInterpretation of a \ndetermination of \na tribunal. \nEffect of tribunal’s \ndecision \nunder \nsection 38. \nClosing orders. \n[§ 11, 17 of 1965.] \n[§ 9, 29 of 1971.] \nday is due to his unwillingness to work or such other circumstances as the Commissioner or the \ntribunal, as the case may be, may determine, and not due to the omission of his employer to provide \nhim with work. \n(3) Where, by reason of his illness or his unwillingness to work or such other circum- \nstances as the Commissioner or the tribunal, as the case may be, may de"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 19,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4114,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nApproval of Closing \nOrders. \nClosing order to \nprevail in case of \nconflict with other \nwritten law. \n[$10, 60 of 1957] \nNo shop to be \nopened in \ncontravention \nof \na closing order. \nApplication of \nclosing order to shop \nwhere more than one \nbusiness is carried on. \nRestriction against \ncarrying on trade \nor bussiness \nafter closing hour for \nshop. \n(3) Any closing order may - \n(a) specify different days or different hours for different classes of shops or for \nshops in different areas; or \n(b) specify different days or different hours for different periods of the year; or \n(c) empower the Commissioner to specify different days or different hours for speci- \nfied shops; or \n(d) authorize, or empower the Commissioner t"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 20,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3181,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nAdministration \nof Act. \n[ § 11,60 \nof 1957. ] \nPower of \nCommissioner to \ncall for returns & c. \n[ § 12,60 of 1957.] \nProvided that nothing in this section shall be deemed to prohibit - \n(a) a barber or hairdresser from attending to a customer at the customer’s resi- \ndence; \n(b) the holding, in a dwelling house, of an auction sale of household goods belong- \ning to the occupier of the dwelling house; \n(c) the sale of newspapers; \n(d) the sale of any goods by a person who does not carry on any trade or business \nas a Seller of such goods and is not employed by a person carrying on any such \ntrade or business; \n(e) the carrying on of any prescribed trade or business. \n(2) Where any person in the presence of a prescribed "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 21,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3917,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nPower of tribunal to \nsummon wittnesses \n&e. \nInformation given \nbefore a tribunal \nto be treated as \nconfidential in \ncertain cases. \nPowers of entry \ninspection, & c. \nthe materials to which the request relates shall not be disclosed by any person without the consent \npreviously obtained of the employer who made the request. \n(4) Nothing in the preceding provisions of this section shall be deemed to require or \npermit any person to disclose any information or to produce any document in any case where the \ndisclosure or production by that person of the information or document is prohibited by or under the \nprovisions of any written law other than this Act. \n48. (1) For the purposes of holding any inquiry under this Act."
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 22,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4303,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nRemuneration to be a \nfirst charge on assets \nof the bussines of a \nshop or office. \n[ § 13,60 1957.] \nPower of \nCommissioner or \nregistered trade \nunion to recover by \nsuit money due \nto any employee. \n[§ 13,60 of 1957.] \n[§ 2,28 of 1962.] \nRecovery of remunaration \nwhere employer has \nfailed to maintain \nany register or record. \n[§ 3,12 of 1978.] \n(2) It shall be the duty of the person in charge of each shop or office, in or about the \nbusiness of which any person is employed to render such assistance and furnish such facilities as \nmay be required by the Commissioner or any prescribed officer, for the purposes of any entry, \ninspection or examination which the Commissioner or that officer is empowered to carry out by "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 23,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3545,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nOffences. \n[§ 2, 26 of 1966.] \n[§ 2, 26 of 1966.] \nPanalty for failure \nto pay \nremuneration. \n[§ 14, 60 of 1957.] \n[§ 3, 26 of 1966.] \n[§ 2,36 of 1982.] \nOFFENCES \n51. (1) In the event of any contravention of or failure to comply with any provision of \nthis Act , other than the provisions of section 30, section 43 or section 45, or of any regulation, \nrelating to any shop or office or to the employment of any person in or about the business thereof, \nthe employer shall be guilty of an offence and shall be liable to a fine not exceeding five hundred \nrupees or to imprisonment of either description for a period not exceeding six months or to both such \nfine and imprisonment. \n(2) Where any person who has previously on any"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 24,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4073,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nRecovery of \nremuneration due to \nemployees \nunder this Act. \n[§ 15, 60 of 1957.] \n[§ 3, 28 of 1962.] \n[§ 15, 60 of 1957.] \n[$ 4, 26 of 1966.] \n[§ 15, 60 of 1957.] \nObstruction of \nofficers & c. \n(2A) The surcharge payable on any sum referred to in paragraph (a) or paragraph (b) \nof subsection (2) shall be calculated as follows:- \n(a) where such sum is in arrears for a period exceeding one month but not exceed- \ning three months, a surcharge of twenty per centrum of such sum; \n(b) where such sum is in arrears for a period exceeding three months but not ex- \nceeding six months, a surcharge of thirty per centrum of such sum; \n(c) where such sum is in arrears for a period exceeding six months but not exceed- \ning twelve mon"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 25,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 4237,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nPenalty for \nfailure to maintain \nregister, notice or \nrecord. \n[§ 4,12 of 1978.] \nOffences in \nconnection with \nnotices or records \nunder the Act. \nDisclosure of \ninformation in \nbreach of Section 47 \n(3) or Section 49 (2). \nDismissal of \nany person for \ngiving \ninformation & c. \n[§ 16, 60 of 1957.] \nImmediate employer \nbeing himself \nin the employment of \nanother person. \nLiability of manager, \nagent &c., for employer \nfor offences. \n54A. Every employer who fails to keep or maintain any register, notice or record required \nunder section 18 to be kept or maintained, or who fails to produce the register or record required to \nbe produced by the Commissioner or any prescribed officer under paragraph (b) of subsection (1) "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 26,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3789,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \nWhere employer \nproves that some \nother person is \nguilty of the offence. \nNo offence \ncommitted \nby employer in \ncertain cases where \ncustomer is served \nafter closing hour. \nSpecial provisions \nas to evidence. \nOffences under \nAct \nto be triable \nsummarily. \nSanction of \nprosecutions. \n[§ 5,12 of 1978.] \n60. (1) \nWhere any employer is charged with an offence under this Act, he shall, upon \ncomplaint duly made by him in accordance with the provisions of section 136 of the Code of \nCriminal Procedure Act, and on giving to the prosecution not less than three days’ notice of his \nintention, be entitled, subject to the provisions of Chapter XIV of that Act, to have any other \nperson whom he charges as the actual offender b"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 27,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3585,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nProof of closing \norders and \ndeterminations \nunder Part II. \nRegulations. \n65. (1) An extract from the Gazette containing any closing order and the notification of \napproval of \nsuch closing order by Parlicment and purporting to have been printed by \nthe \nGovernment Printer, ora copy of such closing order and notification purporting to have been \ncertified to be a true copy by the Commissioner, may be produced in any court in proof of such \nclosing order and notification. \n(2) An extract from the Gazette containing a determination with consent and purporting \nto have been printed by the Government Printer, or a copy of such determination purporting to have \nbeen certified to be a true copy by the Commissioner, may be pr"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 28,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3023,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nExpenses. \n67. Any expenses incurred in carrying out the provisions of this Act, including the payment \nof all persons appointed for the purposes of this Act, shall be met out of moneys provided by \nParliament. \nINTERPRETATION &C \nInterpretation. \n68 (1) In this Act, unless the context otherwise requires - \n“appointed date” means the 9th day of August, 1954; \n“Commissioner” means the person for the time being holding the office of Commissioner of \nLabour and includes - \n(a) subject to any direction given by the Commissioner under section 46(2), any \nDeputy or Assistant Commissioner, and \n(b) in respect of any particular power, duty or function of the Commissioner under \nthis Act or any regulation, any officer authorized "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 29,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3172,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[§ 18, 60 of 1957.] \n[$ 18, 60 of 1957.] \n“office” means any establishment maintained for the purpose of the transaction of the \nbusiness of any bank, broker, insurance company, shipping company, joint stock or \nother company, estate agent, advertising agent, commission agent or forwarding or \nindenting agent, or for the purposes of the practice of the profession of any accountant, \nand includes- \n(a) \n(b) \n“overtime” \nthe office or clerical department of any shop, factory, estate, mine, hotel, \nclub or other place of entertainment, or of any other industrial, business or \ncommercial undertaking (including the business of transporting persons or \ngoods for fee or reward and any undertaking for the publication of newspape"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 30,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 3777,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[§ 18,60 of 1957.] \nExemption \nfrom application \nof Act. \nProvisions of \nAct to be in addition \nto and not in \nsubstitutuion of \nother laws &c. \n“week” means the period between midnight on any Saturday night and midnight on the \nsucceeding Saturday night; \n“whole holiday” means a day on which a person usually employed in or about the business \nof a shop or office is not so employed during any period whatsoever. \n(2) For the purposes of this Act, a person shall be deemed to be employed in or about the \nbusiness of a shop or office if he is wholly or mainly employed - \n(a) inashop, in connexion with the serving of customers or the receipt of orders or \nthe despatch or delivery of goods, or as the case may be, in an office,"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees.pdf",
+      "page": 31,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees.pdf",
+      "extracted_text_characters": 2146,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[§ 19,60 of 1957.] \n[Sec.9.] \nin any way to authorize or permit the employer to withhold, restrict or terminate such rights or \nprivileges. \n(2A) The preceding provisions of this section shall have effect subject to the provisions of \nsection 42A. \n(3) Any contract or agreement, whether made before or after the appointed date, whereby \nany right conferred on any employee by or under this Act is in any way affected or modified to his \ndetriment or whereby any liability imposed on any employer by or under this Act is in any way \nremoved or reduced, shall be null and void in so far as it purports to affect or modify any such right \nor to remove or reduce any such liability. \nSCHEDULE \nINTERVALS FOR REST OR A MEAL \n1. (a) Wh"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 1,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 3516,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[Gazette No.314 \nof 21.4.1978.] \n[Gazette No.111 \nof 10.5. 1974.] \n[Gazette No.10, \n899 of 2.3.1956.] \n[Gazette No.12, \n553 of 21.7.1961.] \nTHE SHOP AND OFFICE EMPLOYEES \n(REGULATION OF EMPLOYMENT AND REMUNERATION) \nAct, No. 19. oF 1954 \nRegulations made by the Minister of Labour by virtue of the powers vested in him \nby section 66 of the Shop and Office Employees (Regulation of Employment and Remuneration) Act, \nNo.19 of 1954, and approved by the Senate and the House of Representatives. \nM.C.M. Kaleel, \nMinister of Labour. \nColombo, \nOctober 13, 1954. \nRegulations \n1. These regulations may be cited as the Shop and Office Employees (Regulation of Employ- \nment and Remuneration) Regulations, 1954. \nPART I \nREGULATION OF E"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 2,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2917,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[Gazette No.11, 564 of \n24.10.1958.] \n8. For the purpose of computing overtime remuneration, the hourly rate of remuneration \nshall - \n(a) where remuneration is payable at a daily rate, be one-eight of the daily rate, \n(b) where remuneration is payable at a monthly rate, be one-eighth of the monthly \nrate divided by thirty, \n(c) where remuneration is payable at a fortnightly rate, be one-eighth of the \nfortnightly rate divided by fourteen, and, \n(d) where remuneration is payable at a weekly rate, be one-eighth of the weekly rate \ndivided by seven. \n8A. \nForthe purpose of computing overtime in respect of work done in any week by \nany employee in excess of the normal maximum period of 45 hours, any day in that week on whic"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 3,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2618,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n(a) shall be substantially in \nForm C of the Schedule, and \n(b) shall be served on the officer concerned personally or sent to him by registered \npost, at least fourteen days prior to the date of hearing of the appeal. \n13. The prescribed officer for the purposes of section 15 of the Act shall be any one of the \nofficers specified in regulation 10. \n14. Every notice required to be exhibited under section 16(2) of the Act shall be substantially \nin Form D of the Schedule hereto and shall be kept exhibited in such manner that it can be readily seen \nand read by all persons affected by such notice. \n15. (1) The particulars relating to the conditions of employment required to be furnished in \nterms of section 17 of the Act b"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 4,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2370,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n(ii) a remuneration record containing the following particulars, for each period \n(month, fortnight or week, as the case may be, hereinafter referred to as the \nremuneration period) in respect of which remuneration is paid:- \n(a) Name of the employee; \n(b) Age; \n(c) Sex; \n(d) Class or grade, if any; \n(e) Category or designation or occupation; \n(f) \nRemuneration period (month, fortnight or week); \n(g) Number of hours of work performed during the remuneration period; \n(h) Number of hours of overtime work performed during the remuneration \nperiod; \n(i) Rate of remuneration payable; \n(j) \nAllowances payable (each allowance to be shown separately); \n(k) Gross remuneration earned for the remuneration period; \n(1) All deduction"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 5,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2669,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n(5) \nan amount approved in writing by the Commissioner as a charge for any amenities or \nservices provided for the employee by the employer; \n(6) the price of any goods other than goods referred to in item (2), sold to the employee out \nof goods kept for sale by the employer at the place of employment or at any other place; \n(7) any fine imposed on the employee by the employer in respect of any of the following \nacts or omissions:- \n(a) \n(b) \n(c) \n(d) \n(e) \n(g) \n(h) \n(i) \n(j) \n(k) \n(1) \nabsence from the work without reasonable excuse; \nlate attendance at work without reasonable excuse, \ncausing damage to, or causing the loss of goods or articles belonging to the \nemployer, such damage or loss being directly attributable "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 6,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2767,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n(ii) \nin acase where no such assessment has been made, not exceed six per \ncentum per annum of the capital expenditure incurred on such house; \n(b) in the case of any deduction referred to in item (7)- \n(i) \nthe aggregate amount of the deductions made in respect of such fines at \nany one time shall not exceed five per centum of the remuneration earned \nby the employee during the period during which such fines are imposed, \nand \n(ii) \nthe amount so deducted shall be applied by the employer for such pur \nposes as are beneficial for the employees, being purposes approved in \nwriting by the Commissioner; and \n(c) in the case of any deduction referred to in item (10), the interest charged shall \nnot exceed six per centum per "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 7,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2455,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n(c) \n(i) \nthe name of the employee, \n(ii) \nthe date on which the fine was imposed, \n(iii) the reasons for the fine, \n(iv) the amount of the fine imposed, and \n(v) \nthe dates on which recoveries were made in respect of such fine; \nin the case of any deductions in respect of any security required to be furnished \nby the employee - \n(i) \nmaintain a record of such deductions, and \n(ii) \nfurnish to the employee a receipt in respect of the amount so deducted; \nand \n(d) in the case of any deduction in respect of any moneys advanced to the em- \nployee by the employer, maintain a record containing - \n(i) \nthe full name of the employee, \n(ii) \nthe amount of money advanced, \n(iii) the date on which the advance was made, \n(iv) the d"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 8,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 3547,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n(b) ifhe is not a member of any such trade union, by himself or by any representa- \ntive authorised by him in that behalf in writing; and \n(2) \nthe employees may be represented and consent on their behalf may be given - \n(a) in the case of employees who are members of any trade union, by an office \nbearer of such trade union, \n(b) in the case of employees who are not members of any trade union, by such \nnumber of representatives as may be determined by the Commissioner. \n24. In every case where, at any inquiry referred to in regulation 23, the employees of any \nshop or office are represented by a trade union, such employees shall notify the Commissioner in \nwriting the name of the trade union representing them. \n25. Wher"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 9,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2957,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n(2) In the case of employees of any shop or office, notice of repudiation given by an \noffice bearer of a trade union or by an authorised representative, as provided in regulation 27(2), shall \nbe notice given only on behalf of such of the employees in that shop or office as have given their \nwritten authority in terms of that regulation. \n30. Where consent to any determination under section 22 of the Act or notice of repudiation \nunder section 24 of the Act is given by a trade union on behalf of any employer, such employer shall, \nsubject to the provisions of the Act, be bound by such consent or by such notice, as the case may be, \nnotwithstanding that he may, at a subsequent date, have ceased to be a member of such tr"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 10,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 3145,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[Gazette No.10, 899 \nof 2.3.1956.] \n[Gazette No.10, 899 \nof 2.3.1956.] \n[Gazette No.10, 899 \nof 2.3.1956.] \n[Gazette. No.12, 553 \nof 21.7.1961.] \n[Gazette.No.10, 899 \nof 2.3.1956.] \n[Gazette No. 11, 174 \n174 of 27.9.1957.] \n[Gazette No. 14, 962 \nof 11.6. 1971.] \nPART IV \nPROVISIONS RELATING TO CERTAIN CLASSES \nOF SHOPS AND OFFICES AND PERSONS EMPLOYED THERE \n37. Any premises where the only trade or business carried on is that of a chemist, druggist, \npharmacist, optician, dealer in surgical goods or dealer in ayurvedic medicines shall be exempt from \nthe provisions of Part IV of the Act. \n37A. \nEvery person who is employed in or about the business of any shop or office \nas atravelling inspector, travelling agent, travell"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 11,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 1730,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n[Gazette No. 11, 174 \nof 27.9.1957.] \n[Gazette No. 11, 564 \nof 24.10.1958.] \n[Gazette No. 12, 553 \nof 27.7.1961.] \n(2) Every establishment maintained for the purpose of any of the following businesses \nof - \n(a) an actuary, \n(b) an architect, \n(c) a surveyor, \n(d) an auctioneer, \n(e) avaluer, \n(f) \na draughtsman, \n(g) an appraiser, \n(h) anews agency, and \n(i) \na travel and tourist agency. \n(3) Every establishment maintained for the purpose of administering the business of - \n(i) \nany trade union, \n(i) any thrift society or mutual benefits society, \n(itt) any provident fund or pension scheme, \n(iv) any body, corporate or incorporate, and \n(v) any school or other educational establishment. \n(4) Every establishment maintai"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 12,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 3378,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n(a) where the employer is a single individual, on the employer himself or on the \nmanager or the person for the time being in charge of the shop or office of the \nemployer, \n(b) where the employer is an incorporated body, on the managing director, or the \nsecretary of that body or on the manager or the person for the time being in \ncharge of the shop or office of the employer, \n(c) where the employer is a firm, on any partner of the firm, or on the manager of the \nshop or office of the employer, and \n(d) where the employer is a co-operative society, on the president, secretary or \ntreasurer of the society, or on the manager of the shop or office of the employer. \n43. For the purposes of making any determination by consen"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 13,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 3522,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n49. The rate of remuneration payable to an employee, being an employee whose remunera- \ntion is paid at a piece rate, in respect of any day on which a holiday or on which leave has been \ngranted to that employee, shall - \n(a) where a minimum time rate has been determined under the provisions of the Act \nin respect of that employee or that class of employees, be the rate that employee \nwould have been entitled to under that determination in respect of that day, had \nhe been actually employed for the normal period of employment on that day at \nsuch minimum time rate, and \n(b) where no such time rate has been determined, be the average daily rate of \nremuneration earned by that employee during the month or part of the mont"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 14,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2039,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n“Employee means” a person employed in or about the business of a shop or office; and \n“local authority” means any Municipal Council, Urban Council,‘ Town Council or ‘Village \nCouncil \nRepeal \n55. The Shops Regulation, 1939, published in Gazette Extraordinary No.8,521 of October 5, \n1939, as amended subsequently, are hereby rescinded. \nSCHEDULE \nRegulation 10 \nForm A \nThe Shop and Office Employees (Regulation of \nEmployment and Remuneration) Act, No.19 of 1954 \nSECTION 12 (1) \nPermit for Residence \neceesceeenteeeeaeeeees being a person employed in or about the business of the shop/office’ main- \ntained in respect at wo... cece and who not being a member of the family of .........0.0000.... and not \nbeing maintained by the"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 15,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 1865,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \npersons only/all persons* employed in or about the business of the said shop/office* by regulation \nmade under the said Act, the said employer is hereby exempted from providing and maintaining in the \nsaid shop/office* any sanitary conveniences and washing facilities for the use of male persons only/ \nfemale persons only/all persons* employed in or about the business of the said shop/office*. \nThis certificate is issued and shall be valid subject to the provisions of section 14 of the Act \nand of the regulations made thereunder until ................... unless revoked earlier. \nSignature and Designation \nof Officer issuing Permit \nRegulation 12 \nForm C \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT AND \nREMUNER"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 16,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 1833,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n* Strike out whichever is inapplicable. \nRegulation 14 \nForm D \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT AND \nREMUNERATION) Act, No. 19. or 1954 \nSECTION 16(2) \nSEATS FOR FEMALE SHOP ASSISTANTS \nNotice is hereby given that seats are provided in this shop for the use of female persons \nemployed in this shop and that they are entitled to make use of these seats whenever the use thereof \ndoes not interfere with their work. \nAddress of Shop: .......:..0:06 \nEmployer \nSECTION 16 (1) oF THE AcT \nSection 16 (1): In every room in which female persons are employed in the serving of custom- \ners in any shop, there shall be provided for the use of such persons seats behind the counter, or in \nsuch other position as m"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 17,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2122,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n8. \nDate of commencement of employment ? 0... eee eee \n9 \nPost to which appointment was made giving class, grade or cateQOry?..........e cece \n10. \nPeriod of probation or trial, if any}... \neee eee \n11. \nCommencing basic salary and allowance? 00... eee eee \n* Changes to be indicated form time to time. \nPART II \nDate \nCommencing salary, allowances, other privileges, payment Signature of \nof increments, promotion, variation of conditions of service, employer \nall other changes affecting employment (to be entered in \nchronological order with full particulars and dates) \nRegulation 22 \nForm G \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF \nEMPLOYMENT AND REMUNERATION) Act, No. 19 oF 1954 \nSection 21(1) \nAPPLICATION TO THE MI"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 18,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 2404,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \nColumn I \n(c) a Trade Union of employee having membership among persons indicated in \nColumn II of the Schedule hereto employed in or about the business of the \nshop/office maintained, in respect of the business indicated in the correspond- \ning entry in Column I of that Schedule, or \n(d) employees employed in and representing persons indicated in Column II of the \nSchedule hereto employed in or about the business of the shop/office main- \ntained for the purpose of the business, indicted in the corresponding entry in \nColumn I of that Schedule. \n** Strike out whichever is not applicable. \nSCHEDULE \nColumn II \nRegulation 28 \nForm H \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF \nEMPLOYMENT AND REMUNERATION) Act, No. 19 oF "
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 19,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 1534,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \nColumn I \n(d) employees employed in and representing persons indicated in Column II of the \nSchedule hereto employed in or about the business of the shop/offices* main- \ntained for the purpose of the business, indicted in the corresponding entry in \nColumn I of that Schedule. \n* Strike out whichever is not applicable. \nSCHEDULE \nColumn II \nColumn III \nRegulation 41 \nForm I \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT AND \nREMUNERATION) AcT, No. 19 oF 1954 \nNotice under section 53 \nTO feces \nEmployer of 0... \nTake notice that in the prosecution instituted against you i the ...... Court of ........ , for having \nfailed to pay the said Act to ........... persons employed in or about the business of the shop/off"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 20,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 808,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[Order under \ntion \n2(1)] \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF \nsection \nEMPLOYMENT AND REMUNERATION) ACT, No. 19 oF 1954 \n[Gazette No.10,724 of \nOctober \n13.1954 ] \nOrder made by the Minister of Labour by virtue of the powers vested in him by subsection \nctober \n> \n. \n(1) of section 2 of the Shop and Office Employees (Regulation of Employment and Remuneration) \nAct, No.19 of 1954, and approved by the Senate and the House of Representatives under subsection \n(2) of that section. \nM.C.M. Kaleel \nMinister of Labour \nColombo, October 13, 1954 \nOrder \nThe provisions of Part I of the Shop and Office Employees (Regulation of Employment and \nRemuneration) Act, No.19 of 1954, shall apply to all shops and offices in Ceyl"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 21,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 848,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[Order under \n§ 46(3)] \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT AND \n[Gazette No.10,755 of \nREMUNERATION) Act, No. 19 oF 1954. \n21.1.1955.] \nIt is hereby notified that the Minister of Labour has, under section 46(3) of the Shop and \nOffice Employees (Regulation of Employment and Remuneration) Act, No.19 of 1954, appointed, with \neffect from November 1, 1954, the officers mentioned in the Schedule hereto to be officers for the \npurposes of carrying out or giving effect to the provisions of the aforesaid Act. \nR.M.G. Monypenny \nPermanent Secretary to the \nMinistry of Labour \nColombo, January 13, 1955. \nSCHEDULE \n1. The Labour Medical Officer \n2. The Labour Statistician, \n3. The Statistical Officer of the De"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 22,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 863,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[Order under \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF \n§ 46(3)] \nEMPLOYMENT AND REMUNERATION) Act, No. 19 oF 1954 \n(Gazette No.10,850 of \nIt is hereby notified that the Minister of Labour has, under section 46(3) of the Shop and \nOctober 21,1955.] \nOffice Employees (Regulation of Employment and Remuneration) Act, No.19 of 1954, appointed, with \neffect from October 1, 1955, the officers mentioned in the Schedule hereto to be officers for the \npurposes of carrying out or giving effect to the provisions of the aforesaid Act, in addition to the list \nof officers published by notification in Government Gazette No.10,755 of January 21, 1955. \nR.M.G. Monypenny \nPermanent Secretary to the \nMinistry of Labour \nColombo, Octob"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 23,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 717,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n[Order under \n§ 46(3)] \nTue Suorp AND OFFICE EMPLOYEES (REGULATION OF \nEMPLOYMENT AND Remuneration) Act, No. 19 OF 1954 \n[Gazette No.39 of 22.12 \nIt is hereby notified that the Minister of Labour has, under section 46(3) of the Shop and \n1972] \nOffice Employees (Regulation of Employment and Remuneration) Act, No.19 of 1954, appointed, with \neffect from 6th November, 1972, the officers mentioned in the Schedule hereto to be officers for the \npurposes of carrying out or giving effect to the provisions of the aforesaid Act. \nA.E. Gogerly Moragoda \nSecretary \nMinistry of Labour \nColombo, 29 November, 1972. \nSCHEDULE \nProgramme Assistants \n213"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 24,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 731,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT & REMUNERATION ) \n[Order under \n§ 46(3)] \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF \n[Gazette No.89 of \nEMPLOYMENT AND REMUNERATION) AcT, No. 19 or 1954 \n7.12.1973.] \nIt is hereby notified that the Minister of Labour, has under section 46(3) of the Shop and \nOffice Employees (Regulation of Employment and Remuneration) Act, No.19 of 1954, appointed, with \neffect from 1.12.1973, the officers mentioned in the Schedule hereto to be officers for the purpose of \ncarrying out or giving effect to the provisions of the aforesaid Act. \nA.E.Gogerly Moragoda, \nSecretary, Ministry of Labour \nColombo, 24th November, 1973. \nSCHEDULE \nEmployment Assistants \nOccupational Analysts \n214"
+    },
+    {
+      "source_pdf": "ch02_shop_and_office_employees_regulations.pdf",
+      "page": 25,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch02_shop_and_office_employees_regulations.pdf",
+      "extracted_text_characters": 1261,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "SHOP AND OFFICE EMPLOYEES (REGULATION OF EMPLOYMENT \n& REMUNERATION ) \n[Gazette Extraordinary \nof the Democratic \nSocialist Republic of Sri \nLanaka No.945/1 of \nOctober 14, 1996.] \nTHE SHOP AND OFFICE EMPLOYEES (REGULATION OF \nEMPLOYMENT AND REMUNERATION) AcT, No. 945/lor 1996 \nOrder under Section 7 \nBy virtue of the powers vested in me by Section 7 of the Shop and Office Employees \n(Regulation of Employment and Remuneration) Act (Chapter 129), as subsquently amended, I Mahinda \nRajapakse, Minister of Labour and Vocational Training, do hereby Order- \n(1) declare tha the days specified in the Schedule hereto, being public holidays within the \nthe meaning of the Holidays Act, No. 29. of 1971, to be holidays for the purposes of the aforesaid \nSecion ; and \n(2) rescind the Order made under the"
+    },
+    {
+      "source_pdf": "ch02_wages_boards_ordinance.pdf",
+      "page": 2,
+      "raw_text_characters": 17,
+      "extraction_source": "raw_pdfs/ch02_wages_boards_ordinance.pdf",
+      "extracted_text_characters": 17,
+      "disposition": "valid_running_header",
+      "rationale": "The source page contains only its folio and the Wages Boards running title.",
+      "source_page_text": "124\nWAGES  BOARDS"
+    },
+    {
+      "source_pdf": "ch03_employment_of_female_in_mines_ordinance.pdf",
+      "page": 2,
+      "raw_text_characters": 37,
+      "extraction_source": "raw_pdfs/ch03_employment_of_female_in_mines_ordinance.pdf",
+      "extracted_text_characters": 37,
+      "disposition": "valid_running_header",
+      "rationale": "The source page contains only its folio and the Employment of Females in Mines running title.",
+      "source_page_text": "232\nEMPLOYMENT OF  FEMALES  IN  MINES"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 1,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 2810,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nActs \nNos. 47 of 1956, \n43 of 1964. \nLaw \nNo. 29 of 1973, \nAct \nNo. 32 of 1984, \nNo. 08 of 2003, \nNo. 24 of 2006. \nShort title. \n[§ 2, 32 of 1984.] \n[§ 2, 8 of 2003] \nEmployment of \nwomen at night in any \nindustrial undertaking. \n[§ 3, 32 of 1984.] \nProvisions of \nsection 2A not to \napply \nto \nwomen \nholding \nresponsiable \npositions & c. \n[$3, 32 of 1984] \nAN ACT TO REGULATE THE EMPLOYMENT OF WOMEN, \nYOUNG PERSONS AND CHILDREN \n[November 7, 1956] \n1. This Act may be cited as the Employment of Women, Young Persons and Children Act. \nPARTI \nNIGHT WORK IN INDUSTRIAL UNDERTAKINGS \n2. (1) Subject to the provisions of this Part, no person shall employ at any time during the \nnight, a person under the age of eighteen years, in a public or private i"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 2,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 4641,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nMinister may prohibit \nemployment of women \nat night in industrial \nunder takings. \n[§ 3, 32 of 1984.] \n[§ 3, 8 of 2003] \n[§ 3, \n8 of 2003] \nException to \nrestriction on \nnight work in \nindustrial \nundertakings. \n[§ 4,32 of 1984.] \nRest period for \napprentices or \nvocational trainees \nemployed on night \nwork. \n(c) to an industrial undertaking in which only members of the same family are \nemployed. \n2C. When in a case of serious emergency, the public interest demands it, the Minister \nmay, after consultations with the employers’ and workers’ organizations concerned, if any, by Order \npublished in the Gazette, vary the conditions set out in section 2A, in relation of employment of \nwomen, or prohibit employment of women, during the night in an"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 3,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 3931,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \n[$ 4, 8 of 2003.] \nRegisters of \nindustrial workers \nunder the age of \neighteen years. \n[$ 5, 8 of 2003.] \nExhibition of \nprovisions of this \nPart relating to \nworkers under the \nage of eighteen \nyears. \n[§ 6, 8 of 2003.] \nEmployment of \nchildren in \nindustrial \nunder \ntakings. \n[$ 7, 8 of 2003.] \nRegisters of industrial \nworkers who are \nwomen or young \npersons. \n[§ 8, 8 of 2003.] \nFurnishing of \ninformation regarding \nemployment of young \nperson in industrial \nundertakings. \n[§ 9, 8 of 2003.] \n(2) A person who contravenes subsection (1) of this section shall be guilty of an offence \nand shall, on conviction after summary trial before a Magistrate, be liable to a fine not exceeding ten \nthousand rupees or imprisonment of either description "
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 4,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 4058,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nMinimum age for \nemployment at sea. \n[§ 10, 8 of 2003.] \nRegisters or lists of \ncrew under the age of \nsixteen years. \n[§ 11, 8 of 2003.] \nFurnishing of \ninformation regarding \nemployment of young \npersons employed on \nvessels. \n[$ 12, 8 of 2003.] \n(2) Any employer, parent or guardian who fails to comply with the provisions of subsection \n(1) of this section or willfully gives false information to an authorized officer regarding the employment \nof any young person in an industrial undertaking, shall be guilty of an offence under this Act, and \nshall on conviction after summary trail before a Magistrate be liable to a fine not exceeding ten \nthousand rupees or to imprisonment of either description for a period not exceeding twelve months \nor "
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 5,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 3697,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nApplication of \nthis Part. \nRestrictions on \nemployment of \nchildren. \n[§ 13, 8 of 2003.] \nPART II \nEMPLOYMENT OTHER THAN EMPLOYMENT IN INDUSTRIAL \nUNDERTAKINGS AND AT SEA \n12. This Part of this Act shall apply in relation to employment other than employment in \nindustrial undertakings and at sea. \n13. (1) No child shall be employed except in accordance with the provisions of this Part of \nthis Act. \n(2) Where a child is employed in contravention of the provisions of subsection (1) the \nemployer or the person (other than the child employed) to whose act or default the contravention is \nattributable shall be guilty of an offence and shall on conviction after summary trial before a Magistrate \nbe liable to a fine not exceeding ten thousand rup"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 6,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 3939,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nRestriction on \nemployment of \nchildren \nattending \nschool. \n[§ 17, 8 of 2003.] \nRestriction \non \nchildren taking part \nin entertainments. \n[§ 17, 8 of 2003.] \nProhibition \nagainst persons \nunder eighteen \nyears of age taking \npart in performances \nendangering life \nor limb. \n[§ 19, 8 of 2003.] \n[§ 19, 8 of 2003.] \nRestrictions \non \ntraining for per \nformances of a \ndangerous nature. \n[§ 20, 8 of 2003.] \n[§ 20, 8 of 2003.] \n(a) shall employ a child in such a manner as to prevent the child from attending \nschool in accordance with the provisions of any written law, or \n(b) having received notice of any prohibition or restriction as to the employment of \na child issued under section 15, shall employ that child in such a manner as to \ncontraven"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 7,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 3374,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \n[§ 20, 8 of 2003.] \n[§ 20, 8 of 2003.] \nProhibition against \npersons under \neighteen years of age \nbeing employed in \nhazardous \noccupations. \n[§ 2, 24 of 2006.] \nhim, to be trained to take part in performances of a dangerous nature in contravention of this section, \nshall be guilty of an offence and shall, on conviction after summary trial before a Magistrate, be liable \nto a fine not exceeding ten thousand rupees or to imprisonment of either description for a period not \nexceeding twelve months or to both such fine and imprisonment, and shall in addition be ordered to \npay compensation of such amount as may be determined by the court, to the person in respect of \nwhom the offence was committed. \n(4) An authorised officer may grant a licenc"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 8,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 3647,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nPARTIV \nPROVISIONS APPLICABLE TO ALL EMPLOYMENT \n21. (1) Subject to the provisions of subsection (2) of this section, regulations may be made \nRegulations relating to With respect to the employment of young persons, and any such regulation may distinguish \nemployment of \nyoung \npersons. \n[§ 21, 8 of 2003.] \nFurnishing of \ninformation regarding \nemployment of women \nand young persons. \n[§ 22, 8 of 2003.] \n[§ 22, 8 of 2003.] \nDivision between \nindustry and \nnon industrial \noccupations. \nInspection, and \nfurnishing or \ntaking of copies, \nof registers and \nlists kept under \nthis Act. \n[§ 23, 8 of 2003.] \nbetween young persons of different ages and sexes, and \nbetween different localities, trades, \noccupations \nand circumstances, \nand may _ \ncont"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 9,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 4336,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nPowers of entry and \nsearch. \n[§ 24, 8 of 2003.] \n[§ 24, 8 of 2003.] \n[§ 24, 8 of 2003.] \nThe furnishing of \ninformation etc, by \nany class of employers \nmay be required by \nnotice published in \nthe Gazette and \nnewspapers. \n[§ 25, 8 of 2003.] \nIn prosecution for \nemployment in \ncontravention of \nthis Act employer \nmay \nprove that \nsome other person \ncommitted the \noffence. \nundertaking is carried on a vessel and may examine the building, place or vessel and question any \nperson therein for the purpose of ascertaining whether any person is employed therein in contraven- \ntion of this Act. \n(2) An authorised officer may enter any place in which any woman, young person or child \nis, or is believed to be, employed, or, as the case may be, in wh"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 10,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 3712,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nEvidence. \nProvision \nregarding \nprosecution. \nMedical \nexamination of \nyoung persons \nand children. \n[§ 26, 8 of 2003.] \n[§ 26, 8 of 2003.] \nRegulations. \nApplication of \nthis Act. \nexceeding twenty-five rupees by any party to the proceedings to any other party \nthereto, and any sum so ordered to be paid shall be recoverable in the same \nmanner as a fine imposed by the court. \n28. (1) Where any entry is required by or under this Act to be made by an employer in any \nregister or list, any such entry made by or on behalf of that employer shall as against him be admis- \nsible as a fact stated in that register or list. \n(2) The fact that any entry required by any provision of this Act or of any regulation to be \nmade in any register or list has"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 11,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 2900,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nRepeals. \nInterpretation. \n[§ 27, 8 of 2003.] \n[§ 27, 8 of 2003.] \n(a) The Employment of Women, Young Persons, and Children Ordinance. \n(b) The Employment of Women (Revised Convention) Ordinance, No.16 of 1940. \n(2) Part IV of the Children and Young Persons Ordinance, No.48 of 1939, is hereby \nrepealed. \n34. (1) In this Act, unless the context otherwise requires - \n“authorized officer’ means the Commissioner of Labour, Additional Commissioner of Labour, \na Deputy Commissioner of Labour and an Assistant Commissioner of Labour and \nincludes any Medical Officer, the Chief Factory Inspecting Engineer, any Factory \nInspecting Engineer, any Labour Officer or any Statistical Officer or any Statistician \nattached to the Department of Labour; \n“child"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children.pdf",
+      "page": 12,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children.pdf",
+      "extracted_text_characters": 2869,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nor telephonic installation, electrical undertaking, gas work, water work, or \nother work of construction, as well as the preparation for or laying the \nfoundations of any such work or structure; and \n(ii) transport of passengers or goods by road or rail or inland waterway, and \nthe handling of goods at docks, quays, wharves and warehouses, but \nexcluding transport by hand; \n[§ 4, 43 of 1964.] \n“night” - \n(a) with reference to the employment of women, \nmeans \nat \nleast \neleven \nconsecutive hours including the period between 10 p.m. and 5 a.m. and \n(b) with reference to the employment of persons under the age of eighteen years, \nmeans at least twelve consecutive hours which shall end not later than 6 a.m. \nand which - \n(i) \ninthe case of such "
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "page": 1,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "extracted_text_characters": 1965,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \n[Gazette. No. 11, 302 of \nTHE EMPLOYMENT OF WOMEN, YOUNG \nApril 25, 1958.] \nPERSONS AND CHILDREDN Act, No. 47 oF 1956 \nREGULATIONS made by the Minister of Labour, Housing and Social Services under sec- \ntions 3 (7) and 31 of the Employment of Women, Young Persons and Children Act, No. 47 of 1956, and \napproved by the Senate and House of Representatives. \nT.B. ILANGARATNE, \nMinister of Labour, Houing and \nSocial Services. \nColombo, 11 th April, 1958. \nREGULATIONS \n1. These regulation may be cited as the Employment of Young Persons at Night in Industrial \nUndertakings Regulations, 1957. \n2. The provisions of Part I of the Employment of Women, Young Persons and Children Act, \nNo. 47 of 1956, shall not apply to the employment of young persons in"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "page": 2,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "extracted_text_characters": 1509,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \n[Gazette No. 11, 302 of \nApril 25, 1958.] \nTHE EMPLOYMENT OF WOMEN, YOUNG \nPERSONS AND CHILDREDN Act, No. 47 oF 1956 \nREGULATIONS made by the Minister of Labour, Housing and Social Services under sec- \ntions 9 (3) and 31 of the Employment of Women, Young Persons and Children Act, No. 47 of 1956, and \napproved by the Senate and House of Representatives. \nT.B. ILANGARATNE, \nMinister of Labour, Housing and \nSocial Services. \nColombo, 11th April, 1958. \nREGULATIONS \n1. These regulation may be cited as the Employment of Young Persons at Sea Regulations, \n1957. \n2. The Commissioner may, if he is satisfied, on the report of a Government Medical Officer, \nthat a person who has attained the age of 14 years and is under the age of 15 years is physical"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "page": 3,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "extracted_text_characters": 802,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \neee Ne ss \nTHE EMPLOYMENT OF WOMEN, YOUNG \nfe) \nri \n; \n1958.] P \nPERSONS AND CHILDREDN ACT, No. 47 oF 1956 \nREGULATIONS made by the Minister of Labour, Housing and Social Services under sections \n14 and 31 of the Employment of Women, Young Persons and Children Act, No. 47 of 1956, and \napproved by the Senate and House of Representatives. \nT.B. ILANGARATNE, \nMinister of Labour, Housing and \nSocial Services. \nColombo, 11th April, 1958. \nREGULATIONS \n1. These regulations may be cited as the Employment of Children Regulations, 1957. \n[Gazette. No. \n*2. No Child shall be employed in any occupation. \n1116/5 of \n26. 01. 2000.] \n*Regulations 3, 4, 5, 6, 7, 8 and the Schedule repealed by regulation published in Gazette No. 1116/5 \nof 26. 01. 2000. \n2"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "page": 4,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "extracted_text_characters": 2663,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \n[Gazette No 11, 302 of \nTHE EMPLOYMENT OF WOMEN, YOUNG \nApril 25, 1958.] \nPERSONS AND CHILDREDN Act, No. 47 oF 1956 \nREGULATIONS made by the Minister of Labour, Housing and Social Services sections 23 \nand 31 of the Employment of Women, Young Persons and Children Act, No. 47 of 1956, and approved \nby the Senate and House of Representatives. \nT.B. ILANGARATNE, \nMinister of Labour, Housing and \nSocial Services. \nColombo, 11th April, 1958. \nREGULATIONS RELATING TO THE LINE OF DIVISION SEPARATING \nINDUSTRY FORM AGRICULTURE, COMMERCE AND OTHER \nNON-IDUSTRIAL OCCUPATIONS \n1. \nWith respect to the industries referred to in the Schedule hereto, the line of division \nwhich separates industrial from agricultural, commercial and other non-industrial occ"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "page": 5,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "extracted_text_characters": 748,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \n[Gazette No. 11, 479 of \nTHE EMPLOYMENT OF WOMEN, YOUNG \nAugust 22, 1958.] \nPERSONS AND CHILDREDN AcT, No. 47 oF 1956 \nNOTIFICATION \nBy virtue of the powers vested in me by section 34 (1) of the Employment of Women, Young \nPersons and Children Act, No. 47 of 1956, I, Charles Banda Kumarasinha, Commissioner of Labour, do \nhereby apoint every officer in the Department of Labour referred to in the Schedule hereto to be an \nauthorised officer for the purposes of the aforesaid Act. \nC.B. KUMARASINHA, \nCommissioner of Labour. \nColombo, 18th August, 1958. \nSCHEDULE \nThe Labour Medical Officer \nThe Chief Inspector of Factories \nInspectors of Factories \nThe Labour Statistician \nLabour officers. \n263"
+    },
+    {
+      "source_pdf": "ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "page": 6,
+      "raw_text_characters": 0,
+      "extraction_source": "ocr_pdfs/ch03_employment_of_women_young_person_and_children_regulations.pdf",
+      "extracted_text_characters": 771,
+      "disposition": "repaired_using_existing_ocr_copy",
+      "rationale": "The source PDF page is image-only or has fewer than 200 text characters; the matching OCR copy supplies searchable text now present in the extraction. OCR wording still requires normal legal proofreading.",
+      "source_page_text": "EMPLOYMENT OF WOMEN, YOUNG PERSONS AND CHILDREN \nace 058.) 302 of \nTHE EMPLOYMENT OF WOMEN, YOUNG \n“oe \nPERSONS AND CHILDREDN Act, No. 47 or 1956 \nREGULATIONS made by the Minister of Labour, Housing and Social Services under sections \n21 and 31 of the Employment of Women, Young Persons and Children Act, No. 47 of 1956, and \napproved by the Senate and House of Representatives. \nT.B. \nILANGARATNE, \nMinister of Labour, Housing and \nSocial Services. \nColombo, 11th April, 1958. \nREGULATIONS \n1. These regulations may be cited as the Employment of Young Persons Regulations, 1957. \n3000) 26th Jan. \n* 2. Child shall be employed in any occupation. \n*Regulations 3, 4, 5, 6, 7, and 8 and the Schedule repealed by Gazette Extraordinary 1, 116/5 dated \n26th January 2000. \n264"
+    },
+    {
+      "source_pdf": "ch04_factories_ordinance.pdf",
+      "page": 1,
+      "raw_text_characters": 172,
+      "extraction_source": "raw_pdfs/ch04_factories_ordinance.pdf",
+      "extracted_text_characters": 172,
+      "disposition": "valid_chapter_contents_page",
+      "rationale": "The source page is the Chapter 4 divider and contents list, not operative law.",
+      "source_page_text": "265\nFACTORIES\n           4\nC H A P T E R\nOCCUPATIONAL SAFETY  &  HEALTH  AND\nPAYMENT  OF  WORKMEN’S  COMPENSATION\n1.\nFactories Ordinance\n2.\nWorkmen’s Compensation Ordinance"
+    },
+    {
+      "source_pdf": "ch04_factories_ordinance.pdf",
+      "page": 2,
+      "raw_text_characters": 13,
+      "extraction_source": "raw_pdfs/ch04_factories_ordinance.pdf",
+      "extracted_text_characters": 13,
+      "disposition": "valid_running_header",
+      "rationale": "The source page contains only its folio and the Factories running title.",
+      "source_page_text": "266\nFACTORIES"
+    },
+    {
+      "source_pdf": "ch05_employees_provident_fund.pdf",
+      "page": 2,
+      "raw_text_characters": 30,
+      "extraction_source": "raw_pdfs/ch05_employees_provident_fund.pdf",
+      "extracted_text_characters": 30,
+      "disposition": "valid_running_header",
+      "rationale": "The source page contains only its folio and the Employees' Provident Fund running title.",
+      "source_page_text": "425\nEMPLOYEES’  PROVIDENT FUND"
+    },
+    {
+      "source_pdf": "ch06_fee_charging_employment_agencies.pdf",
+      "page": 1,
+      "raw_text_characters": 165,
+      "extraction_source": "raw_pdfs/ch06_fee_charging_employment_agencies.pdf",
+      "extracted_text_characters": 165,
+      "disposition": "valid_chapter_contents_page",
+      "rationale": "The source page is the Chapter 6 divider and contents list, not operative law.",
+      "source_page_text": "537\nFEE-CHARGING EMPLOYMENT AGENCIES\n           6\nC H A P T E R\nFOREIGN  EMPLOYMENT\n1. Fee-charging Employment Agencies\n2. Sri Lanka Bureau of Foreign Employment Act"
+    },
+    {
+      "source_pdf": "ch06_fee_charging_employment_agencies.pdf",
+      "page": 2,
+      "raw_text_characters": 36,
+      "extraction_source": "raw_pdfs/ch06_fee_charging_employment_agencies.pdf",
+      "extracted_text_characters": 36,
+      "disposition": "valid_running_header",
+      "rationale": "The source page contains only its folio and the Fee-Charging Employment Agencies running title.",
+      "source_page_text": "538\nFEE-CHARGING EMPLOYMENT AGENCIES"
+    },
+    {
+      "source_pdf": "ch07_estate_labour_indian.pdf",
+      "page": 2,
+      "raw_text_characters": 26,
+      "extraction_source": "raw_pdfs/ch07_estate_labour_indian.pdf",
+      "extracted_text_characters": 26,
+      "disposition": "valid_running_header",
+      "rationale": "The source page contains only its folio and the Estate Labour running title.",
+      "source_page_text": "573\nESTATE LABOUR (INDIAN)"
+    }
+  ]
+}

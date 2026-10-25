@@ -1,0 +1,386 @@
+{
+  "run_date": "2026-10-25",
+  "index_fingerprint": "9960e99fd1438c8856ee48b664cc199e6a19d1dd5ce92bdbfa1b41e201398864",
+  "embedding_model": "gemini-embedding-001",
+  "top_k": 8,
+  "method": "Gemini query embeddings searched against the local FAISS inner-product index; vectors normalized before search. Retrieval relevance only; generated answer quality was not evaluated.",
+  "queries": [
+    {
+      "label": "Retirement age",
+      "query": "What is the minimum retirement age for workers in Sri Lanka?",
+      "judgment": "PASS - exact Act retrieved at ranks 1, 3, and supporting provisions; all top 8 are from the Minimum Retirement Age of Workers Act.",
+      "top_results": [
+        {
+          "rank": 1,
+          "score": 0.7805,
+          "record_id": "ch00_minimum_retirement_age_of_workers_s2",
+          "section": "Minimum Retirement Age of Workers Act s.2",
+          "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+          "source_page": 2
+        },
+        {
+          "rank": 2,
+          "score": 0.7569,
+          "record_id": "ch00_minimum_retirement_age_of_workers_sschedule_ii",
+          "section": "Minimum Retirement Age of Workers Act SCHEDULE II",
+          "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+          "source_page": 15
+        },
+        {
+          "rank": 3,
+          "score": 0.7503,
+          "record_id": "ch00_minimum_retirement_age_of_workers_s3",
+          "section": "Minimum Retirement Age of Workers Act s.3",
+          "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+          "source_page": 2
+        },
+        {
+          "rank": 4,
+          "score": 0.7182,
+          "record_id": "ch00_minimum_retirement_age_of_workers_s19",
+          "section": "Minimum Retirement Age of Workers Act s.19",
+          "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+          "source_page": 15
+        },
+        {
+          "rank": 5,
+          "score": 0.718,
+          "record_id": "ch00_minimum_retirement_age_of_workers_s18",
+          "section": "Minimum Retirement Age of Workers Act s.18",
+          "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+          "source_page": 13
+        },
+        {
+          "rank": 6,
+          "score": 0.7154,
+          "record_id": "ch00_minimum_retirement_age_of_workers_s12",
+          "section": "Minimum Retirement Age of Workers Act s.12",
+          "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+          "source_page": 10
+        },
+        {
+          "rank": 7,
+          "score": 0.7153,
+          "record_id": "ch00_minimum_retirement_age_of_workers_s8",
+          "section": "Minimum Retirement Age of Workers Act s.8",
+          "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+          "source_page": 6
+        },
+        {
+          "rank": 8,
+          "score": 0.7091,
+          "record_id": "ch00_minimum_retirement_age_of_workers_s1",
+          "section": "Minimum Retirement Age of Workers Act s.1",
+          "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+          "source_page": 2
+        }
+      ]
+    },
+    {
+      "label": "Minimum wage",
+      "query": "What is the current national minimum monthly wage in Sri Lanka?",
+      "judgment": "PARTIAL / UNSAFE - rank 1 is the correct Act and section, but its indexed amount is stale because the corpus update review flags the 2025 amendment. The answer engine should refuse when this stale source is retrieved. Several lower ranks are unrelated foreign-employment provisions.",
+      "top_results": [
+        {
+          "rank": 1,
+          "score": 0.7774,
+          "record_id": "ch02_national_minimum_wage_of_workers_act_no_3_of_2016_s3",
+          "section": "National Minimum Wage of Workers Act s.3",
+          "source_file": "ch02_national_minimum_wage_of_workers_act_no_3_of_2016.pdf",
+          "source_page": 2
+        },
+        {
+          "rank": 2,
+          "score": 0.7021,
+          "record_id": "ch06_sri_lanka_bureau_of_foreign_employment_act_s1_p20_2",
+          "section": "Sri Lanka Bureau of Foreign Employment Act s.1 (page 20 schedule)",
+          "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.pdf",
+          "source_page": 20
+        },
+        {
+          "rank": 3,
+          "score": 0.6948,
+          "record_id": "ch02_budgetary_relief_allowance_of_workers_act_no_4_of_2016_s3_2",
+          "section": "Budgetary Relief Allowance of Workers Act s.3(2)",
+          "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_4_of_2016.pdf",
+          "source_page": 2
+        },
+        {
+          "rank": 4,
+          "score": 0.6813,
+          "record_id": "ch06_sri_lanka_bureau_of_foreign_employment_act_s2_p20_2",
+          "section": "Sri Lanka Bureau of Foreign Employment Act s.2 (page 20 schedule)",
+          "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.pdf",
+          "source_page": 20
+        },
+        {
+          "rank": 5,
+          "score": 0.6807,
+          "record_id": "ch02_budgetary_relief_allowance_of_workers_act_no_4_of_2016_s3_1",
+          "section": "Budgetary Relief Allowance of Workers Act s.3(1)",
+          "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_4_of_2016.pdf",
+          "source_page": 2
+        },
+        {
+          "rank": 6,
+          "score": 0.6725,
+          "record_id": "ch02_national_minimum_wage_of_workers_act_no_3_of_2016_s15",
+          "section": "National Minimum Wage of Workers Act s.15",
+          "source_file": "ch02_national_minimum_wage_of_workers_act_no_3_of_2016.pdf",
+          "source_page": 11
+        },
+        {
+          "rank": 7,
+          "score": 0.6723,
+          "record_id": "ch06_sri_lanka_bureau_of_foreign_employment_act_s3_p20_2",
+          "section": "Sri Lanka Bureau of Foreign Employment Act s.3 (page 20 schedule)",
+          "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.pdf",
+          "source_page": 20
+        },
+        {
+          "rank": 8,
+          "score": 0.6673,
+          "record_id": "ch02_budgetary_relief_allowance_of_workers_act_no_2_s3",
+          "section": "Budgetary Relief Allowance of Workers (No. 2) Law s.3",
+          "source_file": "ch02_budgetary_relief_allowance_of_workers_act_no_2.pdf",
+          "source_page": 1
+        }
+      ]
+    },
+    {
+      "label": "Gratuity",
+      "query": "When must an employer pay gratuity to an employee who resigns or retires?",
+      "judgment": "PASS for retrieval relevance - ranks 1-8 all point to Payment of Gratuity Act provisions relevant to eligibility, calculation, payment, or enforcement. Human answer accuracy/currentness not evaluated by this retrieval-only run.",
+      "top_results": [
+        {
+          "rank": 1,
+          "score": 0.7564,
+          "record_id": "ch05_payment_of_gratuity_s5",
+          "section": "Payment of Gratuity Act s.5",
+          "source_file": "ch05_payment_of_gratuity.pdf",
+          "source_page": 2
+        },
+        {
+          "rank": 2,
+          "score": 0.744,
+          "record_id": "ch05_payment_of_gratuity_s3",
+          "section": "Payment of Gratuity Act s.3",
+          "source_file": "ch05_payment_of_gratuity.pdf",
+          "source_page": 1
+        },
+        {
+          "rank": 3,
+          "score": 0.7314,
+          "record_id": "ch05_payment_of_gratuity_s6",
+          "section": "Payment of Gratuity Act s.6",
+          "source_file": "ch05_payment_of_gratuity.pdf",
+          "source_page": 3
+        },
+        {
+          "rank": 4,
+          "score": 0.7144,
+          "record_id": "ch05_payment_of_gratuity_s2",
+          "section": "Payment of Gratuity Act s.2",
+          "source_file": "ch05_payment_of_gratuity.pdf",
+          "source_page": 1
+        },
+        {
+          "rank": 5,
+          "score": 0.6902,
+          "record_id": "ch05_payment_of_gratuity_s20",
+          "section": "Payment of Gratuity Act s.20",
+          "source_file": "ch05_payment_of_gratuity.pdf",
+          "source_page": 8
+        },
+        {
+          "rank": 6,
+          "score": 0.6865,
+          "record_id": "ch05_payment_of_gratuity_s17",
+          "section": "Payment of Gratuity Act s.17",
+          "source_file": "ch05_payment_of_gratuity.pdf",
+          "source_page": 7
+        },
+        {
+          "rank": 7,
+          "score": 0.6843,
+          "record_id": "ch05_payment_of_gratuity_s18",
+          "section": "Payment of Gratuity Act s.18",
+          "source_file": "ch05_payment_of_gratuity.pdf",
+          "source_page": 8
+        },
+        {
+          "rank": 8,
+          "score": 0.6841,
+          "record_id": "ch05_payment_of_gratuity_s1",
+          "section": "Payment of Gratuity Act s.1",
+          "source_file": "ch05_payment_of_gratuity.pdf",
+          "source_page": 1
+        }
+      ]
+    },
+    {
+      "label": "Dismissal / TEWA",
+      "query": "When may an employer terminate a worker without prior approval under TEWA?",
+      "judgment": "PASS for retrieval relevance - rank 1 is TEWA s.2, directly on prior consent/Commissioner approval; other high ranks are related TEWA sections. Check exclusions and current law before answering.",
+      "top_results": [
+        {
+          "rank": 1,
+          "score": 0.7007,
+          "record_id": "ch01_termination_of_employment_of_workmen_s2",
+          "section": "Termination of Employment of Workmen Act s.2",
+          "source_file": "ch01_termination_of_employment_of_workmen.pdf",
+          "source_page": 1
+        },
+        {
+          "rank": 2,
+          "score": 0.6679,
+          "record_id": "ch01_termination_of_employment_of_workmen_s5",
+          "section": "Termination of Employment of Workmen Act s.5",
+          "source_file": "ch01_termination_of_employment_of_workmen.pdf",
+          "source_page": 3
+        },
+        {
+          "rank": 3,
+          "score": 0.6593,
+          "record_id": "ch02_employment_of_trainees_private_sector_s10",
+          "section": "Employment of Trainees (Private Sector) Act s.10",
+          "source_file": "ch02_employment_of_trainees_private_sector.pdf",
+          "source_page": 2
+        },
+        {
+          "rank": 4,
+          "score": 0.6532,
+          "record_id": "ch01_termination_of_employment_of_workmen_s3",
+          "section": "Termination of Employment of Workmen Act s.3",
+          "source_file": "ch01_termination_of_employment_of_workmen.pdf",
+          "source_page": 2
+        },
+        {
+          "rank": 5,
+          "score": 0.6453,
+          "record_id": "ch01_termination_of_employment_of_workmen_s6",
+          "section": "Termination of Employment of Workmen Act s.6",
+          "source_file": "ch01_termination_of_employment_of_workmen.pdf",
+          "source_page": 3
+        },
+        {
+          "rank": 6,
+          "score": 0.6403,
+          "record_id": "ch01_termination_of_employment_of_workmen_s17a",
+          "section": "Termination of Employment of Workmen Act s.17A",
+          "source_file": "ch01_termination_of_employment_of_workmen.pdf",
+          "source_page": 6
+        },
+        {
+          "rank": 7,
+          "score": 0.6371,
+          "record_id": "ch01_termination_of_employment_of_workmen_s6a",
+          "section": "Termination of Employment of Workmen Act s.6A",
+          "source_file": "ch01_termination_of_employment_of_workmen.pdf",
+          "source_page": 3
+        },
+        {
+          "rank": 8,
+          "score": 0.6359,
+          "record_id": "ch01_termination_of_employment_of_workmen_s4",
+          "section": "Termination of Employment of Workmen Act s.4",
+          "source_file": "ch01_termination_of_employment_of_workmen.pdf",
+          "source_page": 3
+        }
+      ]
+    },
+    {
+      "label": "Out of scope",
+      "query": "What is the legal process for adopting a child in Sri Lanka?",
+      "judgment": "FAIL - no relevant child-adoption source is in this labour corpus, but retrieval returns unrelated labour provisions with scores 0.6198-0.6311. Since MIN_RETRIEVAL_SCORE is 0.35, score threshold alone will not reliably refuse this out-of-scope query. Add/test an out-of-scope refusal mechanism before pilot.",
+      "top_results": [
+        {
+          "rank": 1,
+          "score": 0.6311,
+          "record_id": "ch06_sri_lanka_bureau_of_foreign_employment_act_s27",
+          "section": "Sri Lanka Bureau of Foreign Employment Act s.27",
+          "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.pdf",
+          "source_page": 7
+        },
+        {
+          "rank": 2,
+          "score": 0.6288,
+          "record_id": "ch06_sri_lanka_bureau_of_foreign_employment_act_s26",
+          "section": "Sri Lanka Bureau of Foreign Employment Act s.26",
+          "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.pdf",
+          "source_page": 6
+        },
+        {
+          "rank": 3,
+          "score": 0.6236,
+          "record_id": "ch03_employment_of_women_young_person_and_children_s10",
+          "section": "Employment of Women, Young Persons and Children Act s.10",
+          "source_file": "ch03_employment_of_women_young_person_and_children.pdf",
+          "source_page": 4
+        },
+        {
+          "rank": 4,
+          "score": 0.6231,
+          "record_id": "ch06_sri_lanka_bureau_of_foreign_employment_act_s1_p20_2",
+          "section": "Sri Lanka Bureau of Foreign Employment Act s.1 (page 20 schedule)",
+          "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.pdf",
+          "source_page": 20
+        },
+        {
+          "rank": 5,
+          "score": 0.6213,
+          "record_id": "ch07_indian_immigrant_labour_s17",
+          "section": "Indian Immigrant Labour Ordinance s.17",
+          "source_file": "ch07_indian_immigrant_labour.pdf",
+          "source_page": 4
+        },
+        {
+          "rank": 6,
+          "score": 0.6208,
+          "record_id": "ch06_sri_lanka_bureau_of_foreign_employment_act_s3",
+          "section": "Sri Lanka Bureau of Foreign Employment Act s.3",
+          "source_file": "ch06_sri_lanka_bureau_of_foreign_employment_act.pdf",
+          "source_page": 1
+        },
+        {
+          "rank": 7,
+          "score": 0.6203,
+          "record_id": "ch06_fee_charging_employment_agencies_s2",
+          "section": "Fee-Charging Employment Agencies Act s.2",
+          "source_file": "ch06_fee_charging_employment_agencies.pdf",
+          "source_page": 1
+        },
+        {
+          "rank": 8,
+          "score": 0.6198,
+          "record_id": "ch06_fee_charging_employment_agencies_s4",
+          "section": "Fee-Charging Employment Agencies Act s.4",
+          "source_file": "ch06_fee_charging_employment_agencies.pdf",
+          "source_page": 3
+        }
+      ]
+    }
+  ],
+  "scope_classifier_smoke": {
+    "model": "configured CHAT_MODEL",
+    "tested_questions": {
+      "retirement age": "in_scope",
+      "minimum wage": "in_scope",
+      "gratuity": "in_scope",
+      "TEWA dismissal": "in_scope",
+      "child adoption": "out_of_scope"
+    },
+    "out_of_scope_answer_path": {
+      "refused": true,
+      "reason": "out_of_scope",
+      "sources_returned": 0,
+      "retrieval_called": false
+    },
+    "stale_source_path": {
+      "refused": true,
+      "reason": "corpus_update_required"
+    },
+    "error_handling": "classifier exceptions and malformed responses fail closed",
+    "limitation": "Targeted smoke check only; AI classification may still err."
+  }
+}

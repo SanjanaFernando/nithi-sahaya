@@ -1,0 +1,493 @@
+[
+  {
+    "id": "q01",
+    "question": "Can my employer retire me at 55?",
+    "language": "English",
+    "expected_source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+    "expected_section_numbers": [
+      "2",
+      "3",
+      "4"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "For a worker covered by the Act, the minimum retirement age is generally 60, subject to the Act?s transitional rules, exclusions, and prescribed exceptions. A retirement at 55 needs fact-specific review."
+  },
+  {
+    "id": "q02",
+    "question": "What is the minimum retirement age for a private-sector worker?",
+    "language": "English",
+    "expected_source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+    "expected_section_numbers": [
+      "2"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Act generally sets age 60 for workers under 52 when it commenced and workers recruited afterwards; transitional rules apply to older workers."
+  },
+  {
+    "id": "q03",
+    "question": "Can a contract set my retirement age below the statutory minimum?",
+    "language": "English",
+    "expected_source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+    "expected_section_numbers": [
+      "4"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "A contract term setting a lower age is generally void, subject to section 3 and the Act?s exceptions."
+  },
+  {
+    "id": "q04",
+    "question": "What exceptions allow early retirement under the retirement-age law?",
+    "language": "English",
+    "expected_source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+    "expected_section_numbers": [
+      "3"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Act excludes the categories in Schedule II and allows prescribed occupations to be treated as exceptions. Check the worker?s exact category and current regulations."
+  },
+  {
+    "id": "q05",
+    "question": "Are casual or fixed-term workers covered by the retirement-age protection?",
+    "language": "English",
+    "expected_source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+    "expected_section_numbers": [
+      "10",
+      "11"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Act?s Schedule II lists fixed-term, casual, seasonal, part-time, probationary, daily-paid, student, domestic, and assignment-based workers among exclusions. Verify the worker?s precise status and applicable amendments."
+  },
+  {
+    "id": "q06",
+    "question": "Can an employer terminate scheduled employment without the worker's consent?",
+    "language": "English",
+    "expected_source_file": "ch01_termination_of_employment_of_workmen.pdf",
+    "expected_section_numbers": [
+      "2"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "For scheduled employment under the Act, an employer generally needs the worker?s prior written consent or the Commissioner?s prior written approval to terminate."
+  },
+  {
+    "id": "q07",
+    "question": "What can the Commissioner do when employment is terminated unlawfully?",
+    "language": "English",
+    "expected_source_file": "ch01_termination_of_employment_of_workmen.pdf",
+    "expected_section_numbers": [
+      "5",
+      "6",
+      "6A"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "An unlawful termination is void. The Commissioner may order reinstatement and payment of wages and benefits, or in specified closure cases order compensation."
+  },
+  {
+    "id": "q08",
+    "question": "How is compensation handled after an unlawful termination?",
+    "language": "English",
+    "expected_source_file": "ch01_termination_of_employment_of_workmen.pdf",
+    "expected_section_numbers": [
+      "6C",
+      "6D"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Commissioner?s order and the Gazette formula govern compensation. If ordered money is not paid on time, section 6C provides a court enforcement route. Confirm current formulas."
+  },
+  {
+    "id": "q09",
+    "question": "What is the labour tribunal deadline in the Industrial Disputes Act?",
+    "language": "English",
+    "expected_source_file": "ch01_industrial_disputes_act.pdf",
+    "expected_section_numbers": [
+      "31C"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Section 31C says a Labour Tribunal should make its order within six months. A separate special-provisions statute in this collection gives a different period in its scope; the applicable law needs review."
+  },
+  {
+    "id": "q10",
+    "question": "Can a party appeal a Labour Tribunal order, and what kind of issue may be appealed?",
+    "language": "English",
+    "expected_source_file": "ch01_industrial_disputes_act.pdf",
+    "expected_section_numbers": [
+      "31D"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "A party dissatisfied with a Labour Tribunal order may appeal to the provincial High Court on a question of law. The statutory procedure and deadlines require careful review."
+  },
+  {
+    "id": "q11",
+    "question": "What deadline applies to the Commissioner's decision on a termination application?",
+    "language": "English",
+    "expected_source_file": "ch01_industrial_disputes_hearing_and_determination_of_proceeding.pdf",
+    "expected_section_numbers": [
+      "11"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Under section 11 of the special-provisions statute, the Commissioner is required to make the approval decision within two months of receiving the employer?s application."
+  },
+  {
+    "id": "q12",
+    "question": "Under the special-provisions law, how long does the Labour Tribunal have to decide a case, and how soon must an appeal be filed?",
+    "language": "English",
+    "expected_source_file": "ch01_industrial_disputes_hearing_and_determination_of_proceeding.pdf",
+    "expected_section_numbers": [
+      "5",
+      "6"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The supplied special-provisions text sets a four-month period for the Tribunal?s decision and a 30-day appeal filing period, subject to its counting rules. The six-month period in the Industrial Disputes Act is a known conflict; a lawyer should determine which provision applies."
+  },
+  {
+    "id": "q13",
+    "question": "Who administers the Employees' Provident Fund?",
+    "language": "English",
+    "expected_source_file": "ch05_employees_provident_fund.pdf",
+    "expected_section_numbers": [
+      "4"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Commissioner of Labour is in charge of general administration of the EPF Act, subject to the Act?s provisions."
+  },
+  {
+    "id": "q14",
+    "question": "When does an employee become liable to contribute to EPF?",
+    "language": "English",
+    "expected_source_file": "ch05_employees_provident_fund.pdf",
+    "expected_section_numbers": [
+      "3",
+      "10"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "An employee in covered employment becomes liable to contribute under section 10 and becomes a Fund member under section 3. The statute states contribution rates, but confirm current rates and coverage."
+  },
+  {
+    "id": "q15",
+    "question": "What does the Employees' Trust Fund law establish?",
+    "language": "English",
+    "expected_source_file": "ch05_employees_trust_fund.pdf",
+    "expected_section_numbers": [
+      "3",
+      "4"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Act establishes the Employees? Trust Fund and its Board. The applicable undertakings depend on the Gazette order described in section 2."
+  },
+  {
+    "id": "q16",
+    "question": "How do I claim gratuity from my employer?",
+    "language": "English",
+    "expected_source_file": "ch05_payment_of_gratuity.pdf",
+    "expected_section_numbers": [
+      "5",
+      "7",
+      "8"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Section 5 sets the eligibility conditions for gratuity, including employer-size and service thresholds. Section 7 lists exclusions. If payment is in default, section 8 allows the Commissioner to initiate a recovery process through the Magistrate?s Court."
+  },
+  {
+    "id": "q17",
+    "question": "When can gratuity be withheld or forfeited?",
+    "language": "English",
+    "expected_source_file": "ch05_payment_of_gratuity.pdf",
+    "expected_section_numbers": [
+      "13"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Under section 13, gratuity may be forfeited only to the extent of the employer?s loss where termination is for fraud, misappropriation, wilful damage, or causing loss of property."
+  },
+  {
+    "id": "q18",
+    "question": "What maternity leave protection is provided to a woman worker?",
+    "language": "English",
+    "expected_source_file": "ch03_maternity_benefits_ordinance.pdf",
+    "expected_section_numbers": [
+      "3(1)",
+      "6",
+      "7"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Ordinance provides maternity benefit for the statutory period, which varies by live birth and other conditions. Notice requirements apply; confirm the current entitlement and coverage."
+  },
+  {
+    "id": "q19",
+    "question": "Can an employer dismiss a worker because of pregnancy or maternity leave?",
+    "language": "English",
+    "expected_source_file": "ch03_maternity_benefits_ordinance.pdf",
+    "expected_section_numbers": [
+      "10",
+      "10A"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Ordinance prohibits dismissal during protected maternity absence and termination solely because of pregnancy, confinement, or related illness."
+  },
+  {
+    "id": "q20",
+    "question": "How can workers register or form a trade union?",
+    "language": "English",
+    "expected_source_file": "ch01_trade_unions_ordinance.pdf",
+    "expected_section_numbers": [
+      "8",
+      "9"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "A newly established trade union must apply for registration within three months. The application must use the prescribed form, be signed by at least seven members, and include the union?s rules and required particulars."
+  },
+  {
+    "id": "q21",
+    "question": "What civil-liability protections apply to a registered trade union during a trade dispute?",
+    "language": "English",
+    "expected_source_file": "ch01_trade_unions_ordinance.pdf",
+    "expected_section_numbers": [
+      "26",
+      "27"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Sections 26 and 27 provide specified protections from civil actions for acts done in contemplation or furtherance of a trade dispute. They do not create blanket immunity for every union activity."
+  },
+  {
+    "id": "q22",
+    "question": "How are minimum wages determined by a Wages Board?",
+    "language": "English",
+    "expected_source_file": "ch02_wages_boards_ordinance.pdf",
+    "expected_section_numbers": [
+      "20",
+      "21"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "A Wages Board determines minimum rates for the trade it covers. Once a decision takes effect, employers covered by it must pay at least the applicable rate."
+  },
+  {
+    "id": "q23",
+    "question": "Can an employer deduct any amount from my wages?",
+    "language": "English",
+    "expected_source_file": "ch02_shop_and_office_employees_regulations.pdf",
+    "expected_section_numbers": [
+      "18",
+      "19",
+      "20",
+      "21"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Deductions from shop or office employees? remuneration are limited to the categories and procedures in the Act and regulations; an employer cannot make arbitrary deductions."
+  },
+  {
+    "id": "q24",
+    "question": "What is the national minimum wage law about?",
+    "language": "English",
+    "expected_source_file": "ch02_national_minimum_wage_of_workers_act_no_3_of_2016.pdf",
+    "expected_section_numbers": [
+      "2",
+      "3"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Act establishes national minimum monthly and daily wages and designates the competent authority. The amounts in this compiled copy may be outdated and must be checked against current official sources."
+  },
+  {
+    "id": "q25",
+    "question": "How are plantation worker allowances regulated?",
+    "language": "English",
+    "expected_source_file": "ch07_allowances_to_plantation_workers.pdf",
+    "expected_section_numbers": [
+      "2",
+      "3"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Act covers specified plantation trades and provides allowances under its schedules. The listed rates are time-sensitive and should be confirmed with the Labour Department."
+  },
+  {
+    "id": "q26",
+    "question": "What compensation may be available for a workplace injury?",
+    "language": "English",
+    "expected_source_file": "ch04_workmens_compensation.pdf",
+    "expected_section_numbers": [
+      "3",
+      "4",
+      "5",
+      "6(1)"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Compensation may be payable for an employment-related accident or a covered occupational disease, subject to statutory conditions and exceptions. The amount depends on the applicable schedule and current rules."
+  },
+  {
+    "id": "q27",
+    "question": "What notice and time limit apply when claiming compensation after a workplace accident?",
+    "language": "English",
+    "expected_source_file": "ch04_workmens_compensation.pdf",
+    "expected_section_numbers": [
+      "16",
+      "17"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The accident notice should be given as soon as practicable in the manner allowed by the Ordinance. A compensation claim generally must be instituted within two years, subject to the statutory exceptions."
+  },
+  {
+    "id": "q28",
+    "question": "Can a government employee rely on the private-sector Industrial Disputes Act for every employment issue?",
+    "language": "English",
+    "expected_source_file": "",
+    "expected_section_numbers": [],
+    "should_say_not_sure": true,
+    "reference_answer": "The collection does not establish that every government employee is covered by the Industrial Disputes Act for every employment issue. Coverage depends on the worker, employer, and issue; the assistant should avoid a categorical answer."
+  },
+  {
+    "id": "q29",
+    "question": "What is the exact current rupee amount of every labour-law fine in Sri Lanka?",
+    "language": "English",
+    "expected_source_file": "",
+    "expected_section_numbers": [],
+    "should_say_not_sure": true,
+    "reference_answer": "The collection does not establish that every fine is current. The assistant should not provide a current complete rupee total; confirm the applicable amount with the Labour Department."
+  },
+  {
+    "id": "q30",
+    "question": "What will the Supreme Court decide in my individual employment case next month?",
+    "language": "English",
+    "expected_source_file": "",
+    "expected_section_numbers": [],
+    "should_say_not_sure": true,
+    "reference_answer": "The assistant cannot predict a future court decision or assess the outcome of an individual case from this collection."
+  },
+  {
+    "id": "q31",
+    "question": "Can my employer secretly record my private phone call?",
+    "language": "English",
+    "expected_source_file": "",
+    "expected_section_numbers": [],
+    "should_say_not_sure": true,
+    "reference_answer": "The supplied labour-law collection does not answer whether a private phone call may be secretly recorded. The assistant should say it is unsure and refer the user to a lawyer."
+  },
+  {
+    "id": "q32",
+    "question": "Mage employer mata awurudu 55 di retire karanna puluwanda?",
+    "language": "Singlish",
+    "expected_source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+    "expected_section_numbers": [
+      "2",
+      "3",
+      "4"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Covered workers generally have a minimum retirement age of 60, subject to the law?s transitional rules and exclusions. Check the worker?s precise status."
+  },
+  {
+    "id": "q33",
+    "question": "Mama job eken ain karanna kalin Commissioner approval one da?",
+    "language": "Singlish",
+    "expected_source_file": "ch01_termination_of_employment_of_workmen.pdf",
+    "expected_section_numbers": [
+      "2",
+      "5"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "For scheduled employment, the employer generally needs the worker?s prior written consent or the Commissioner?s prior written approval before termination."
+  },
+  {
+    "id": "q34",
+    "question": "EPF contribution eka employer gena pay karanna oni da?",
+    "language": "Singlish",
+    "expected_source_file": "ch05_employees_provident_fund.pdf",
+    "expected_section_numbers": [
+      "3",
+      "10"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "An employee in covered employment contributes to EPF, and the employer also has contribution duties under the Act. Check the current rates with the Labour Department."
+  },
+  {
+    "id": "q35",
+    "question": "Maternity leave labaganna female worker kenekta thiyena rights monawada?",
+    "language": "Singlish",
+    "expected_source_file": "ch03_maternity_benefits_ordinance.pdf",
+    "expected_section_numbers": [
+      "3(1)",
+      "6",
+      "7"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Ordinance provides maternity benefit and related protections, subject to its eligibility and notice rules. Exact entitlement depends on the worker?s circumstances."
+  },
+  {
+    "id": "q36",
+    "question": "වයස අවුරුදු 55 දී සේවකයෙකු විශ්‍රාම ගැන්විය හැකිද?",
+    "language": "Sinhala",
+    "expected_source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+    "expected_section_numbers": [
+      "2",
+      "3",
+      "4"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Covered workers generally have a minimum retirement age of 60, subject to transitional rules and exclusions in the Act."
+  },
+  {
+    "id": "q37",
+    "question": "සේවක අර්ථසාධක අරමුදලට දායක වීම ගැන නීතිය කුමක්ද?",
+    "language": "Sinhala",
+    "expected_source_file": "ch05_employees_provident_fund.pdf",
+    "expected_section_numbers": [
+      "3",
+      "10"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Employees in covered employment become members of the EPF and contribute under the EPF Act; verify coverage and current rates."
+  },
+  {
+    "id": "q38",
+    "question": "தொழிலாளியை பணிநீக்கம் செய்வதற்கு ஆணையரின் அனுமதி தேவையா?",
+    "language": "Tamil",
+    "expected_source_file": "ch01_termination_of_employment_of_workmen.pdf",
+    "expected_section_numbers": [
+      "2",
+      "5"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "For scheduled employment, prior written consent of the worker or prior written approval of the Commissioner is generally required."
+  },
+  {
+    "id": "q39",
+    "question": "மகப்பேறு விடுப்பு பெறும் பெண் தொழிலாளியின் உரிமைகள் என்ன?",
+    "language": "Tamil",
+    "expected_source_file": "ch03_maternity_benefits_ordinance.pdf",
+    "expected_section_numbers": [
+      "3(1)",
+      "6",
+      "7"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Ordinance provides maternity benefit, notice rules, and protection against dismissal during protected absence or termination solely because of pregnancy or confinement."
+  },
+  {
+    "id": "q40",
+    "question": "Can the assistant tell me whether a future Gazette will increase the minimum wage?",
+    "language": "English",
+    "expected_source_file": "",
+    "expected_section_numbers": [],
+    "should_say_not_sure": true,
+    "reference_answer": "A future Gazette is not in the supplied materials. The assistant should say it cannot determine whether a future wage increase will be made."
+  },
+  {
+    "id": "q41",
+    "question": "??? ???????? ????? ????? ????????? ????????? ??? ??? ??????",
+    "language": "Sinhala",
+    "expected_source_file": "ch02_wages_boards_ordinance.pdf",
+    "expected_section_numbers": [
+      "3A"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "The Wages Boards Ordinance requires a full-moon Poya holiday for workers in covered trades, subject to the weekly-holiday proviso."
+  },
+  {
+    "id": "q42",
+    "question": "?????? ????????????? ????? ???????? ??????????? ????????? ?????",
+    "language": "Tamil",
+    "expected_source_file": "ch04_workmens_compensation.pdf",
+    "expected_section_numbers": [
+      "16",
+      "17"
+    ],
+    "should_say_not_sure": false,
+    "reference_answer": "Notice should be given as soon as practicable, and a compensation claim generally must be filed within two years, subject to statutory exceptions."
+  }
+]

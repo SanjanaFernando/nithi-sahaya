@@ -1,0 +1,102 @@
+{
+  "run_date": "2026-10-25",
+  "index_metadata": {
+    "record_count": 2094,
+    "dimensions": 3072,
+    "embedding_model": "gemini-embedding-001",
+    "metric": "inner_product_on_L2_normalized_vectors",
+    "batch_size": 50
+  },
+  "index_records_sha256": "73302f89fd473c307415931c6836182641230fa01ebf4af79e211bbaff0f0367",
+  "answer_model": "gemini-3.8-flash",
+  "embedding_model": "gemini-embedding-001",
+  "results": [
+    {
+      "language": "English",
+      "question": "What is the minimum retirement age for a worker in Sri Lanka?",
+      "answer": "I could not produce a safely verified answer from the retrieved legal sections. Please contact the Department of Labour, the Legal Aid Commission, or a qualified lawyer.",
+      "refused": true,
+      "reason": "citation_validation_failed",
+      "retrieved_sections": [
+        {
+          "id": "ch00_minimum_retirement_age_of_workers_s2",
+          "act": "Minimum Retirement",
+          "section": "2"
+        },
+        {
+          "id": "ch00_minimum_retirement_age_of_workers_sschedule_ii",
+          "act": "Minimum Retirement",
+          "section": "SCHEDULE II"
+        },
+        {
+          "id": "ch00_minimum_retirement_age_of_workers_s3",
+          "act": "Minimum Retirement",
+          "section": "3"
+        },
+        {
+          "id": "ch00_minimum_retirement_age_of_workers_s18",
+          "act": "Minimum Retirement",
+          "section": "18"
+        },
+        {
+          "id": "ch00_minimum_retirement_age_of_workers_s19",
+          "act": "Minimum Retirement",
+          "section": "19"
+        }
+      ],
+      "citation_markers": [],
+      "citations_valid": null,
+      "contains_ai_warning": true,
+      "contains_freshness_warning": false
+    },
+    {
+      "language": "Sinhala",
+      "question": "ශ්‍රී ලංකාවේ සේවකයෙකුට අවම විශ්‍රාම වයස කීයද?",
+      "answer": "I cannot safely answer from this result because the retrieved legal text is known to need an update. An AI-generated answer may be wrong or may not reflect a later Act, amendment, or Gazette notice. Please verify the current text with the Department of Labour or a qualified lawyer.",
+      "refused": true,
+      "reason": "corpus_update_required",
+      "retrieved_sections": [
+        {
+          "id": "ch05_employees_provident_fund_s23",
+          "act": "Employees’ Provident Fund Act",
+          "section": "23"
+        }
+      ],
+      "citation_markers": [],
+      "citations_valid": null,
+      "contains_ai_warning": true,
+      "contains_freshness_warning": true
+    },
+    {
+      "language": "Tamil",
+      "question": "இலங்கையில் ஒரு தொழிலாளியின் குறைந்தபட்ச ஓய்வு வயது என்ன?",
+      "answer": "I cannot safely determine that this question is within this Sri Lankan labour-law assistant's scope. Please ask a qualified professional in the relevant area. AI-generated answers may be wrong or incomplete and may not reflect a later Act, amendment, or Gazette notice; verify current law with an official source or a qualified lawyer.",
+      "refused": true,
+      "reason": "scope_check_unavailable",
+      "retrieved_sections": [],
+      "citation_markers": [],
+      "citations_valid": null,
+      "contains_ai_warning": true,
+      "contains_freshness_warning": true
+    },
+    {
+      "language": "Singlish",
+      "question": "Sri Lanka wala worker kenek retire wenna puluwan aduma wayasa kiyada?",
+      "answer": "I cannot safely determine that this question is within this Sri Lankan labour-law assistant's scope. Please ask a qualified professional in the relevant area. AI-generated answers may be wrong or incomplete and may not reflect a later Act, amendment, or Gazette notice; verify current law with an official source or a qualified lawyer.",
+      "refused": true,
+      "reason": "scope_check_unavailable",
+      "retrieved_sections": [],
+      "citation_markers": [],
+      "citations_valid": null,
+      "contains_ai_warning": true,
+      "contains_freshness_warning": true
+    }
+  ],
+  "index_fingerprint": "9960e99fd1438c8856ee48b664cc199e6a19d1dd5ce92bdbfa1b41e201398864",
+  "summary": {
+    "queries": 4,
+    "successful_generated_answers": 0,
+    "all_queries_refused_or_failed": true,
+    "notes": "This is a smoke run, not a pass. English reached generation but failed citation validation; Sinhala retrieved a stale/unrelated EPF source and was refused; Tamil and Singlish failed the scope check and were refused. No successful generated answer was produced."
+  }
+}
