@@ -2,6 +2,28 @@
 
 Goal: turn 44 clear English PDFs (Department of Labour compiled labour code) into a legal-information assistant with a website, using free tools.
 
+## Re-audit update — 24 October 2026
+
+This is a working status snapshot after rechecking Phases 1–6. A checked box means
+the repository artifact exists and its automated checks passed; it does not mean
+the legal content has been approved for public use.
+
+| Phase | Status | Current finding |
+|---|---|---|
+| 0 Setup | Done locally | The project environment and required Python packages are present. |
+| 1 Extract | Done, with source review recorded | 44 PDFs have 44 text extracts. The six pages flagged as sparse contain page labels or running heads; five sample extracts contain readable legal text. |
+| 2 Clean and split | Partial | Reworked splitting to preserve schedules and the omitted Industrial Disputes Act s.31D provision. 2,094 records are produced. QC still flags 158 short records; `scope_notes` and `topics` remain unfilled, and 31 records lack an Act number/year. |
+| 3 Legal checks | Not complete | Two known deadline conflicts remain for lawyer review. Current-law/amendment verification and approved plain-language summaries are outstanding. |
+| 4 Search index | Partial | The resumable checkpoint currently contains 1,921 of 2,094 vectors (173 remain). The complete FAISS index still contains 2,148 records from the earlier section set; it remains usable for that old set, but is not the corrected index. |
+| 5 Answer engine | Implemented, not fully evaluated | The answer engine exists, but it must be evaluated after Phase 4 completes. |
+| 6 Evaluation | Test set improved; full run pending | There are 42 questions, 10 in Sinhala, Tamil, or Singlish, each with a reference answer. The keyword baseline retrieved an expected section for 18 of 37 in-scope questions. Generated-answer, citation, and refusal evaluation must be rerun against the rebuilt index. |
+
+The Gemini free-tier embedding quota was reached during the re-index. The API
+reported both daily and per-minute quota limits during the re-index;
+`scripts/build_index.py` can resume from `index/embedding_checkpoint.npy`
+without repeating completed embeddings. Do not launch the public pilot until
+the completion gate below and Phase 3 review are complete.
+
 Approach: **RAG (retrieval-augmented generation)**. You do not train a model. For each question, the system finds the most relevant sections from your PDFs and gives them to Gemini, which writes a plain-language answer with citations.
 
 > Model names, free-tier limits and library versions change often. Keep model names in a `.env` file and check the current docs before you start.
@@ -218,12 +240,118 @@ Target before public launch: every citation real, no invented sections, and lawy
 
 ---
 
+## Phase 6A: Complete Phases 1–6 before starting Phase 7
+
+This is a required closeout phase. Work through each subphase and record its
+artifact and pass result. Development of later phases must not be treated as
+evidence that this gate has passed.
+
+### 6A.1 Close Phase 1 and Phase 2 data-quality gaps
+
+1. Re-run extraction inventory: confirm 44 source PDFs, 44 text extracts, and
+   matching source names. Keep the PDFs read-only and record hashes in the
+   extraction report.
+2. Review all 158 short-section warnings against the source PDF. For each,
+   either repair the extracted/split text or mark why the short record is a
+   valid heading, repeal note, schedule entry, or other legitimate short item.
+   Save a review disposition for every warning; do not suppress warnings just
+   to make the count zero.
+3. Fill `act_number_year` for the 31 records that lack it using the source Act
+   title page or an official copy. Record `unknown` with a reason when the
+   source does not establish it; do not infer an Act number.
+4. Populate `scope_notes` and `topics` at Act/section level from the source
+   text. Mark uncertain scope explicitly and keep unsupported assumptions out.
+5. Re-run the splitter and validator, then compare record counts, section
+   numbers, source page references, and required metadata. Save updated QC and
+   split reports.
+
+**Pass condition:** every short-record warning has a disposition, every
+metadata gap is resolved or explicitly justified, and the validator has no
+unreviewed errors.
+
+### 6A.2 Close Phase 3 legal-review gaps
+
+1. Build a source register for all 44 Acts with official source link, title,
+   Act number/year, source date, amendments checked, and reviewer/date.
+2. Check each Act and any relevant amendment or Gazette notice against current
+   official sources. Record the applicable date and any unresolved uncertainty.
+3. Put the two known deadline conflicts in a conflict register with both
+   provisions quoted, their source links, the issue, and the proposed handling.
+4. Have a Sri Lankan labour-law reviewer decide each conflict and approve the
+   plain-language summaries and exclusions used in answers. Record their
+   sign-off and the corpus/version reviewed.
+
+**Pass condition:** every Act planned for the pilot has a dated legal check,
+the conflicts have a documented resolution, and a qualified reviewer has
+approved the launch subset and summaries. Automated checks cannot replace this
+human legal review.
+
+### 6A.3 Finish Phase 4 using the saved vectors
+
+1. Keep the existing 2,148-record index intact as the rollback copy. It is
+   complete for its earlier corpus only.
+2. Resume `index/embedding_checkpoint.npy`; it currently has 1,921 of 2,094
+   current vectors, leaving 173. Reuse exact-text vectors already in the old
+   index/checkpoint. Do not re-embed records whose text and model match.
+3. When Gemini quota is available, finish the remaining records in paced
+   batches. Keep `EMBED_MODEL` unchanged while resuming; a model change requires
+   a complete, consistent vector set.
+4. Build and verify the replacement index only after all 2,094 vectors exist.
+   Confirm record order, dimensions, model, fingerprint, and FAISS/vector/JSON
+   counts agree before replacing the active index. Save build metadata.
+5. Run representative semantic searches, including retirement age, wages,
+   gratuity, dismissal, and a question outside the collection. Record the top
+   sections and whether they are appropriate.
+
+**Pass condition:** the corrected records and vectors match 2,094-to-2,094,
+the new FAISS index loads, and the saved search examples retrieve the expected
+legal provisions. The old index remains available until this passes.
+
+### 6A.4 Close Phase 5 answer-engine checks
+
+1. Run the answer engine against the corrected index with English, Sinhala,
+   Tamil, and Singlish questions.
+2. Verify every cited record ID is among the retrieved records and maps to the
+   section text shown to the user. Check unsupported questions refuse safely.
+3. Fix answer, retrieval, language, or citation failures, then repeat the
+   affected checks and record the prompt/model/index versions.
+
+**Pass condition:** the engine uses the corrected index, citations resolve to
+real retrieved records, and unsupported questions receive the safe referral
+response.
+
+### 6A.5 Complete Phase 6 evaluation
+
+1. Run all 42 questions against the corrected index, not the earlier 2,148
+   record index. Preserve the result file and record the index fingerprint.
+2. Review retrieval for all 37 in-scope questions; review refusal behavior for
+   every out-of-scope question; compare generated answers with the reference
+   answers; inspect citations for every result.
+3. Fix failures in the corpus, retrieval, or prompt and rerun the affected
+   cases. Keep a failure log so a passing aggregate cannot hide a serious
+   legal or language error.
+4. Have the legal reviewer approve answer samples in all supported languages
+   and sign off on the final evaluation report.
+
+**Pass condition:** no fabricated citations, all expected sections are
+retrieved/cited or the case is corrected and rerun, refusals are correct for
+out-of-scope questions, and the legal reviewer approves the pilot answers.
+
+### Phase 6A completion gate
+
+Before Phase 7 is treated as the next project phase, save the updated Phase 1–6
+reports, the corrected-index metadata, the full Phase 6 results, the resolved
+legal-conflict register, and reviewer sign-off. Until then, Phases 1–6 remain
+open and public-pilot work is blocked.
+
+---
+
 ## Phase 7: Backend API (2 days)
 
 A small FastAPI app that exposes `POST /ask` with `{question, language}` and streams the answer. It should:
 - load the FAISS index and records once at startup
 - call the same code as `ask.py`
-- add rate limiting per IP and a CAPTCHA (for example Cloudflare Turnstile) to protect the free Gemini quota
+- apply per-IP rate limits to protect the Gemini quota; keep CAPTCHA out of the first pilot unless abuse data shows it is needed
 - cache answers to repeated questions
 - log nothing that identifies the user; store no question text unless the user opts in
 - send the API key only from environment variables
@@ -249,10 +377,10 @@ Defer voice input and document upload until the text chat is solid.
 
 ## Phase 9: Deploy (2 days)
 
-- Frontend: Cloudflare Pages (or Vercel).
+- Frontend: Vercel or another static-site host.
 - Backend: a free container host (Render, Fly.io or Hugging Face Spaces). Free hosts may sleep, so add an uptime monitor and a "waking up" message.
 - Store the API key as a secret in the host, not in the code.
-- Add Cloudflare rate limiting.
+- Keep host-level or application-level rate limits enabled.
 - Add monitoring (UptimeRobot, Sentry) and a daily check on Gemini quota use.
 - Launch as a **closed pilot** to law students and legal-aid volunteers before opening to the public.
 

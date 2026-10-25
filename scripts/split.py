@@ -29,6 +29,14 @@ REGULATION_SECTION = re.compile(
 )
 SUBSECTION = re.compile(r"^\s*\((\d{1,3}[A-Z]?)\)\s+", re.MULTILINE)
 PAGE_NUMBER = re.compile(r"^\s*\d{1,4}\s*$")
+SCHEDULE_MARKER = re.compile(
+    r"^\s*SCHEDULE\s+([A-Z0-9]+)\s*$", re.IGNORECASE | re.MULTILINE
+)
+OPERATIVE_OPENING = re.compile(
+    r"^(?:no|any|every|the|a|an|where|if|nothing|subject|for|in|upon|"
+    r"notwithstanding|whoever|all|each|it|such|provided)\b",
+    re.IGNORECASE,
+)
 
 
 @dataclass
@@ -128,9 +136,20 @@ def find_chunks(text: str, regulations: bool) -> list[Chunk]:
         if len(regulation_matches) > len(matches):
             matches = regulation_matches
 
+    schedules = list(SCHEDULE_MARKER.finditer(text))
+
+    def in_schedule(position: int) -> bool:
+        return any(
+            marker.start() <= position < (schedules[index + 1].start() if index + 1 < len(schedules) else len(text))
+            for index, marker in enumerate(schedules)
+        )
+
+    section_matches = [match for match in matches if not in_schedule(match.start())]
     chunks: list[Chunk] = []
-    for index, match in enumerate(matches):
-        end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
+    for index, match in enumerate(section_matches):
+        next_section = section_matches[index + 1].start() if index + 1 < len(section_matches) else len(text)
+        next_schedule = next((marker.start() for marker in schedules if marker.start() > match.start()), len(text))
+        end = min(next_section, next_schedule)
         body = text[match.end() : end].strip()
         if not body:
             continue
@@ -141,6 +160,18 @@ def find_chunks(text: str, regulations: bool) -> list[Chunk]:
                 page=page_number_at(text, match.start()),
             )
         )
+    for index, marker in enumerate(schedules):
+        end = schedules[index + 1].start() if index + 1 < len(schedules) else len(text)
+        body = text[marker.start() : end].strip()
+        if body:
+            chunks.append(
+                Chunk(
+                    number=f"SCHEDULE_{marker.group(1).upper()}",
+                    raw_text=body,
+                    page=page_number_at(text, marker.start()),
+                )
+            )
+    chunks.sort(key=lambda chunk: (chunk.page, text.find(chunk.raw_text)))
     return chunks
 
 
@@ -151,7 +182,12 @@ def heading_and_body(raw_text: str) -> tuple[str, str]:
         return "", ""
     first = lines[0]
     # Most compiled Acts put a short heading before the operative text.
-    if len(first) <= 180 and not first.startswith(("(", "[")):
+    if (
+        len(first) <= 140
+        and not first.startswith(("(", "["))
+        and not OPERATIVE_OPENING.match(first)
+        and not re.search(r"\b(?:shall|must|means|includes|is|are|has|have)\b", first, re.IGNORECASE)
+    ):
         return first.rstrip("."), "\n".join(lines[1:]).strip()
     return "", "\n".join(lines).strip()
 
@@ -189,14 +225,15 @@ def make_records(text: str, source_file: str) -> tuple[list[dict[str, object]], 
             record_id = base_id
             if seen_ids[base_id] > 1:
                 record_id = f"{base_id}_p{piece.page}_{seen_ids[base_id]}"
+            is_schedule = piece.number.startswith("SCHEDULE_")
             records.append(
                 {
                     "id": record_id,
                     "act_name": act_name,
                     "act_number_year": number_year,
-                    "doc_type": "regulations" if regulations else "act",
+                    "doc_type": "schedule" if is_schedule else "regulations" if regulations else "act",
                     "chapter": "",
-                    "section_number": piece.number,
+                    "section_number": piece.number.replace("_", " "),
                     "heading": heading,
                     "text": body,
                     "amended_by": amendments,
@@ -208,11 +245,47 @@ def make_records(text: str, source_file: str) -> tuple[list[dict[str, object]], 
                     "status": "verify",
                 }
             )
+
+    # The compiled Labour Code omits the printed "31D." label even though its
+    # subsections and the following section 31DD refer to section 31D. The
+    # Department of Labour's copy starts that provision at the footnote-marked
+    # subsection (2), after section 31C(1) and (2).
+    if Path(source_file).stem == "ch01_industrial_disputes_act":
+        marker = re.compile(
+            r"(?m)^\s*\*\s*\(2\)\s+Save as provided in subsection \(3\) an order of a labour tribunal"
+        )
+        parent_index = next(
+            (i for i, record in enumerate(records) if record["section_number"] == "31C"),
+            None,
+        )
+        if parent_index is not None:
+            parent = records[parent_index]
+            split_at = marker.search(str(parent["text"]))
+            if split_at:
+                full_text = str(parent["text"])
+                parent["text"] = full_text[: split_at.start()].strip()
+                section_31d = dict(parent)
+                section_31d.update(
+                    {
+                        "id": f"{Path(source_file).stem}_s31d",
+                        "section_number": "31D",
+                        "heading": "Appeal to High Court on question of law arising out of the order of a labour tribunal",
+                        "text": full_text[split_at.start() :].strip(),
+                    }
+                )
+                records.insert(parent_index + 1, section_31d)
+            else:
+                warnings_for_split = True
+        else:
+            warnings_for_split = True
+
     warnings: list[str] = []
     if not chunks:
         warnings.append("no numbered sections detected")
     if any(len(record["text"].split()) < 10 for record in records):
         warnings.append("contains section text shorter than 10 words")
+    if Path(source_file).stem == "ch01_industrial_disputes_act" and locals().get("warnings_for_split", False):
+        warnings.append("section 31D reconstruction marker not found; manual check required")
     if "[Â§" in cleaned or "[§" in cleaned:
         warnings.append("amendment tags remain")
     return records, warnings

@@ -8,6 +8,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import time
@@ -38,6 +39,29 @@ def embedding_text(record: dict) -> str:
     )
 
 
+def records_fingerprint(records: list[dict]) -> str:
+    payload = "\n".join(f"{r['id']}\0{embedding_text(r)}" for r in records)
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def save_checkpoint(destination: Path, model: str, records: list[dict], completed: dict[int, list[float]]) -> None:
+    indices = sorted(completed)
+    np.save(
+        destination / "embedding_checkpoint.npy",
+        np.asarray([completed[index] for index in indices], dtype="float32"),
+    )
+    (destination / "embedding_checkpoint.json").write_text(
+        json.dumps({
+            "model": model,
+            "record_ids": [records[index]["id"] for index in indices],
+            "completed_indices": indices,
+            "total_records": len(records),
+            "content_fingerprint": records_fingerprint(records),
+        }),
+        encoding="utf-8",
+    )
+
+
 def embed_batch(client: genai.Client, model: str, texts: list[str], retries: int) -> list[list[float]]:
     last_error: Exception | None = None
     for attempt in range(retries):
@@ -53,6 +77,12 @@ def embed_batch(client: genai.Client, model: str, texts: list[str], retries: int
             last_error = exc
             if attempt + 1 == retries:
                 break
+            error_text = str(exc)
+            if "per day" in error_text.lower() or "PerDay" in error_text:
+                raise RuntimeError(
+                    "Gemini's daily embedding quota is exhausted. The checkpoint is saved; "
+                    "rerun this command after the quota resets."
+                ) from exc
             is_quota = "429" in str(exc) or "RESOURCE_EXHAUSTED" in str(exc)
             delay = min(90, (15 if is_quota else 2**attempt))
             print(f"Embedding batch failed; retrying in {delay}s ({attempt + 1}/{retries})")
@@ -67,6 +97,11 @@ def main() -> int:
     parser.add_argument("--batch-size", type=int, default=50)
     parser.add_argument("--delay", type=float, default=1.0)
     parser.add_argument("--retries", type=int, default=4)
+    parser.add_argument(
+        "--prepare-only",
+        action="store_true",
+        help="reuse compatible saved vectors and write a resumable checkpoint without API calls",
+    )
     args = parser.parse_args()
     if args.batch_size < 1 or args.retries < 1:
         parser.error("batch-size and retries must be positive")
@@ -81,32 +116,73 @@ def main() -> int:
     records = load_records(args.source)
     texts = [embedding_text(record) for record in records]
     client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    args.destination.mkdir(parents=True, exist_ok=True)
     checkpoint_vectors = args.destination / "embedding_checkpoint.npy"
     checkpoint_meta = args.destination / "embedding_checkpoint.json"
-    vectors: list[list[float]] = []
+    completed: dict[int, list[float]] = {}
+    record_index = {record["id"]: index for index, record in enumerate(records)}
+
+    # Reuse only vectors whose complete embedded text is unchanged.
+    old_records_path = args.destination / "records.json"
+    old_vectors_path = args.destination / "vectors.npy"
+    if old_records_path.exists() and old_vectors_path.exists():
+        old_records = json.loads(old_records_path.read_text(encoding="utf-8"))
+        old_vectors = np.load(old_vectors_path, mmap_mode="r")
+        old_by_text = {
+            embedding_text(record): old_vectors[index]
+            for index, record in enumerate(old_records)
+            if index < len(old_vectors)
+        }
+        for index, record in enumerate(records):
+            vector = old_by_text.get(texts[index])
+            if vector is not None:
+                completed[index] = np.asarray(vector, dtype="float32").tolist()
+
     if checkpoint_vectors.exists() and checkpoint_meta.exists():
         checkpoint = json.loads(checkpoint_meta.read_text(encoding="utf-8"))
-        if checkpoint.get("model") == model and checkpoint.get("record_ids") == [r["id"] for r in records]:
-            vectors = np.load(checkpoint_vectors).tolist()
-            print(f"Resuming from {len(vectors):,} completed embeddings")
+        if checkpoint.get("model") == model:
+            saved_vectors = np.load(checkpoint_vectors)
+            saved_ids = checkpoint.get("record_ids", [])
+            saved_indices = checkpoint.get("completed_indices")
+            if saved_indices is None:
+                # Backward compatibility with the original prefix checkpoint.
+                saved_indices = list(range(len(saved_vectors)))
+                saved_ids = saved_ids[:len(saved_vectors)]
+            current_fingerprint = records_fingerprint(records)
+            exact_checkpoint = checkpoint.get("content_fingerprint") == current_fingerprint
+            for row, (saved_index, record_id) in enumerate(zip(saved_indices, saved_ids)):
+                target = record_index.get(record_id)
+                if target is None or row >= len(saved_vectors):
+                    continue
+                unchanged = exact_checkpoint or checkpoint.get("content_fingerprint") is None
+                # The legacy partial checkpoint was generated from this same split output;
+                # the one section whose text changed in the reconstruction is re-embedded.
+                if unchanged and record_id != "ch01_industrial_disputes_act_s31c":
+                    completed[target] = np.asarray(saved_vectors[row], dtype="float32").tolist()
+            print(f"Reused {len(completed):,} exact or checkpointed embeddings")
         else:
             print("Ignoring incompatible embedding checkpoint")
-    total_batches = (len(texts) + args.batch_size - 1) // args.batch_size
-    start_batch = len(vectors)
-    for batch_number, start in enumerate(range(start_batch, len(texts), args.batch_size), start=1):
-        batch = texts[start : start + args.batch_size]
+
+    missing = [index for index in range(len(texts)) if index not in completed]
+    save_checkpoint(args.destination, model, records, completed)
+    if args.prepare_only:
+        print(f"Prepared {len(completed):,} vectors; {len(missing):,} require API embeddings")
+        return 0
+
+    total_batches = (len(missing) + args.batch_size - 1) // args.batch_size
+    for batch_number, offset in enumerate(range(0, len(missing), args.batch_size), start=1):
+        positions = missing[offset : offset + args.batch_size]
+        batch = [texts[index] for index in positions]
         print(f"Embedding batch {batch_number}/{total_batches} ({len(batch)} records)")
-        vectors.extend(embed_batch(client, model, batch, args.retries))
-        args.destination.mkdir(parents=True, exist_ok=True)
-        np.save(checkpoint_vectors, np.asarray(vectors, dtype="float32"))
-        checkpoint_meta.write_text(
-            json.dumps({"model": model, "record_ids": [r["id"] for r in records]}),
-            encoding="utf-8",
-        )
-        if args.delay and start + args.batch_size < len(texts):
+        batch_vectors = embed_batch(client, model, batch, args.retries)
+        completed.update({index: vector for index, vector in zip(positions, batch_vectors)})
+        save_checkpoint(args.destination, model, records, completed)
+        if args.delay and batch_number < total_batches:
             time.sleep(args.delay)
 
-    matrix = np.asarray(vectors, dtype="float32")
+    if len(completed) != len(records):
+        raise RuntimeError(f"only {len(completed)} of {len(records)} embeddings are available")
+    matrix = np.asarray([completed[index] for index in range(len(records))], dtype="float32")
     if matrix.ndim != 2 or matrix.shape[0] != len(records):
         raise RuntimeError(f"unexpected embedding matrix shape: {matrix.shape}")
     faiss.normalize_L2(matrix)
