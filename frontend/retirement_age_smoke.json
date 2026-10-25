@@ -1,0 +1,16 @@
+{
+  "test": "retirement-age question after fast-scope fix",
+  "question_sha256": "ab156b00f1d09511cfc702418b4f259b86299b59b7d5398c0e3fa3fef2f027ee",
+  "http_status": 503,
+  "elapsed_seconds": 31.89,
+  "sse_done": false,
+  "answer_received": false,
+  "refused": null,
+  "reason": null,
+  "source_count": 0,
+  "citation_count": 0,
+  "citations_resolve_to_returned_text": true,
+  "source_sections": [],
+  "error_detail": "The answer service is temporarily unavailable.",
+  "superseded_by": "2026-10-25 local topic-scope, bounded retry, and section-specific currentness fixes in scripts/ask.py"
+}

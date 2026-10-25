@@ -1,0 +1,44 @@
+{
+  "test": "Phase 8 site/API integration smoke",
+  "http_status": 200,
+  "content_type": "text/event-stream; charset=utf-8",
+  "sse_done": true,
+  "answer_received": true,
+  "refused": false,
+  "refusal_reason": null,
+  "question_sha256": "0662c0b4b4e1fb096aa3100f9363225dd512193ead5152192696494ce0c3c79c",
+  "source_count": 8,
+  "citation_count": 11,
+  "citations_resolve_to_returned_text": true,
+  "static_site": {
+    "home_http_status": 200,
+    "contacts_http_status": 200,
+    "stylesheet_http_status": 200,
+    "app_js_http_status": 200,
+    "cors_preflight_status": 200,
+    "cors_allow_origin": "http://localhost:3000"
+  },
+  "syntax_checks": {
+    "javascript_node_check": "passed",
+    "html_parser": "passed"
+  },
+  "live_answer_api": {
+    "http_status": 200,
+    "sse_done": true,
+    "citation_render_check": "all 11 citation IDs map to returned records with section text",
+    "source_count": 8,
+    "citation_count": 11
+  },
+  "manual_checks": {
+    "older_android_font_and_layout": "not run; physical device unavailable",
+    "slow_mobile_network": "not run under network throttling"
+  },
+  "index_fingerprint": "9960e99fd1438c8856ee48b664cc199e6a19d1dd5ce92bdbfa1b41e201398864",
+  "answer_model": "gemini-3.8-flash",
+  "embedding_model": "gemini-embedding-001",
+  "browser_ui_rendering": "not visually exercised; no browser automation or physical Android device is available in this environment",
+  "cors_actual_response": {
+    "status": 200,
+    "allow_origin": "http://localhost:3000"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "test": "updated local-scope full /ask smoke",
+  "question_sha256": "ec1a39e592f6c07610b3068e01c4d42c7e2a2a0d8957d369b12d24d4ae8669af",
+  "http_status": 200,
+  "content_type": "text/event-stream; charset=utf-8",
+  "elapsed_seconds": 5.26,
+  "sse_done": true,
+  "answer_received": true,
+  "refused": true,
+  "reason": "corpus_update_required",
+  "source_count": 2,
+  "citation_count": 0,
+  "citations_resolve_to_source_text": true,
+  "source_sections": [
+    {
+      "id": "ch02_shop_and_office_employees_regulations_s6",
+      "section_number": "6",
+      "source_file": "ch02_shop_and_office_employees_regulations.pdf"
+    },
+    {
+      "id": "ch02_shop_and_office_employees_regulations_s2",
+      "section_number": "2",
+      "source_file": "ch02_shop_and_office_employees_regulations.pdf"
+    }
+  ],
+  "error_detail": null,
+  "superseded_by": "2026-10-25 local topic-scope, bounded retry, and section-specific currentness fixes in scripts/ask.py"
+}

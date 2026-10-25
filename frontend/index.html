@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f3ee">
+  <meta name="description" content="Sri Lankan labour-law information with links to the source sections.">
+  <title>Nithi Sahaya — Labour rights, made clearer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Nithi Sahaya home">
+      <span class="brand-mark" aria-hidden="true">නී</span>
+      <span><strong>Nithi Sahaya</strong><small>ශ්‍රම නීති සහාය</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="index.html" aria-current="page">Ask a question</a>
+      <a class="nav-link" href="contacts.html">Get help</a>
+    </nav>
+    <span class="status-pill"><i></i> Sri Lanka</span>
+  </header>
+
+  <main class="layout">
+    <section class="conversation" aria-labelledby="page-title">
+      <div class="intro">
+        <p class="eyebrow">LABOUR LAW, IN PLAIN LANGUAGE</p>
+        <h1 id="page-title">Know your rights.<br><em>Take your next step.</em></h1>
+        <p class="intro-copy">Ask about work, wages, leave, dismissal, benefits, or workplace safety. Answers link back to the source sections.</p>
+      </div>
+
+      <div class="legal-notice" role="note">
+        <span class="notice-icon" aria-hidden="true">i</span>
+        <span><strong>Legal information, not legal advice.</strong> AI answers can be wrong or incomplete and may miss a later Act, amendment, or Gazette notice. Check current law with an official source.</span>
+      </div>
+
+      <div id="messages" class="messages" aria-live="polite" aria-label="Conversation">
+        <article class="welcome-card">
+          <div class="assistant-avatar" aria-hidden="true">නී</div>
+          <div>
+            <p class="message-kicker">NITHI SAHAYA</p>
+            <h2>What would you like to know?</h2>
+            <p>Choose a question to begin, or write your own below.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="starter-area" id="starter-area">
+        <p class="section-label">START WITH A COMMON QUESTION</p>
+        <div class="starter-grid">
+          <button class="starter-card" data-question="My employer wants to retire me at 55. What can I do?">
+            <span class="starter-icon">↗</span><span><small>RETIREMENT</small><strong>Can I be retired at 55?</strong></span>
+          </button>
+          <button class="starter-card" data-question="How is overtime pay calculated under Sri Lankan labour law?">
+            <span class="starter-icon">◷</span><span><small>WAGES &amp; HOURS</small><strong>How is overtime pay calculated?</strong></span>
+          </button>
+          <button class="starter-card" data-question="How do I complain about unpaid wages?">
+            <span class="starter-icon">＋</span><span><small>GETTING HELP</small><strong>What can I do about unpaid wages?</strong></span>
+          </button>
+        </div>
+      </div>
+
+      <form id="ask-form" class="composer">
+        <label class="sr-only" for="question">Your labour-law question</label>
+        <textarea id="question" name="question" rows="2" maxlength="4000" placeholder="Tell us what happened at work…" required></textarea>
+        <div class="composer-bottom">
+          <div class="language-control">
+            <label for="language">Answer in</label>
+            <select id="language" name="language">
+              <option value="English">English</option>
+              <option value="Sinhala">සිංහල</option>
+              <option value="Tamil">தமிழ்</option>
+            </select>
+          </div>
+          <div class="composer-actions">
+            <span id="char-count" class="char-count">0 / 4000</span>
+            <button id="send-button" class="send-button" type="submit"><span>Ask</span><span aria-hidden="true">↑</span></button>
+          </div>
+        </div>
+      </form>
+      <p class="privacy-note"><span aria-hidden="true">⌑</span> Questions are not saved by this page. Avoid sharing names or other identifying details.</p>
+    </section>
+
+    <aside class="side-panel" aria-label="About this service">
+      <section class="panel-card coverage-card">
+        <div class="panel-orbit" aria-hidden="true"><span>§</span></div>
+        <p class="eyebrow">A CLEARER START</p>
+        <h2>Understand the rule.<br>Find the source.</h2>
+        <p>Explore answers grounded in Sri Lankan labour-law documents, with citations you can open and read.</p>
+        <a class="text-link" href="contacts.html">Find official help <span aria-hidden="true">→</span></a>
+      </section>
+      <section class="panel-card scope-card">
+        <p class="section-label">GOOD QUESTIONS TO ASK</p>
+        <ul class="topic-list">
+          <li><span>01</span> Pay, deductions &amp; overtime</li>
+          <li><span>02</span> Leave &amp; maternity benefits</li>
+          <li><span>03</span> Dismissal &amp; termination</li>
+          <li><span>04</span> EPF, ETF &amp; gratuity</li>
+          <li><span>05</span> Safety &amp; labour complaints</li>
+        </ul>
+      </section>
+      <section class="panel-card help-card">
+        <span class="help-mark" aria-hidden="true">↗</span>
+        <div><strong>Need someone to speak to?</strong><p>Find a Labour Office, Legal Aid, or Labour Tribunal.</p><a href="contacts.html">Browse contacts <span aria-hidden="true">→</span></a></div>
+      </section>
+      <p class="version-note">A pilot information service · Sources may not reflect recent legal changes.</p>
+    </aside>
+  </main>
+
+  <footer><span>© Nithi Sahaya</span><span>Legal information, not legal advice.</span><a href="contacts.html">Official contacts</a></footer>
+</body>
+</html>

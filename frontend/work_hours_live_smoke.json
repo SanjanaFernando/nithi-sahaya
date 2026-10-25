@@ -1,0 +1,15 @@
+{
+  "test": "section-aware work-hours answer smoke",
+  "question_sha256": "ec1a39e592f6c07610b3068e01c4d42c7e2a2a0d8957d369b12d24d4ae8669af",
+  "http_status": 503,
+  "elapsed_seconds": 30.95,
+  "sse_done": false,
+  "answer_received": false,
+  "refused": null,
+  "reason": null,
+  "source_count": 0,
+  "citation_count": 0,
+  "citations_resolve_to_returned_text": true,
+  "source_sections": [],
+  "error_detail": "The answer service is temporarily unavailable."
+}
