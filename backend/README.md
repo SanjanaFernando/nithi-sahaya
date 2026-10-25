@@ -4,7 +4,7 @@ Run from the project root after installing `requirements.txt` and configuring
 `.env`:
 
 ```powershell
-python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --no-access-log
 ```
 
 The API loads the retrieval engine on the first `/ask` request and reuses it.
@@ -18,8 +18,9 @@ streamed.
 Set `CORS_ORIGINS` to a comma-separated list of trusted frontend origins. Rate
 limits and cached answers are held in process memory, so production should run
 one worker or replace these with shared storage before scaling horizontally.
-The service does not log question text or store raw questions in its cache; it
-uses a hash as the cache key.
+The service does not log question text, client addresses, or raw questions in its cache; it
+uses a hash as the cache key. Run Uvicorn with `--no-access-log` to keep client
+addresses out of access logs. Internal failure logging records exception types only.
 
 Example request:
 

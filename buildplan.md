@@ -13,15 +13,14 @@ the legal content has been approved for public use.
 | 0 Setup | Done locally | The project environment and required Python packages are present. |
 | 1 Extract | Inventory passed; sparse-page dispositions recorded | On 25 October 2026, 44 source PDFs matched 44 text extracts by filename; the extraction report records 44 original-source SHA-256 hashes and zero duplicate groups. The 82 short-page warnings are dispositioned: 74 repaired using matching OCR copies, 8 verified as chapter contents/divider or running-header pages. OCR accuracy still needs proofreading before legal use. |
 | 2 Clean and split | Partial; warning and metadata reviews complete | 2,094 records are produced. All 158 fewer-than-10-word warnings have source-linked dispositions in `audit/short_section_review.json`; warnings remain visible in QC. The 31 missing Act identifiers are filled with title-page evidence in `audit/act_number_year_review.json`. `scope_notes` and `topics` are populated for all records with source-linked method and evidence in `audit/scope_topics_review.json`; Act-wide scope has not been inferred. |
-| 3 Legal checks | Not complete; current-law review underway | Targeted official-source checks found later amendments to employment-of-women, national-minimum-wage, budgetary-relief, factories, EPF, termination, industrial-disputes, and shop-and-office laws, plus updated subsidiary instruments. The corpus needs updates and a complete amendment/Gazette review. Two known deadline conflicts and lawyer-approved summaries remain open. |
+| 3 Legal checks | Research limitations documented; informal lawyer-friend review reported | Targeted official-source checks found later amendments to employment-of-women, national-minimum-wage, budgetary-relief, factories, EPF, termination, industrial-disputes, and shop-and-office laws, plus updated subsidiary instruments. The corpus needs updates and a complete amendment/Gazette review. Two known deadline conflicts retain conservative dual-citation handling; the owner reports an informal lawyer-friend review (see `audit/legal_review_gate_waiver.md`). |
 | 4 Search index | Built; retrieval review pending | The corrected index now contains 2,094 records and 2,094 normalized, 3,072-dimensional vectors using `gemini-embedding-001`. The checkpoint is complete. Representative semantic-search checks still need review. |
 | 5 Answer engine | Implemented, not fully evaluated | The answer engine exists, but it must be evaluated after Phase 4 completes. |
 | 6 Evaluation | Test set improved; full run pending | There are 42 questions, 10 in Sinhala, Tamil, or Singlish, each with a reference answer. The keyword baseline retrieved an expected section for 18 of 37 in-scope questions. Generated-answer, citation, and refusal evaluation must be rerun against the rebuilt index. |
 
 The Gemini free-tier daily and per-minute embedding quotas slowed the re-index.
 The complete checkpoint is saved, and the corrected index has now been built.
-Do not launch the public pilot until the completion gate below and Phase 3
-review are complete.
+The formal reviewer-signoff gate was removed by owner decision (see `audit/legal_review_gate_waiver.md`). Keep the documented source-currentness limitations and AI warning visible; Phase 5/6 evaluation remains a separate open item.
 
 Approach: **RAG (retrieval-augmented generation)**. You do not train a model. For each question, the system finds the most relevant sections from your PDFs and gives them to Gemini, which writes a plain-language answer with citations.
 
@@ -149,10 +148,10 @@ Done when: `sections/` has 44 JSON files, and a spot check of 10 sections per Ac
    - Labour tribunal order deadline: 6 months (Industrial Disputes Act s.31C) vs 4 months (Special Provisions Act 2003 s.5)
    - Commissioner's decision on an employer's termination application: 3 months (Termination Act s.2) vs 2 months (Special Provisions Act s.11)
 3. **Time-sensitive material.** Mark fines, allowances, wage rates and compensation formulas `status: verify`. The assistant must say "please confirm the current amount with the Labour Department" when quoting these.
-4. **Currency check by a lawyer:** is each Act in force, and what amended it after the edition date?
-5. **Plain-language summaries:** generate a one-paragraph summary per section with Gemini, then have your legal reviewer approve them. Store as `plain_summary`.
+4. **Currency inventory:** record official-source amendment, Gazette, commencement, and current-status findings, with uncertainty explicit.
+5. **Plain-language summaries:** generate and store one-paragraph summaries only if useful; keep generated wording linked to source provisions and preserve uncertainty wording.
 
-Done when: the reviewer has signed off on at least the Acts you will launch with first.
+Done when: source findings, conflicts, and uncertainty are recorded, and answer safeguards are applied. Formal reviewer sign-off is waived as a project gate; see `audit/legal_review_gate_waiver.md`.
 
 ---
 
@@ -235,7 +234,7 @@ Done when: you can run `python scripts/ask.py "Can my employer retire me at 55?"
 4. Write `eval/run.py` that asks all questions and prints: correct section retrieved? correct citation? hallucinated section? correct refusal?
 5. Re-run after every change to chunking, prompt or model.
 
-Target before public launch: every citation real, no invented sections, and lawyer approval of the answers.
+Target before public launch: every citation real, no invented sections, and supported-answer, refusal, and citation checks recorded. Formal reviewer approval is waived as a project gate.
 
 ---
 
@@ -259,8 +258,7 @@ evidence that this gate has passed.
    and source-page evidence for each in `audit/short_section_review.json`.
    These warnings remain in QC; the review records why they are legitimate
    short titles, contents entries, form fields, schedule rows, cross-references,
-   or complete short provisions. OCR accuracy proofreading remains part of
-   legal review.
+   or complete short provisions. OCR accuracy proofreading remains a source-quality check.
 3. **Done 25 October 2026:** Filled `act_number_year` for all 31 affected
    records from the two source title pages. No identifier was marked unknown:
    the Minimum Wages (Indian Labour) Ordinance is No. 27 of 1927, and the
@@ -288,7 +286,7 @@ evidence that this gate has passed.
    dispositions, 0 unreviewed warnings, 0 stale dispositions, and 0 required
    metadata gaps. `phase_2_closeout_pass` is true. The warnings remain visible
    for auditability; the two known deadline conflicts still require the Phase 3
-   legal review listed below.
+   source-currentness limitations listed below.
 
 **Pass condition:** every short-record warning has a disposition, every
 metadata gap is resolved or explicitly justified, and the validator has no
@@ -304,8 +302,7 @@ unreviewed errors.
    from official publications; the rest remain flagged for verification. The
    downloaded compiled copies do not consistently state an edition date. The
    targeted amendment findings and unresolved current-law checks are recorded
-   in `audit/current_law_review.csv` and `.json`; a human legal reviewer remains
-   outstanding.
+   in `audit/current_law_review.csv` and `.json`; the owner-reported informal lawyer-friend review is recorded in `audit/legal_review_gate_waiver.md`; formal sign-off is not a project gate.
 2. **Targeted source review recorded 25 October 2026; not a legal closeout:**
    `audit/current_law_review.csv` and `.json` contain entries for all 44 source
    instruments, a review cutoff date, findings and links from the official
@@ -317,23 +314,18 @@ unreviewed errors.
    2026 was certified 8 September 2026; the National Minimum Wage and
    Budgetary Relief Allowance amendment Acts are both No. 11/2025 and No.
    10/2025 respectively; further Act and Gazette findings are in the report.
-   Search non-results are not evidence that no amendment exists. A complete
-   amendment/repeal and subsidiary-Gazette history, commencement check, and
-   human legal review remain outstanding.
+   Search non-results are not evidence that no amendment exists. A complete amendment/repeal and subsidiary-Gazette history and commencement check remain incomplete as documented source-currentness limitations; formal reviewer sign-off is waived as a project gate.
 3. **Conflict register assembled 25 October 2026:**
    `audit/deadline_conflict_register.md` records both pairs of provisions with
    quoted deadline text, official source links, commencement date evidence,
    the four-to-six-month and two-to-three-month differences, and conservative
    handling proposals. Both shorter periods are recommended only as internal
    planning targets; the register does not resolve statutory interpretation.
-   Sri Lankan labour-law reviewer sign-off remains outstanding.
-4. **Reviewer packet prepared 25 October 2026; sign-off pending:** `audit/legal_review_packet.md` records the exact corpus/runtime hashes, review gaps, conflict decisions required, and approval fields. `audit/legal_reviewer_act_decisions.csv` provides a decision row for every instrument. The answer engine has no curated `plain_summary` corpus, and currently does not pass `scope_notes`/`scope_status` to generation; reviewer approval of implemented summaries/exclusions must wait until representative samples and scope handling are available. A qualified Sri Lankan labour-law reviewer must decide both conflicts, approve the launch subset and answer summaries/exclusions, and complete the decision sheet with credentials, date, rationale, and corpus/version acknowledged.
-5. **AI operational dispositions recorded 25 October 2026:** `audit/ai_operational_law_dispositions.csv` records a safe answer policy for all 44 instruments. Ten known-stale sources are refused until their corpus text is updated. Thirteen partial-history and 21 unconfirmed sources require citations and a warning that AI answers may be wrong/incomplete or may not reflect a later Act, amendment, or Gazette notice; the model must not claim those sources are confirmed current. The two conflicts use four-month and two-month internal escalation targets respectively, with both statutory periods cited and no claim that either provision legally overrides the other. These are AI safeguards, not legal verification or qualified-review sign-off.
+   The owner reports an informal lawyer-friend review; no formal sign-off is required as a project gate.
+4. **Formal reviewer gate removed by owner decision:** `audit/legal_review_gate_waiver.md` records the owner-reported informal review and the limits of the record. `audit/legal_review_packet.md` is retained as a historical packet, not an outstanding approval task. The answer engine generates responses dynamically; no curated `plain_summary` corpus exists. This review-gate change does not resolve corpus-currentness findings or certify a legal interpretation of the two deadline conflicts.
+5. **AI operational dispositions recorded 25 October 2026:** `audit/ai_operational_law_dispositions.csv` records a safe answer policy for all 44 instruments. Ten source instruments have known corpus updates; refuse the affected text, while allowing citations only to sections not changed by the identified update and retaining the current-law warning. Thirteen partial-history and 21 unconfirmed sources require citations and a warning that AI answers may be wrong/incomplete or may not reflect a later Act, amendment, or Gazette notice; the model must not claim those sources are confirmed current. The two conflicts use four-month and two-month internal escalation targets respectively, with both statutory periods cited and no claim that either provision legally overrides the other. These are AI safeguards; they do not establish that every source is current. Formal reviewer sign-off is not a project gate per the owner decision.
 
-**Pass condition:** every Act planned for the pilot has a dated legal check,
-the conflicts have a documented resolution, and a qualified reviewer has
-approved the launch subset and summaries. Automated checks cannot replace this
-human legal review.
+**Status:** Formal lawyer sign-off is waived as a project gate per owner decision and documented in `audit/legal_review_gate_waiver.md`. The source-currentness inventory and conflict handling remain explicitly qualified: 10 corpus updates, 13 partial histories, and 21 unconfirmed histories remain, and the conflicts use conservative dual-citation operational targets rather than a definitive interpretation. Preserve the AI freshness warning.
 
 ### 6A.3 Finish Phase 4 using the saved vectors
 
@@ -367,21 +359,19 @@ response.
 3. Fix failures in the corpus, retrieval, or prompt and rerun the affected
    cases. Keep a failure log so a passing aggregate cannot hide a serious
    legal or language error.
-4. Have the legal reviewer approve answer samples in all supported languages
-   and sign off on the final evaluation report.
+4. Record the owner-reported informal lawyer-friend review in `audit/legal_review_gate_waiver.md`; formal reviewer approval is not a required gate.
 5. **Phase 5 fixes applied; live retest blocked by Gemini quota (25 October 2026):** `scripts/ask.py` now requests structured JSON claims with source IDs, validates IDs against retrieved records, and renders citation markers only for valid IDs. It recognizes the tested Sinhala/Tamil/Singlish retirement phrases locally, fails closed on uncertain scope, and only blocks a stale source when it is among the top three and within 0.05 of the top retrieval score. Local path checks and Python compilation pass. The post-fix live attempt reached English generation but Gemini returned its free-tier daily `generate_content` quota error. A probe using stable `gemini-3.7-flash` reported the same daily-quota exhaustion, so the configured model was left unchanged. The remaining languages were not rerun after the fixes. Previous live outcomes remain in `audit/multilingual_answer_smoke.json`; post-fix details and index/model/code versions are in `audit/phase5_multilingual_answer_run.json`. **Pass condition not met:** rerun English, Sinhala, Tamil, Singlish, and unsupported queries after quota reset; verify generated answers, cited IDs, source text mappings, and safe refusals.
 
 6. **42-question retrieval pass run 25 October 2026 after correcting test data:** `eval/results/phase6_vector_retrieval_corrected.json` records all top-8 vector results, expected references, model/index fingerprints, and question hash. Expected section retrieval is 37/37 for in-scope questions. q05 had incorrect expected sections; q41/q42 had corrupted Sinhala/Tamil text; reference apostrophes were also repaired. The original test set is preserved at `eval/questions.pre_phase6_repair.json`; corrections and remaining failures are in `eval/results/phase6_failure_log.md`.
-7. **Generated-answer evaluation and legal approval remain open:** Gemini daily generation quota is exhausted, so reference-answer comparison, 5 refusal checks, and citation/source-text validation for generated answers were not run. No qualified reviewer sign-off is present. Rerun `eval/run.py --api` after quota reset, inspect every answer and citation, fix failures, and obtain the required human review.
+7. **Generated-answer evaluation remains open:** Gemini daily generation quota is exhausted, so reference-answer comparison, 5 refusal checks, and citation/source-text validation for generated answers were not run. Rerun `eval/run.py --api` after quota reset, inspect every answer and citation, and fix failures. Formal reviewer sign-off is not a project gate per the owner decision.
 
-**Pass condition: NOT MET.** Retrieval now finds the expected section for all 37 in-scope questions after test-data corrections, but generated answers, citations, and all five should-refuse decisions remain unevaluated because the Gemini generation quota is exhausted. Qualified legal reviewer approval is also outstanding. Close only after the API evaluation and human sign-off are recorded.
+**Scope/latency fix 25 October 2026:** after the web UI misclassified "Can my employer work me for 10 hours?" and "Can I work until age 80?", `scripts/ask.py` replaced the separate model-based scope call with local labour-topic checks for English, Singlish, Sinhala, and Tamil. Both examples now pass scope locally. The extra manual multi-minute retry loop was removed; Gemini requests now use a 30-second timeout, one SDK attempt by default, and low thinking for lower latency. A live work-hours request first returned in 5.26 seconds with a source-level stale refusal. Official Gazette 2473/25 changes regulation 3 only, so the currentness check is now section-specific: regulation 3 stays blocked, while regulations 2 and 6 (not changed by this Gazette) can be cited with the incomplete-history warning. A local mock check confirmed the correct branch and valid citations; see `frontend/quick_answer_smoke.json`. After that fix, a live work-hours request still hit an upstream `ServerError` and returned HTTP 503 after 30.95 seconds; no generated answer or citations were returned (`frontend/work_hours_live_smoke.json`). The age-80 query also returned HTTP 503 after 31.89 seconds under the previous two-attempt setting (`frontend/retirement_age_smoke.json`). The default is now one attempt. This avoids the false scope refusal and long nested retries, but a current-law answer for shop/office hours still needs the flagged source updated, and Gemini availability can vary. Restart Uvicorn to load the changes.
+
+**Pass condition: NOT MET.** Retrieval now finds the expected section for all 37 in-scope questions after test-data corrections, but generated answers, citations, and all five should-refuse decisions remain unevaluated because the Gemini generation quota is exhausted. Formal legal reviewer sign-off is waived as a project gate. Close this phase only after the API evaluation is run and its findings are recorded.
 
 ### Phase 6A completion gate
 
-Before Phase 7 is treated as the next project phase, save the updated Phase 1–6
-reports, the corrected-index metadata, the full Phase 6 results, the resolved
-legal-conflict register, and reviewer sign-off. Until then, Phases 1–6 remain
-open and public-pilot work is blocked.
+Before Phases 1-6 are marked complete, save updated reports, corrected-index metadata, full Phase 6 results, and the conflict register with cautious operational handling. Formal reviewer sign-off is waived by owner decision. Phase 5/6 remain open pending generated-answer evaluation.
 
 ---
 
@@ -395,7 +385,9 @@ A small FastAPI app that exposes `POST /ask` with `{question, language}` and str
 - log nothing that identifies the user; store no question text unless the user opts in
 - send the API key only from environment variables
 
-Done when: `curl` to `/ask` returns a streamed answer with citations.
+**Completed and live-tested 25 October 2026.** Added the missing `asyncio` import and type-only internal error logging. The endpoint loads the engine once, validates requests, limits per-IP requests, caches by a normalized-question hash without storing raw questions, and streams SSE metadata, answer text, and `[DONE]`. Use Uvicorn `--no-access-log` so client addresses are not logged. A live `curl -N` request returned HTTP 200; the SSE answer was not refused, contained 13 citation markers resolving to retrieved source records with section text, and ended with `[DONE]`. The result, source mappings, models, and index fingerprint are saved in `backend/phase7_live_smoke.json`. Local checks also passed for health, input validation, cache reuse, rate limiting, SSE framing, and citation metadata.
+
+**Phase 7 pass condition: MET** for the tested request and API behavior. This does not close the outstanding Phase 5/6 evaluation.
 
 ---
 
@@ -409,6 +401,10 @@ Mobile-first chat page (Next.js or plain React with Tailwind):
 5. A "Was this correct?" thumbs up/down button, with no personal data.
 6. A **Contacts page**: Labour Department district offices, Legal Aid Commission, labour tribunals (add from official sources; assign an owner to keep it current).
 7. Test Sinhala and Tamil fonts on an older Android phone and on slow connections.
+
+**Implemented 25 October 2026:** `frontend/` contains a responsive, dependency-free chat site and an official contacts page. The chat calls `POST /ask`, reads SSE metadata/text events, offers English/Sinhala/Tamil answers and starter questions, shows the legal-information warning, and maps citation markers only to returned source records. Selecting a citation opens the exact returned section text. Chat stays in page memory; feedback is acknowledged locally and is not collected. Contacts link to the Department of Labour district-office directory, Legal Aid Commission, and Ministry of Justice Labour Tribunal directory. The project owner is responsible for monthly link/contact checks; details are in `frontend/README.md`.
+
+**Checks 25 October 2026:** JavaScript syntax and HTML parsing passed; home, contacts, CSS, and JavaScript files return HTTP 200; API health and CORS checks return 200. A live `/ask` request returned HTTP 200 with SSE `[DONE]`; all 11 citation markers mapped to 8 returned source records with section text. Results and the corrected index fingerprint are in `frontend/phase8_smoke.json`. Responsive CSS and local font fallbacks are included. The chat was not visually exercised in a browser, and physical older-Android font/layout and slow-network checks remain open. **Phase 8 is implemented; the device/network checks are still needed before marking every checklist item complete.**
 
 Defer voice input and document upload until the text chat is solid.
 
@@ -451,7 +447,7 @@ Defer voice input and document upload until the text chat is solid.
 | 8 Website | 5 to 7 days |
 | 9 Deploy and pilot | 2 days plus pilot |
 
-About 4 to 6 weeks to a pilot, depending on how fast the legal review goes.
+About 4 to 6 weeks to a pilot, depending on corpus updates and evaluation results.
 
 ---
 
@@ -459,9 +455,9 @@ About 4 to 6 weeks to a pilot, depending on how fast the legal review goes.
 
 | Risk | What to do |
 |---|---|
-| Wrong or invented legal answers | Citation check, "not sure" fallback, lawyer review, test set |
+| Wrong or invented legal answers | Citation checks, "not sure" fallback, source freshness warning, test set |
 | Outdated law or amounts | `status: verify`, dated Gazette collection, quarterly updates |
-| Conflicting time limits between Acts | `conflicts_with` field and `audit/deadline_conflict_register.md`; legal interaction unresolved pending qualified reviewer decision. Use only the register's conservative internal target meanwhile; do not claim which provision controls. |
+| Conflicting time limits between Acts | `conflicts_with` field and `audit/deadline_conflict_register.md`; legal interaction remains uncertain; use the register's conservative internal target, cite both provisions, and do not claim which provision controls. Formal reviewer sign-off is waived as a project gate. |
 | Splitting errors in compiled text | Automatic numbering checks, manual spot checks per Act |
 | Free quota runs out | Cache, rate limits, CAPTCHA, FAQ answers prepared in advance |
 | Privacy | No accounts, no question logging, no document uploads on the free tier |

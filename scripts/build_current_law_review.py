@@ -33,7 +33,7 @@ FINDINGS = {
         ["https://documents.gov.lk/view/acts/2022/9/22-2022_E.pdf", "https://documents.gov.lk/view/acts/1999/12/56-1999_E.pdf", "https://www.documents.gov.lk/view/act/acts_2003.html"], "partial"
     ),
     "ch01_industrial_disputes_hearing_and_determination_of_proceeding.pdf": (
-        "The 2003 Act No. 13 is a special-provisions statute related to the Industrial Disputes Act. Later amendments, current applicability, and the two deadline conflicts in the corpus require legal review.",
+        "The 2003 Act No. 13 is a special-provisions statute related to the Industrial Disputes Act. Later amendments, current applicability, and the two deadline conflicts remain uncertain in this targeted source check. Owner-reported informal lawyer-friend review is recorded separately; formal sign-off is not a project gate.",
         ["https://www.documents.gov.lk/view/act/acts_2003.html"], "partial"
     ),
     "ch01_termination_of_employment_of_workmen.pdf": (
@@ -69,8 +69,8 @@ FINDINGS = {
         ["https://documents.gov.lk/view/act/2021/1/01-2021_E.pdf", "https://www.documents.gov.lk/view/act/acts_2018.html"], "partial"
     ),
     "ch02_shop_and_office_employees_regulations.pdf": (
-        "The Government Printer's 2026 Gazette index lists Gazette Extraordinary No. 2473/25 dated 30 January 2026 as Shop and Office Employees Regulations. Its effect on this corpus copy has not yet been reviewed clause by clause.",
-        ["https://www.documents.gov.lk/view/egz/egz_2026.html"], "corpus_update_required"
+        "Official Gazette Extraordinary No. 2473/25 dated 30 January 2026 amends regulation 3 only. The corpus does not include that revision. Regulations 2 and 6, which contain daily-hour and overtime provisions, are not changed by this Gazette; the broader amendment history remains incomplete.",
+        ["https://www.documents.gov.lk/view/egz/egz_2026.html", "https://documents.gov.lk/view/extra-gazettes/2026/1/2473-25_E.pdf"], "corpus_update_required"
     ),
     "ch02_wages_boards_ordinance.pdf": (
         "Official sources show a Wages Boards (Amendment) Bill in 2019, but this review did not confirm enactment of that Bill. Wage Board decisions/notices continue to be made by trade and date; the Government Printer index lists 2025–2026 notices. A current trade-specific notice review is required.",
@@ -206,6 +206,10 @@ IDENTIFIER_LINKS = {
     "ch01_termination_of_employment_of_workmen.pdf": "https://documents.gov.lk/view/extra-gazettes/2022/4/2277-53_E.pdf",
 }
 
+AFFECTED_SECTIONS = {
+    "ch02_shop_and_office_employees_regulations.pdf": ["3"],
+}
+
 
 def main() -> int:
     register = json.loads(REGISTER_JSON.read_text(encoding="utf-8"))
@@ -231,7 +235,8 @@ def main() -> int:
             "status": status,
             "official_sources_checked": [CATALOG, PARLIAMENT, GOV_PRINTING, *links],
             "amendment_and_gazette_findings": finding,
-            "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. Check the complete official Act and Gazette sequence, commencement orders, subsidiary legislation, and Sinhala text; human Sri Lankan labour-law review is required.",
+            "unresolved_uncertainty": "This targeted review does not establish an exhaustive amendment/repeal history or current legal status. The remaining source-currentness uncertainty is retained in the audit; owner-reported informal lawyer-friend review is recorded separately and formal sign-off is not a project gate.",
+            **({"affected_sections": AFFECTED_SECTIONS[source]} if source in AFFECTED_SECTIONS else {}),
         })
 
     register["sources"] = register["sources"]

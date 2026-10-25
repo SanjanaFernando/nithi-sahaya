@@ -103,7 +103,7 @@ def main() -> int:
             "official_source_link_type": "Department of Labour Labour Code catalogue page; individual PDF button is on this page",
             "source_date": "Edition/compilation date not stated in the downloaded copy; catalogue checked " + REVIEW_DATE,
             "amendments_checked": "No — amendment/current-law check remains pending under Phase 6A.2",
-            "reviewer": "AI-assisted source inventory; human legal reviewer pending",
+            "reviewer": "AI-assisted source inventory; no instrument-level reviewer attribution recorded",
             "review_date": REVIEW_DATE,
             "source_pdf_sha256": sha256(path),
             "corpus_record_count": len(ids_by_source.get(source, set())),

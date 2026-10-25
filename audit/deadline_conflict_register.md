@@ -1,7 +1,7 @@
 # Deadline conflict register
 
 **Review date:** 25 October 2026  
-**Status:** Source texts and commencement evidence checked; statutory interpretation remains for Sri Lankan labour-law counsel.
+**Status:** Source texts and commencement evidence checked; statutory interpretation remains uncertain in this record. Owner-reported informal lawyer-friend review is recorded in `legal_review_gate_waiver.md`; formal sign-off is not a project gate.
 
 ## 1. Labour Tribunal order: six months or four months?
 
@@ -15,7 +15,7 @@
 
 **Issue:** For an application under section 31B, the Industrial Disputes Act sets a six-month outer period. The later 2003 Act sets a four-month period for orders on labour tribunal applications under the Industrial Disputes and Termination Acts. The duties can be read cumulatively: an order within four months satisfies both periods. The practical difference concerns an order made after four months but by six months. This register does not decide the statutory construction or legal consequence for such an order.
 
-**Proposed handling:** Use four months as the conservative internal target for a tribunal order. In legal-information answers, cite both provisions and state that the 2003 Act gives the shorter period; do not tell users that the six-month text authorizes waiting beyond four months. Flag any application approaching four months for immediate legal review.
+**Proposed handling:** Use four months as the conservative internal target for a tribunal order. In legal-information answers, cite both provisions and state that the 2003 Act gives the shorter period; do not tell users that the six-month text authorizes waiting beyond four months. Flag any application approaching four months for advice from the appropriate authority or a qualified lawyer.
 
 **Applicable date / open point:** The 2003 Act has operated since 31 December 2003. The exact interaction and remedy for an order issued in the four-to-six-month interval remain unresolved here.
 
@@ -31,7 +31,7 @@
 
 **Issue:** Both provisions address the Commissioner's decision on an employer's section 2 approval application. A decision within two months satisfies both periods. A decision after two months but within three months meets the TEWA period but is later than the Act No. 13 of 2003 period. The provisions therefore create a difference in statutory ceilings; this register does not determine their hierarchy or the legal consequence of a late decision.
 
-**Proposed handling:** Use two months as the conservative internal target. In answers, cite both sections and explain the shorter period in Act No. 13 of 2003; do not present the three-month period as permission to wait past two months. Escalate a pending application approaching two months for legal review. Until a qualified Sri Lankan labour-law reviewer records a legal resolution, the operational deadline for this item is therefore **two months from receipt of the employer's application**. This is a precautionary service target, not a conclusion that section 11 legally overrides TEWA section 2(2)(c). For user-facing answers, state both quoted periods, identify the two-month target as interim, and direct parties to seek immediate advice if that point is near or has passed.
+**Proposed handling:** Use two months as the conservative internal target. In answers, cite both sections and explain the shorter period in Act No. 13 of 2003; do not present the three-month period as permission to wait past two months. Escalate a pending application approaching two months for advice from the appropriate authority or a qualified lawyer. The operational deadline for this item is therefore **two months from receipt of the employer's application**. This is a precautionary service target, not a conclusion that section 11 legally overrides TEWA section 2(2)(c). For user-facing answers, state both quoted periods, identify the two-month target as interim, and direct parties to seek immediate advice if that point is near or has passed.
 
 **Applicable date / open point:** Act No. 13 of 2003 has operated since 31 December 2003. The relationship between its two-month duty and TEWA's three-month language, including the consequence of a decision in the two-to-three-month interval, remains unresolved here.
 
@@ -39,4 +39,4 @@
 
 For assistant answers and internal escalation, apply the shorter period as the conservative target: **four months** for the tribunal order and **two months** for the TEWA Commissioner decision. These are operational targets only. The assistant must cite both provisions, state both periods, and say their legal interaction remains unresolved; it must not say that the later or shorter Act legally controls. Escalate before the shorter target expires. This operational policy does not decide the legal consequence of a decision in either interval.
 
-These are public-authority decision periods, not deadlines for a worker to file an application. A qualified Sri Lankan labour-law reviewer still needs to issue a legal interpretation before the register can be treated as legally resolved.
+These are public-authority decision periods, not deadlines for a worker to file an application. The owner-reported informal review does not establish a definitive statutory interpretation. The conservative operational targets, dual citations, and uncertainty wording remain in effect; formal reviewer sign-off is not a project gate.

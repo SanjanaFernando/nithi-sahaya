@@ -262,7 +262,7 @@ def main() -> int:
         "method": {
             "topics": "A reviewed source-file Act-domain tag plus up to four deterministic section tags from exact words in the heading or first 1,200 source-text characters; matching terms are recorded per record.",
             "scope_notes": "Exact scope clauses are quoted only when explicit applicability/exemption wording occurs. Headings such as 'Application of this Act' and procedural phrases such as 'application for a licence' do not count alone as coverage. Otherwise the note states scope is absent or unclear in that section and points to Act application/interpretation provisions; no Act-wide coverage is inferred.",
-            "legal_review": "These annotations describe source text and still require the legal review gate before public answers are relied on.",
+            "legal_review": "These annotations describe source text, not current-law conclusions. Owner reports an informal lawyer-friend review; formal sign-off is waived as a project gate. Keep the AI/current-law warning visible.",
         },
         "records": audit_items,
     }

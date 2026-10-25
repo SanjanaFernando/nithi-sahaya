@@ -1,0 +1,139 @@
+{
+  "test": "live curl POST /ask SSE",
+  "http_status": 200,
+  "content_type": "text/event-stream",
+  "done_event": true,
+  "refused": false,
+  "reason": null,
+  "query": "What is the minimum retirement age for a worker in Sri Lanka?",
+  "language": "English",
+  "answer": "A. Simple answer\nThe minimum retirement age in Sri Lanka is 60 years for a worker who was under the age of 52 when the Act came into force or who was recruited after that date. [CITE:ch00_minimum_retirement_age_of_workers_s2]\nFor a worker who was aged 52 or older on the date the Act came into operation, the minimum retirement age is set according to Schedule I of the Act. [CITE:ch00_minimum_retirement_age_of_workers_s2]\n\nB. Legal basis\nUnder the Minimum Retirement Age of Workers Act, No. 28 of 2021, an employer employing 15 or more workers is prohibited from retiring any worker before they reach the minimum retirement age, regardless of any contrary contract of service, collective agreement, or other written law. [CITE:ch00_minimum_retirement_age_of_workers_s1] [CITE:ch00_minimum_retirement_age_of_workers_s2] [CITE:ch00_minimum_retirement_age_of_workers_s3]\nThe restriction on retiring workers before the minimum retirement age does not apply to employers who have employed an average of 15 or fewer workers during the 12-month period prior to retirement. [CITE:ch00_minimum_retirement_age_of_workers_s3]\nThe Act explicitly excludes workers listed in Schedule II, such as public sector workers, statutory body employees, fixed-term or casual contract workers, seasonal workers, part-time workers, probationary workers, apprentices or trainees, and domestic workers. [CITE:ch00_minimum_retirement_age_of_workers_s3] [CITE:ch00_minimum_retirement_age_of_workers_sschedule_ii]\nAn employer may only prematurely retire a worker on specific statutory grounds: permanent incapacitation certified by a registered medical practitioner, termination following a disciplinary inquiry that has not been revised by law, closure or destruction of the establishment due to natural causes, or with prior written approval from the Commissioner-General under the Termination of Employment of Workmen (Special Provisions) Act. [CITE:ch00_minimum_retirement_age_of_workers_s3]\nA worker may also choose voluntarily to leave their employment prior to reaching the minimum retirement age. [CITE:ch00_minimum_retirement_age_of_workers_s3]\n\nC. What to do next\nCheck your employment contract and employer records to verify whether your employer employs 15 or more workers and whether your position falls under any excluded category in Schedule II. [CITE:ch00_minimum_retirement_age_of_workers_s3] [CITE:ch00_minimum_retirement_age_of_workers_sschedule_ii]\nIf facing premature retirement contrary to the Act, a complaint may be made to the Commissioner-General of Labour; for serious disputes, consult a qualified lawyer or the Legal Aid Commission, as this summary is legal information and not legal advice. [CITE:ch00_minimum_retirement_age_of_workers_s3]\n\nThis AI-generated answer may be wrong or incomplete and may not reflect a later Act, amendment, or Gazette notice. Please check with the Department of Labour or a qualified lawyer.",
+  "streamed_text_chunks": 12,
+  "citation_ids": [
+    "ch00_minimum_retirement_age_of_workers_s2",
+    "ch00_minimum_retirement_age_of_workers_s2",
+    "ch00_minimum_retirement_age_of_workers_s1",
+    "ch00_minimum_retirement_age_of_workers_s2",
+    "ch00_minimum_retirement_age_of_workers_s3",
+    "ch00_minimum_retirement_age_of_workers_s3",
+    "ch00_minimum_retirement_age_of_workers_s3",
+    "ch00_minimum_retirement_age_of_workers_sschedule_ii",
+    "ch00_minimum_retirement_age_of_workers_s3",
+    "ch00_minimum_retirement_age_of_workers_s3",
+    "ch00_minimum_retirement_age_of_workers_s3",
+    "ch00_minimum_retirement_age_of_workers_sschedule_ii",
+    "ch00_minimum_retirement_age_of_workers_s3"
+  ],
+  "citations_resolve_to_returned_source_text": true,
+  "citation_source_mappings": [
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s2",
+      "act_name": "Minimum Retirement",
+      "section_number": "2",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "232cb7cb2b63ecbfb7dcde6ca3b1768f113c0356ed2b4078296f804a907ca498"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s2",
+      "act_name": "Minimum Retirement",
+      "section_number": "2",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "232cb7cb2b63ecbfb7dcde6ca3b1768f113c0356ed2b4078296f804a907ca498"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s1",
+      "act_name": "Minimum Retirement",
+      "section_number": "1",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "aa1f0f2ac05093a97e24adf1cdae74c9ffac8fd9868d379f96652d87bb319ac1"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s2",
+      "act_name": "Minimum Retirement",
+      "section_number": "2",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "232cb7cb2b63ecbfb7dcde6ca3b1768f113c0356ed2b4078296f804a907ca498"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s3",
+      "act_name": "Minimum Retirement",
+      "section_number": "3",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "4e0d59f4aafb5c6a3116d32d5e4248111060465958e1724e9201bf0b01fb0a8e"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s3",
+      "act_name": "Minimum Retirement",
+      "section_number": "3",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "4e0d59f4aafb5c6a3116d32d5e4248111060465958e1724e9201bf0b01fb0a8e"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s3",
+      "act_name": "Minimum Retirement",
+      "section_number": "3",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "4e0d59f4aafb5c6a3116d32d5e4248111060465958e1724e9201bf0b01fb0a8e"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_sschedule_ii",
+      "act_name": "Minimum Retirement",
+      "section_number": "SCHEDULE II",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 15,
+      "section_text_sha256": "d2a1714e1f0ea71b1723c34a82f6f3880ef16610b08892fa74d6819f40d027c5"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s3",
+      "act_name": "Minimum Retirement",
+      "section_number": "3",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "4e0d59f4aafb5c6a3116d32d5e4248111060465958e1724e9201bf0b01fb0a8e"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s3",
+      "act_name": "Minimum Retirement",
+      "section_number": "3",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "4e0d59f4aafb5c6a3116d32d5e4248111060465958e1724e9201bf0b01fb0a8e"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s3",
+      "act_name": "Minimum Retirement",
+      "section_number": "3",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "4e0d59f4aafb5c6a3116d32d5e4248111060465958e1724e9201bf0b01fb0a8e"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_sschedule_ii",
+      "act_name": "Minimum Retirement",
+      "section_number": "SCHEDULE II",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 15,
+      "section_text_sha256": "d2a1714e1f0ea71b1723c34a82f6f3880ef16610b08892fa74d6819f40d027c5"
+    },
+    {
+      "id": "ch00_minimum_retirement_age_of_workers_s3",
+      "act_name": "Minimum Retirement",
+      "section_number": "3",
+      "source_file": "ch00_minimum_retirement_age_of_workers.pdf",
+      "source_page": 2,
+      "section_text_sha256": "4e0d59f4aafb5c6a3116d32d5e4248111060465958e1724e9201bf0b01fb0a8e"
+    }
+  ],
+  "source_count": 8,
+  "answer_model": "gemini-3.8-flash",
+  "embedding_model": "gemini-embedding-001",
+  "index_fingerprint": "9960e99fd1438c8856ee48b664cc199e6a19d1dd5ce92bdbfa1b41e201398864",
+  "corrected_prompt_status_label_check": "passed"
+}

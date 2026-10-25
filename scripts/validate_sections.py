@@ -1,8 +1,6 @@
 """Run Phase 3 quality checks over the generated section records.
 
-The report is intentionally conservative: warnings are surfaced for legal
-review rather than silently corrected. Known cross-document conflicts are
-linked with ``conflict_status: lawyer_review_required``.
+The report is intentionally conservative: warnings are surfaced for source-quality follow-up rather than silently corrected. Known cross-document conflicts are linked with conservative operational cautions; formal reviewer sign-off is not a project gate.
 """
 
 from __future__ import annotations
@@ -36,7 +34,7 @@ def add_conflict(records: list[dict], ids: list[str], description: str) -> None:
             for other in ids:
                 if other != record["id"] and other not in record["conflicts_with"]:
                     record["conflicts_with"].append(other)
-            record["conflict_status"] = "lawyer_review_required"
+            record["conflict_status"] = "operational_caution"
             notes = record.setdefault("conflict_notes", [])
             if description not in notes:
                 notes.append(description)
@@ -111,22 +109,22 @@ def main() -> int:
             if missing:
                 metadata_gaps.append({"id": record["id"], "field": field})
 
-    # These are intentionally unresolved links; a lawyer must determine which
-    # rule controls for the user's facts and the applicable edition/amendments.
+    # These cross-document links preserve the conflict and operational caution;
+    # the validator does not decide which rule controls for a user's facts.
     conflicts = [
         (
             [
                 "ch01_industrial_disputes_act_s31c",
                 "ch01_industrial_disputes_hearing_and_determination_of_proceeding_s5",
             ],
-            "Labour tribunal deadline appears as six months versus four months in the compiled sources.",
+            "Labour tribunal deadline appears as six months versus four months in the compiled sources; cite both and retain the conservative four-month operational target.",
         ),
         (
             [
                 "ch01_termination_of_employment_of_workmen_s2",
                 "ch01_industrial_disputes_hearing_and_determination_of_proceeding_s11",
             ],
-            "Commissioner's decision deadline appears as three months versus two months in the compiled sources.",
+            "Commissioner's decision deadline appears as three months versus two months in the compiled sources; cite both and retain the conservative two-month operational target.",
         ),
     ]
     for ids, description in conflicts:
@@ -153,15 +151,16 @@ def main() -> int:
         "phase_2_closeout_pass": not unreviewed_warnings and not stale_dispositions and not metadata_gaps,
         "warnings": warnings,
         "known_conflicts": [
-            {"record_ids": ids, "description": description, "status": "lawyer_review_required"}
+            {"record_ids": ids, "description": description, "status": "operational_caution"}
             for ids, description in conflicts
         ],
         "all_records_status": Counter(record.get("status") for record in records),
-        "manual_review_required": True,
+        "manual_quality_checks_advisable": True,
+        "formal_legal_reviewer_gate": "waived_by_owner; see audit/legal_review_gate_waiver.md",
         "manual_review_notes": [
             "Confirm section boundaries and OCR against the source PDFs.",
             "Confirm each Act is in force and capture post-edition amendments.",
-            "Approve plain-language summaries before using them in answers.",
+            "Keep the AI/current-law warning visible; formal reviewer sign-off is waived by owner decision.",
             "Review all fines, rates, allowances, and compensation formulas as time-sensitive.",
         ],
     }
@@ -171,8 +170,8 @@ def main() -> int:
     print(f"Reviewed warnings: {len(warnings) - len(unreviewed_warnings):,}; unreviewed: {len(unreviewed_warnings):,}")
     print(f"Required metadata gaps: {len(metadata_gaps):,}")
     print(f"Phase 2 closeout pass: {'yes' if report['phase_2_closeout_pass'] else 'no'}")
-    print(f"Known conflicts linked for legal review: {len(conflicts)}")
-    print("Manual legal review required: yes")
+    print(f"Known conflicts linked with operational cautions: {len(conflicts)}")
+    print("Formal legal reviewer gate: waived by owner decision")
     return 0
 
 

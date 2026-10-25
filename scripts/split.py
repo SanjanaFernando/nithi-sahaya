@@ -6,7 +6,7 @@ Usage:
 
 This is an automated first pass. The output intentionally uses ``status:
 "verify"`` because section boundaries, amendments, and legal metadata still
-need human/legal review in Phase 3.
+remain marked for source-quality and currentness checks in Phase 3; formal reviewer sign-off is waived by owner decision.
 """
 
 from __future__ import annotations

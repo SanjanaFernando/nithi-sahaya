@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import asyncio
 import hashlib
 import json
+import logging
 import os
 import threading
 import time
@@ -21,6 +23,7 @@ from dotenv import load_dotenv
 from scripts.ask import AnswerEngine
 
 load_dotenv()
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -128,6 +131,14 @@ async def ask(payload: AskRequest, request: FastAPIRequest) -> StreamingResponse
             result = await asyncio.to_thread(lambda: get_engine().ask(payload.question, payload.language, k))
         except Exception as exc:
             # Keep internal exception details out of the response and avoid logging user text.
+            cause = exc.__cause__
+            logger.error(
+                "Answer service failure (type=%s, stage=%s, status=%s, cause_type=%s)",
+                type(exc).__name__,
+                getattr(exc, "stage", "unknown"),
+                getattr(exc, "code", None) or getattr(exc, "status", None) or "unknown",
+                type(cause).__name__ if cause else "none",
+            )
             raise HTTPException(status_code=503, detail="The answer service is temporarily unavailable.") from exc
         with cache_lock:
             if len(cache) >= CACHE_MAX:
