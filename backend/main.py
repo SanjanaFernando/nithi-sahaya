@@ -133,11 +133,12 @@ async def ask(payload: AskRequest, request: FastAPIRequest) -> StreamingResponse
             # Keep internal exception details out of the response and avoid logging user text.
             cause = exc.__cause__
             logger.error(
-                "Answer service failure (type=%s, stage=%s, status=%s, cause_type=%s)",
+                "Answer service failure (type=%s, stage=%s, status=%s, cause_type=%s, upstream=%s)",
                 type(exc).__name__,
                 getattr(exc, "stage", "unknown"),
                 getattr(exc, "code", None) or getattr(exc, "status", None) or "unknown",
                 type(cause).__name__ if cause else "none",
+                getattr(exc, "detail", "") or "unavailable",
             )
             raise HTTPException(status_code=503, detail="The answer service is temporarily unavailable.") from exc
         with cache_lock:

@@ -15,8 +15,7 @@ Start the API in one PowerShell terminal from the repository root:
 Start the static site in another terminal:
 
 ```powershell
-Set-Location frontend
-python -m http.server 3000 --bind 127.0.0.1
+python -m http.server 3000 --bind 127.0.0.1 --directory frontend
 ```
 
 Open `http://localhost:3000`, which matches the default CORS origin in `.env.example`. If you use a different hostname or port, add that exact origin to `CORS_ORIGINS`. Never put the Gemini API key in frontend files. For hosting, set the `data-api-base` attribute on the root `<html>` element to the HTTPS API URL and configure the backend's CORS allowlist to the hosted site origin.
@@ -32,7 +31,7 @@ responsible for checking them monthly.
   receives a streamed response format but not token-by-token Gemini generation.
 - Common labour questions use a local scope check and then need a retrieval
   embedding call plus answer generation. Gemini thinking defaults to `low` for
-  everyday questions and HTTP timeout to 30 seconds per request, with no SDK
+  everyday questions and HTTP timeout to 120 seconds per request, with no SDK
   retry by default; users can retry after a transient error. Remote service
   latency can still vary. Repeated identical questions may use the server's
   answer cache.

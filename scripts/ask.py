@@ -53,10 +53,14 @@ class SearchResult:
 class GeminiRequestFailure(RuntimeError):
     """A Gemini API failure annotated with a safe operation label."""
 
-    def __init__(self, stage: str, status: int | None = None) -> None:
+    def __init__(self, stage: str, status: int | None = None, detail: str = "") -> None:
         super().__init__(f"Gemini request failed during {stage}")
         self.stage = stage
         self.code = status
+        # Keep a short upstream diagnostic for server logs; never expose it to API callers.
+        api_key = os.getenv("GEMINI_API_KEY", "")
+        safe_detail = str(detail).replace(api_key, "[redacted]") if api_key else str(detail)
+        self.detail = " ".join(safe_detail.split())[:500]
 
 
 class AnswerEngine:
@@ -76,7 +80,7 @@ class AnswerEngine:
             item["source_file"]: item
             for item in review.get("sources", [])
         }
-        timeout_ms = max(1_000, int(os.getenv("GEMINI_HTTP_TIMEOUT_MS", "30000")))
+        timeout_ms = max(1_000, int(os.getenv("GEMINI_HTTP_TIMEOUT_MS", "120000")))
         retry_attempts = max(1, min(3, int(os.getenv("GEMINI_RETRY_ATTEMPTS", "1"))))
         self.client = genai.Client(
             api_key=os.environ["GEMINI_API_KEY"],
@@ -98,7 +102,7 @@ class AnswerEngine:
         try:
             response = self.client.models.embed_content(model=self.embedding_model, contents=[question])
         except Exception as exc:
-            raise GeminiRequestFailure("query_embedding", getattr(exc, "code", None)) from exc
+            raise GeminiRequestFailure("query_embedding", getattr(exc, "code", None), str(exc)) from exc
         query = np.asarray([response.embeddings[0].values], dtype="float32")
         faiss.normalize_L2(query)
         scores, positions = self.index.search(query, min(k, len(self.records)))
@@ -258,7 +262,7 @@ USER QUESTION:
                 raise RuntimeError(
                     "Gemini's daily generation quota is exhausted; retry after the quota resets."
                 ) from exc
-            raise GeminiRequestFailure("answer_generation", getattr(exc, "code", None)) from exc
+            raise GeminiRequestFailure("answer_generation", getattr(exc, "code", None), str(exc)) from exc
 
     @staticmethod
     def fallback(results: list[SearchResult]) -> dict:
