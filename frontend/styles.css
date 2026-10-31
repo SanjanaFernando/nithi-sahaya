@@ -23,8 +23,9 @@ button, textarea, select { font: inherit; }
 a { color: inherit; }
 .topbar { height: 76px; padding: 0 clamp(20px, 5vw, 76px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #DCE3EA; background: #FFFFFF; }
 .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; line-height: 1.1; }
-.brand-mark, .assistant-avatar { display: grid; place-items: center; color: #FFFFFF; background: var(--green-deep); font-weight: 700; }
-.brand-mark { width: 39px; height: 39px; border-radius: 13px 13px 13px 4px; font-size: 17px; }
+.brand-mark, .assistant-avatar { display: grid; place-items: center; background: transparent; }
+.brand-mark { width: 39px; height: 39px; }
+.brand-mark img, .assistant-avatar img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .brand strong { display: block; font-family: Georgia, serif; font-size: 18px; letter-spacing: -.3px; }
 .brand small { display: block; color: var(--muted); font-size: 10px; margin-top: 4px; }
 .topbar nav { display: flex; gap: clamp(18px, 3.3vw, 46px); align-items: center; }
@@ -45,7 +46,7 @@ a { color: inherit; }
 .messages { display: grid; gap: 16px; }
 .welcome-card, .assistant-message, .user-message { background: var(--white); border: 1px solid var(--line); border-radius: 15px; box-shadow: 0 7px 24px rgba(16,42,67,.045); }
 .welcome-card { padding: 22px; display: flex; align-items: flex-start; gap: 15px; }
-.assistant-avatar { width: 34px; height: 34px; flex: 0 0 34px; border-radius: 11px 11px 11px 3px; font-size: 14px; }
+.assistant-avatar { width: 34px; height: 34px; flex: 0 0 34px; }
 .welcome-card h2 { margin: 6px 0 5px; font: 500 21px Georgia, serif; }
 .welcome-card p:last-child { color: var(--muted); margin: 0; font-size: 12px; line-height: 1.5; }
 .starter-area { margin: 25px 0; }

@@ -135,7 +135,7 @@ function addAssistantMessage({ answer = "", records = [], web_sources = [], refu
   const avatar = document.createElement("span");
   avatar.className = "assistant-avatar";
   avatar.setAttribute("aria-hidden", "true");
-  avatar.textContent = "නී";
+  avatar.innerHTML = '<img src="compliant.png" alt="">';
   const name = document.createElement("div");
   const strong = document.createElement("strong");
   strong.textContent = "Lanka Labour AI";
@@ -237,7 +237,7 @@ async function ask(question, language, addUserBubble = true) {
   if (addUserBubble) appendUserMessage(question);
   const loading = document.createElement("article");
   loading.className = "assistant-message";
-  loading.innerHTML = '<div class="assistant-header"><span class="assistant-avatar" aria-hidden="true">නී</span><div><strong>Lanka Labour AI</strong><small>Searching local law and current sources…</small></div></div><span class="typing-indicator" aria-label="Loading"><i></i><i></i><i></i></span>';
+  loading.innerHTML = '<div class="assistant-header"><span class="assistant-avatar" aria-hidden="true"><img src="compliant.png" alt=""></span><div><strong>Lanka Labour AI</strong><small>Searching local law and current sources…</small></div></div><span class="typing-indicator" aria-label="Loading"><i></i><i></i><i></i></span>';
   messages.append(loading);
   const loadingMessage = loading.querySelector(".assistant-header small");
   const slowRequestTimer = window.setTimeout(() => {
