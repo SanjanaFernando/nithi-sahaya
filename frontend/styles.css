@@ -187,3 +187,37 @@ footer a { text-decoration: none; color: var(--green); }
 .status-pill i { background: #236B50; }
 .send-button:hover { background: #183B56; }
 @media (max-width: 600px) { .status-pill { display: none; } .intro h1 { font-size: clamp(38px, 11vw, 48px); } .composer textarea { font-size: 16px; } }
+
+/* Larger, more readable interface type */
+.brand strong { font-size: 20px; }
+.nav-link { font-size: 14px; }
+.status-pill { font-size: 12px; }
+.eyebrow, .section-label, .message-kicker { font-size: 11px; }
+.intro-copy { font-size: 16px; }
+.legal-notice, .contact-note { font-size: 13px; }
+.coverage-note { font-size: 12px; }
+.welcome-card p:last-child { font-size: 14px; }
+.starter-area .section-label, .scope-card .section-label, .contact-card .section-label { font-size: 10px; }
+.starter-card small { font-size: 10px; }
+.starter-card strong { font-size: 14px; }
+.composer textarea { font-size: 16px; }
+.language-control label, .language-control select, .char-count, .privacy-note { font-size: 12px; }
+.send-button { font-size: 13px; }
+.coverage-card p:not(.eyebrow), .coverage-card .text-link, .topic-list li, .help-card p { font-size: 13px; }
+.help-card strong { font-size: 16px; }
+.version-note, footer { font-size: 12px; }
+.user-message, .assistant-answer { font-size: 15px; }
+.loading-state { font-size: 13px; }
+.assistant-header strong { font-size: 17px; }
+.assistant-header small { font-size: 12px; }
+.citation-link, .source-toggle, .retry-button, .refusal-label, .feedback, .feedback-note, .web-source-link { font-size: 12px; }
+.source-card h4 { font-size: 13px; }
+.source-card .source-subtitle, .source-card blockquote { font-size: 12px; }
+.contacts-heading > p:last-child, .contact-card > p:not(.section-label) { font-size: 14px; }
+.primary-link, .secondary-link, .contact-details, .contact-owner { font-size: 12px; }
+@media (max-width: 600px) {
+  .nav-link { font-size: 12px; }
+  .legal-notice { font-size: 12px; }
+  .status-pill { font-size: 11px; }
+  .brand strong { font-size: 18px; }
+}
