@@ -138,7 +138,7 @@ function addAssistantMessage({ answer = "", records = [], web_sources = [], refu
   avatar.innerHTML = '<img src="compliant.png" alt="">';
   const name = document.createElement("div");
   const strong = document.createElement("strong");
-  strong.textContent = "Labour Laws";
+  strong.textContent = "SriLaw AI";
   const small = document.createElement("small");
   small.textContent = "AI-generated information · check current law";
   name.append(strong, small);
@@ -237,7 +237,7 @@ async function ask(question, language, addUserBubble = true) {
   if (addUserBubble) appendUserMessage(question);
   const loading = document.createElement("article");
   loading.className = "assistant-message";
-  loading.innerHTML = '<div class="assistant-header"><span class="assistant-avatar" aria-hidden="true"><img src="compliant.png" alt=""></span><div><strong>Labour Laws</strong><small>Searching local law and current sources…</small></div></div><div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span class="loading-copy">Finding relevant law and preparing your answer</span><span class="typing-indicator" aria-hidden="true"><i></i><i></i><i></i></span></div>';
+  loading.innerHTML = '<div class="assistant-header"><span class="assistant-avatar" aria-hidden="true"><img src="compliant.png" alt=""></span><div><strong>SriLaw AI</strong><small>Searching local law and current sources…</small></div></div><div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span class="loading-copy">Finding relevant law and preparing your answer</span><span class="typing-indicator" aria-hidden="true"><i></i><i></i><i></i></span></div>';
   messages.append(loading);
   const loadingMessage = loading.querySelector(".loading-copy");
   const slowRequestTimer = window.setTimeout(() => {
