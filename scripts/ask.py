@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import re
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -18,9 +20,11 @@ from google.genai import types
 
 EMERGENCY_TERMS = re.compile(r"\b(assault|arrest|abuse|self[- ]harm|suicide|violence)\b", re.IGNORECASE)
 CITATION = re.compile(r"\[CITE:([^\]]+)\]")
+WEB_CITATION = re.compile(r"\[WEB:([^\]]+)\]")
+TOKEN = re.compile(r"[a-z0-9]+|[\u0b80-\u0bff]+|[\u0c00-\u0d7f]+", re.IGNORECASE)
 LABOUR_INTENT = re.compile(
     r"\b(employer|employee|worker|work|workplace|job|employment|labour|labor|"
-    r"wage|salary|payroll|overtime|shift|hours|leave|maternity|epf|etf|"
+    r"wages?|salar(?:y|ies)|payroll|overtime|shift|hours|leave|maternity|epf|etf|"
     r"gratuity|dismiss\w*|terminat\w*|retir\w*|redundan\w*|union|factory|"
     r"workman|commissioner|pension|allowance|deduction|weda|wada|sewak\w*|"
     r"sevaka|vetan|wetan|padi|niwadu|sramaya)\b",
@@ -74,6 +78,16 @@ class AnswerEngine:
             raise RuntimeError("EMBED_MODEL and CHAT_MODEL must be set in .env")
         self.index = faiss.read_index(str(index_dir / "sections.faiss"))
         self.records = json.loads((index_dir / "records.json").read_text(encoding="utf-8"))
+        self.lexical_documents = [
+            Counter(self._tokens(" ".join(str(record.get(key, "")) for key in ("act_name", "section_number", "heading", "text"))))
+            for record in self.records
+        ]
+        self.average_document_length = (
+            sum(sum(document.values()) for document in self.lexical_documents) / max(len(self.lexical_documents), 1)
+        )
+        self.document_frequency: Counter[str] = Counter()
+        for document in self.lexical_documents:
+            self.document_frequency.update(document.keys())
         review_path = Path("audit/current_law_review.json")
         review = json.loads(review_path.read_text(encoding="utf-8")) if review_path.exists() else {}
         self.law_review = {
@@ -96,20 +110,71 @@ class AnswerEngine:
         )
         thinking_level = os.getenv("GEMINI_THINKING_LEVEL", "low").casefold()
         self.thinking_level = thinking_level if thinking_level in {"low", "medium", "high"} else "low"
+        self.google_search_enabled = os.getenv("GEMINI_GOOGLE_SEARCH", "true").casefold() not in {"0", "false", "no", "off"}
         self.min_score = float(os.getenv("MIN_RETRIEVAL_SCORE", "0.35"))
+
+    @staticmethod
+    def _tokens(text: str) -> list[str]:
+        return [token.casefold() for token in TOKEN.findall(text)]
+
+    def _lexical_scores(self, query: str) -> list[float]:
+        terms = self._tokens(query)
+        if not terms:
+            return [0.0] * len(self.records)
+        total_docs = len(self.records)
+        scores = []
+        for document in self.lexical_documents:
+            length = sum(document.values())
+            score = 0.0
+            for term in terms:
+                frequency = document.get(term, 0)
+                if not frequency:
+                    continue
+                df = self.document_frequency.get(term, 0)
+                inverse_frequency = math.log(1 + (total_docs - df + 0.5) / (df + 0.5))
+                normalization = frequency + 1.2 * (1 - 0.75 + 0.75 * length / max(self.average_document_length, 1))
+                score += inverse_frequency * frequency * 2.2 / normalization
+            scores.append(score)
+        return scores
 
     def retrieve(self, question: str, k: int = 8) -> list[SearchResult]:
         try:
-            response = self.client.models.embed_content(model=self.embedding_model, contents=[question])
+            retrieval_query = question
+            if re.search(r"\bETF\b", question, re.IGNORECASE) and not re.search(r"\bEPF\b", question, re.IGNORECASE):
+                retrieval_query += " Employees' Trust Fund Act"
+                if re.search(r"\b(age|claim|withdraw|benefit|retire)\w*\b", question, re.IGNORECASE):
+                    retrieval_query += " section 23 termination employment five years over sixty"
+            elif re.search(r"\bEPF\b", question, re.IGNORECASE) and not re.search(r"\bETF\b", question, re.IGNORECASE):
+                retrieval_query += " Employees' Provident Fund Act"
+            response = self.client.models.embed_content(model=self.embedding_model, contents=[retrieval_query])
         except Exception as exc:
             raise GeminiRequestFailure("query_embedding", getattr(exc, "code", None), str(exc)) from exc
         query = np.asarray([response.embeddings[0].values], dtype="float32")
         faiss.normalize_L2(query)
-        scores, positions = self.index.search(query, min(k, len(self.records)))
+        candidate_count = min(max(k * 3, k), len(self.records))
+        semantic_scores, semantic_positions = self.index.search(query, candidate_count)
+        lexical_scores = self._lexical_scores(retrieval_query)
+        lexical_positions = np.argsort(np.asarray(lexical_scores))[-candidate_count:][::-1]
+        max_lexical = max((lexical_scores[int(position)] for position in lexical_positions), default=0.0)
+        candidates: dict[int, tuple[float, float]] = {}
+        for score, position in zip(semantic_scores[0], semantic_positions[0]):
+            if int(position) >= 0:
+                candidates[int(position)] = (float(score), lexical_scores[int(position)])
+        for position in lexical_positions:
+            position = int(position)
+            semantic, _ = candidates.get(position, (0.0, 0.0))
+            candidates[position] = (semantic, lexical_scores[position])
+        ranked = sorted(
+            candidates.items(),
+            key=lambda item: 0.65 * item[1][0] + 0.35 * (item[1][1] / max_lexical if max_lexical else 0.0),
+            reverse=True,
+        )[:min(k, len(candidates))]
         return [
-            SearchResult(self.records[int(position)], float(score))
-            for score, position in zip(scores[0], positions[0])
-            if int(position) >= 0
+            SearchResult(
+                self.records[position],
+                0.65 * semantic + 0.35 * (lexical / max_lexical if max_lexical else 0.0),
+            )
+            for position, (semantic, lexical) in ranked
         ]
 
     @staticmethod
@@ -140,7 +205,7 @@ class AnswerEngine:
                 "that question reliably. Please contact the Department of Labour, the "
                 "Legal Aid Commission, or a qualified lawyer."
             ),
-            "sources": [r.record for r in results[:3]],
+            "sources": [],
             "refused": True, "reason": "low_retrieval_confidence",
         }
 
@@ -162,10 +227,17 @@ class AnswerEngine:
             ]))
         return "\n\n---\n\n".join(blocks)
 
-    def prompt(self, question: str, language: str, results: list[SearchResult], strict: bool = False) -> str:
-        citation_rule = "Return only the JSON object described below. Never invent record IDs."
+    def prompt(
+        self,
+        question: str,
+        language: str,
+        results: list[SearchResult],
+        strict: bool = False,
+        retrieval_low_confidence: bool = False,
+    ) -> str:
+        citation_rule = "Return only the JSON object described below. Never invent record IDs or web URLs."
         if strict:
-            citation_rule += " If any statement cannot be tied to a supplied record ID, omit it or refuse."
+            citation_rule += " If any statement cannot be tied to a supplied record ID or returned web URL, omit it or refuse."
         freshness = []
         for result in results:
             record = result.record
@@ -187,10 +259,20 @@ class AnswerEngine:
                     f"uncertainty: {check.get('unresolved_uncertainty', 'not recorded')}"
                 )
         freshness_context = "\n".join(freshness) or "No law-check metadata is available for these sources."
-        return f"""You are Nithi Sahaya, a Sri Lankan labour-law information assistant.
+        retrieval_note = (
+            "The local knowledge-base search did not find sufficiently relevant passages. "
+            "Do not cite or rely on unrelated local passages. Use Google Search only if it "
+            "finds relevant authoritative sources; otherwise refuse safely."
+            if retrieval_low_confidence else ""
+        )
+        return f"""You are Lanka Labour AI, a Sri Lankan labour-law information assistant.
 
-Answer using ONLY the source records below. Never invent law, section numbers,
-deadlines, amounts, coverage rules, or procedures.
+Use the retrieved source records and Google Search results together. Never invent
+law, section numbers, deadlines, amounts, coverage rules, or procedures. Treat the
+knowledge base as a record of the indexed legal text, and use Google Search to
+check for newer official Sri Lankan laws, amendments, regulations, and notices.
+Prefer official sources such as labourdept.gov.lk, documents.gov.lk,
+parliament.lk, etfb.lk, and cbsl.gov.lk for legal or fund information.
 The corpus QA status label (for example, "verify") is workflow metadata; it does
 not mean that an age, amount, rate, or deadline in the source text is marked for
 verification. Do not say a legal value is marked verify unless the source text
@@ -201,9 +283,25 @@ Say when the sources are insufficient. Mention relevant exclusions. Amounts and
 rates marked verify must be confirmed with the Department of Labour.
 This is legal information, not legal advice. Recommend a lawyer or Legal Aid
 Commission for serious matters.
-For every legal statement, return a separate object with its exact supporting
-record ID(s). Treat dated checks below as AI-assisted research, not proof of
-current law.
+For every legal statement, return a separate object and cite exact supporting
+knowledge-base record IDs and/or exact Google Search URLs returned by the tool.
+Treat dated checks below as AI-assisted research, not proof of current law.
+Keep Employees' Provident Fund (EPF) and Employees' Trust Fund (ETF) rules
+separate. Never transfer an age or withdrawal condition from one fund to the other.
+
+If a source below has status corpus_update_required or an unresolved currentness
+warning, still answer the labour-law question from retrieved text when it supports
+an answer. Do not refuse solely because a source may be outdated. Clearly say the
+answer is based on available source text and may not reflect later amendments,
+regulations, or Gazette notices. Do not describe that source as confirmed current
+law. Refuse only if the retrieved text does not support a reliable answer or
+another safety rule requires refusal.
+When search results are available, compare them with the retrieved sections.
+Never treat an unofficial page as authoritative. If an official web source
+conflicts with an older knowledge-base record, state the discrepancy, cite both
+sources, and explain which information appears newer. If no useful official web
+result is found, answer from the knowledge-base text with a clear currentness
+warning. Do not silently present an older record as current law.
 
 For the two known statutory deadline conflicts, do not claim that either law
 legally overrides the other. State both statutory periods and citations. The
@@ -214,17 +312,21 @@ Act No. 13 of 2003 s.11: two months). Explicitly label these as conservative
 operational targets pending legal interpretation, not settled legal deadlines.
 
 {citation_rule}
+{retrieval_note}
 
 Required JSON schema (no markdown fences):
 {{
   "refuse": false,
   "refusal_text": "",
-  "simple_answer": [{{"text": "one concise factual statement", "source_ids": ["exact_record_id"]}}],
-  "legal_basis": [{{"text": "one legal statement", "source_ids": ["exact_record_id"]}}],
-  "what_to_do_next": [{{"text": "one supported practical step", "source_ids": ["exact_record_id"]}}],
+  "simple_answer": [{{"text": "one concise factual statement", "source_ids": ["exact_record_id"], "web_urls": []}}],
+  "legal_basis": [{{"text": "one legal statement", "source_ids": ["exact_record_id"], "web_urls": []}}],
+  "what_to_do_next": [{{"text": "one supported practical step", "source_ids": ["exact_record_id"], "web_urls": []}}],
   "freshness_warning": "In {language}: say this AI-generated answer may be wrong or incomplete and may not reflect a later Act, amendment, or Gazette notice; advise checking with the Department of Labour or a qualified lawyer."
 }}
-Every non-empty statement item MUST cite one or more exact source IDs supplied below. If the records do not support a reliable answer, set refuse=true and provide a safe referral in refusal_text; leave statement arrays empty. Do not put legal claims in freshness_warning.
+Every non-empty statement item MUST cite one or more exact knowledge-base IDs
+or exact web URLs supplied by Google Search. If neither source supports a
+reliable answer, set refuse=true and provide a safe referral in refusal_text;
+leave statement arrays empty. Do not put legal claims in freshness_warning.
 
 AI-ASSISTED CURRENT-LAW CHECK NOTES (not a legal determination):
 {freshness_context}
@@ -236,22 +338,36 @@ USER QUESTION:
 """
 
     @staticmethod
-    def citation_valid(answer: str, results: list[SearchResult]) -> bool:
+    def citation_valid(answer: str, results: list[SearchResult], web_sources: list[dict] | None = None) -> bool:
         allowed = {result.record["id"] for result in results}
+        allowed_web = {item.get("url") for item in (web_sources or []) if isinstance(item.get("url"), str)}
         cited = CITATION.findall(answer)
-        return bool(cited) and all(item in allowed for item in cited)
+        cited_web = WEB_CITATION.findall(answer)
+        return bool(cited or cited_web) and all(item in allowed for item in cited) and all(item in allowed_web for item in cited_web)
 
-    def generate(self, prompt: str) -> str:
+    def generate(self, prompt: str, use_google_search: bool = False) -> tuple[str, list[dict]]:
         try:
+            config = types.GenerateContentConfig(
+                response_mime_type="application/json",
+                thinking_config=types.ThinkingConfig(thinking_level=self.thinking_level),
+                tools=[types.Tool(google_search=types.GoogleSearch())] if use_google_search else None,
+            )
             response = self.client.models.generate_content(
                 model=self.chat_model,
                 contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    thinking_config=types.ThinkingConfig(thinking_level=self.thinking_level),
-                ),
+                config=config,
             )
-            return response.text or ""
+            web_sources = []
+            candidates = getattr(response, "candidates", None) or []
+            metadata = getattr(candidates[0], "grounding_metadata", None) if candidates else None
+            for chunk in getattr(metadata, "grounding_chunks", None) or []:
+                web = getattr(chunk, "web", None)
+                uri = getattr(web, "uri", None) if web else None
+                if isinstance(uri, str) and uri.startswith(("https://", "http://")):
+                    item = {"url": uri, "title": getattr(web, "title", None) or uri}
+                    if item not in web_sources:
+                        web_sources.append(item)
+            return response.text or "", web_sources
         except Exception as exc:
             error_text = str(exc).casefold()
             daily_quota_exhausted = any(
@@ -262,6 +378,10 @@ USER QUESTION:
                 raise RuntimeError(
                     "Gemini's daily generation quota is exhausted; retry after the quota resets."
                 ) from exc
+            if use_google_search:
+                # If Search grounding is unavailable for this key or request, still
+                # provide the knowledge-base answer with its freshness warning.
+                return self.generate(prompt, use_google_search=False)
             raise GeminiRequestFailure("answer_generation", getattr(exc, "code", None), str(exc)) from exc
 
     @staticmethod
@@ -277,7 +397,7 @@ USER QUESTION:
         }
 
     @staticmethod
-    def render_structured_answer(raw: str, results: list[SearchResult]) -> str | None:
+    def render_structured_answer(raw: str, results: list[SearchResult], web_sources: list[dict] | None = None) -> str | None:
         """Validate model-provided source IDs and render resolvable citations."""
         try:
             data = json.loads(raw)
@@ -286,6 +406,7 @@ USER QUESTION:
         if not isinstance(data, dict) or data.get("refuse") is True:
             return None
         allowed = {result.record["id"] for result in results}
+        allowed_web = {item.get("url") for item in (web_sources or []) if isinstance(item.get("url"), str)}
         rendered = []
         for label, key in (("A. Simple answer", "simple_answer"), ("B. Legal basis", "legal_basis"), ("C. What to do next", "what_to_do_next")):
             statements = data.get(key)
@@ -297,11 +418,14 @@ USER QUESTION:
                     return None
                 text = item["text"].strip()
                 ids = item.get("source_ids")
-                if not text or not isinstance(ids, list) or not ids:
+                urls = item.get("web_urls", [])
+                if not text or not isinstance(ids, list) or not isinstance(urls, list) or not (ids or urls):
                     return None
                 if any(not isinstance(source_id, str) or source_id not in allowed for source_id in ids):
                     return None
-                markers = " ".join(f"[CITE:{source_id}]" for source_id in ids)
+                if any(not isinstance(url, str) or url not in allowed_web for url in urls):
+                    return None
+                markers = " ".join([*(f"[CITE:{source_id}]" for source_id in ids), *(f"[WEB:{url}]" for url in urls)])
                 lines.append(f"{text} {markers}")
             if lines:
                 rendered.append(label + "\n" + "\n".join(lines))
@@ -310,7 +434,7 @@ USER QUESTION:
             return None
         rendered.append(warning.strip())
         answer = "\n\n".join(rendered)
-        return answer if AnswerEngine.citation_valid(answer, results) else None
+        return answer if AnswerEngine.citation_valid(answer, results, web_sources) else None
 
     def ask(self, question: str, language: str = "English", k: int = 8) -> dict:
         if EMERGENCY_TERMS.search(question):
@@ -329,47 +453,41 @@ USER QUESTION:
                 "refused": True,
                 "reason": "scope_check_unavailable" if unavailable else "out_of_scope",
             }
-        results = self.retrieve(question, k)
-        if not results or results[0].score < self.min_score:
-            return self.low_confidence_response(results)
+        retrieved = self.retrieve(question, k)
+        retrieval_low_confidence = not retrieved or retrieved[0].score < self.min_score
+        if retrieval_low_confidence and not self.google_search_enabled:
+            return self.low_confidence_response(retrieved)
+        results = [] if retrieval_low_confidence else retrieved
 
-        top_score = results[0].score
-        stale_sources = [
-            r for rank, r in enumerate(results[:3], start=1)
-            if self.law_review.get(r.record.get("source_file"), {}).get("status") == "corpus_update_required"
-            and (
-                not self.law_review.get(r.record.get("source_file"), {}).get("affected_sections")
-                or str(r.record.get("section_number")) in {
-                    str(value) for value in self.law_review.get(r.record.get("source_file"), {}).get("affected_sections", [])
-                }
-            )
-            and top_score - r.score <= 0.05
-        ]
-        if stale_sources:
-            return {
-                "answer": (
-                    "I cannot safely answer from this result because the retrieved legal text is known to "
-                    "need an update. An AI-generated answer may be wrong or may not reflect a later Act, "
-                    "amendment, or Gazette notice. Please verify the current text with the Department of "
-                    "Labour or a qualified lawyer."
+        raw, web_sources = self.generate(
+            self.prompt(question, language, results, retrieval_low_confidence=retrieval_low_confidence),
+            use_google_search=self.google_search_enabled,
+        )
+        answer = self.render_structured_answer(raw, results, web_sources)
+        if answer is None:
+            raw, web_sources = self.generate(
+                self.prompt(
+                    question,
+                    language,
+                    results,
+                    strict=True,
+                    retrieval_low_confidence=retrieval_low_confidence,
                 ),
-                "sources": [r.record for r in stale_sources],
-                "refused": True,
-                "reason": "corpus_update_required",
-            }
-
-        raw = self.generate(self.prompt(question, language, results))
-        answer = self.render_structured_answer(raw, results)
+                use_google_search=self.google_search_enabled,
+            )
+            answer = self.render_structured_answer(raw, results, web_sources)
         if answer is None:
-            raw = self.generate(self.prompt(question, language, results, strict=True))
-            answer = self.render_structured_answer(raw, results)
-        if answer is None:
-            return self.fallback(results)
+            return self.low_confidence_response(retrieved) if retrieval_low_confidence else self.fallback(results)
+        cited_ids = set(CITATION.findall(answer))
+        cited_urls = set(WEB_CITATION.findall(answer))
+        cited_records = [r.record for r in results if r.record.get("id") in cited_ids]
+        cited_web_sources = [item for item in web_sources if item.get("url") in cited_urls]
         return {
             "answer": answer,
-            "sources": [r.record for r in results],
+            "sources": cited_records,
             "refused": False,
             "retrieval_scores": [r.score for r in results],
+            "web_sources": cited_web_sources,
         }
 
 

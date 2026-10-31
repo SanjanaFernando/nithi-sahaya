@@ -20,7 +20,7 @@ function appendUserMessage(question) {
   messages.append(bubble);
 }
 
-function makeSourcePanel(records) {
+function makeSourcePanel(records, webSources = []) {
   const panel = document.createElement("section");
   panel.className = "source-panel";
   panel.setAttribute("aria-label", "Sources used for this answer");
@@ -45,12 +45,28 @@ function makeSourcePanel(records) {
     card.append(title, subtitle, quote);
     panel.append(card);
   }
+  if (webSources.length) {
+    const webHeading = document.createElement("h3");
+    webHeading.textContent = "Google Search references";
+    panel.append(webHeading);
+    for (const source of webSources) {
+      if (!source || typeof source.url !== "string" || !/^https?:\/\//i.test(source.url)) continue;
+      const link = document.createElement("a");
+      link.className = "web-source-link";
+      link.href = source.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = typeof source.title === "string" && source.title ? source.title : source.url;
+      panel.append(link);
+    }
+  }
   return panel;
 }
 
-function renderAnswer(answerNode, answer, records) {
+function renderAnswer(answerNode, answer, records, webSources = []) {
   const sourceIds = new Set(records.map((item) => item && item.id).filter((id) => typeof id === "string"));
-  const citationPattern = /\[CITE:([^\]]+)\]/g;
+  const sourceUrls = new Map(webSources.filter((item) => item && typeof item.url === "string").map((item) => [item.url, item]));
+  const citationPattern = /\[(CITE|WEB):([^\]]+)\]/g;
   const headingPattern = /(^|\n)(A\. Simple answer|B\. Legal basis|C\. What to do next)(?=\n|$)/g;
   const appendText = (value) => {
     let textCursor = 0;
@@ -71,8 +87,9 @@ function renderAnswer(answerNode, answer, records) {
   let match;
   while ((match = citationPattern.exec(answer)) !== null) {
     appendText(answer.slice(cursor, match.index));
-    const id = match[1];
-    if (sourceIds.has(id)) {
+    const kind = match[1];
+    const id = match[2];
+    if (kind === "CITE" && sourceIds.has(id)) {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "citation-link";
@@ -92,6 +109,15 @@ function renderAnswer(answerNode, answer, records) {
         window.setTimeout(() => card.classList.remove("highlight"), 1500);
       });
       answerNode.append(button);
+    } else if (kind === "WEB" && sourceUrls.has(id)) {
+      const link = document.createElement("a");
+      link.className = "citation-link web-citation-link";
+      link.href = id;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Web source";
+      link.setAttribute("aria-label", `Open web citation: ${sourceUrls.get(id).title || id}`);
+      answerNode.append(link);
     } else {
       // Never present an ID as a valid citation unless the API returned its source.
       answerNode.append(document.createTextNode("[citation unavailable]"));
@@ -101,7 +127,7 @@ function renderAnswer(answerNode, answer, records) {
   appendText(answer.slice(cursor));
 }
 
-function addAssistantMessage({ answer = "", records = [], refused = false, reason = "", retryQuestion = "", retryLanguage = "English" }) {
+function addAssistantMessage({ answer = "", records = [], web_sources = [], refused = false, reason = "", retryQuestion = "", retryLanguage = "English" }) {
   const article = document.createElement("article");
   article.className = "assistant-message";
   const header = document.createElement("div");
@@ -112,7 +138,7 @@ function addAssistantMessage({ answer = "", records = [], refused = false, reaso
   avatar.textContent = "නී";
   const name = document.createElement("div");
   const strong = document.createElement("strong");
-  strong.textContent = "Nithi Sahaya";
+  strong.textContent = "Lanka Labour AI";
   const small = document.createElement("small");
   small.textContent = "AI-generated information · check current law";
   name.append(strong, small);
@@ -120,7 +146,7 @@ function addAssistantMessage({ answer = "", records = [], refused = false, reaso
 
   const answerNode = document.createElement("div");
   answerNode.className = "assistant-answer";
-  renderAnswer(answerNode, answer, records);
+  renderAnswer(answerNode, answer, records, web_sources);
   const meta = document.createElement("div");
   meta.className = "answer-meta";
   if (refused) {
@@ -148,17 +174,18 @@ function addAssistantMessage({ answer = "", records = [], refused = false, reaso
     }
     meta.append(feedback);
   }
-  const sourcePanel = makeSourcePanel(records);
-  if (records.length) {
+  const sourcePanel = makeSourcePanel(records, web_sources);
+  if (records.length || web_sources.length) {
+    const sourceCount = new Set(records.map((record) => record && record.id).filter(Boolean)).size + web_sources.length;
     const sourceToggle = document.createElement("button");
     sourceToggle.type = "button";
     sourceToggle.className = "source-toggle";
     sourceToggle.setAttribute("aria-expanded", "false");
-    sourceToggle.textContent = `View source text (${new Set(records.map((record) => record && record.id).filter(Boolean)).size})`;
+    sourceToggle.textContent = `View sources (${sourceCount})`;
     sourceToggle.addEventListener("click", () => {
       sourcePanel.classList.toggle("open");
       sourceToggle.setAttribute("aria-expanded", String(sourcePanel.classList.contains("open")));
-      sourceToggle.textContent = `${sourcePanel.classList.contains("open") ? "Hide" : "View"} source text (${new Set(records.map((record) => record && record.id).filter(Boolean)).size})`;
+      sourceToggle.textContent = `${sourcePanel.classList.contains("open") ? "Hide" : "View"} sources (${sourceCount})`;
     });
     meta.append(sourceToggle);
   }
@@ -188,6 +215,7 @@ function parseEvent(block, state) {
     try {
       const metadata = JSON.parse(data);
       state.records = Array.isArray(metadata.sources) ? metadata.sources : [];
+      state.web_sources = Array.isArray(metadata.web_sources) ? metadata.web_sources : [];
       state.refused = Boolean(metadata.refused);
       state.reason = typeof metadata.reason === "string" ? metadata.reason : "";
     } catch {
@@ -209,7 +237,7 @@ async function ask(question, language, addUserBubble = true) {
   if (addUserBubble) appendUserMessage(question);
   const loading = document.createElement("article");
   loading.className = "assistant-message";
-  loading.innerHTML = '<div class="assistant-header"><span class="assistant-avatar" aria-hidden="true">නී</span><div><strong>Nithi Sahaya</strong><small>Checking the source sections…</small></div></div><span class="typing-indicator" aria-label="Loading"><i></i><i></i><i></i></span>';
+  loading.innerHTML = '<div class="assistant-header"><span class="assistant-avatar" aria-hidden="true">නී</span><div><strong>Lanka Labour AI</strong><small>Searching local law and current sources…</small></div></div><span class="typing-indicator" aria-label="Loading"><i></i><i></i><i></i></span>';
   messages.append(loading);
   const loadingMessage = loading.querySelector(".assistant-header small");
   const slowRequestTimer = window.setTimeout(() => {
@@ -235,7 +263,7 @@ async function ask(question, language, addUserBubble = true) {
       } catch { /* Keep the safe generic message. */ }
       throw new Error(detail);
     }
-    const state = { answer: "", records: [], refused: false, reason: "", done: false };
+    const state = { answer: "", records: [], web_sources: [], refused: false, reason: "", done: false };
     if (response.body && typeof response.body.getReader === "function" && typeof TextDecoder !== "undefined") {
       const reader = response.body.getReader();
       const decoder = new TextDecoder();

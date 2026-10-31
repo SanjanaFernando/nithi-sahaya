@@ -68,6 +68,7 @@ def answer_chunks(result: dict, chunk_size: int = 256) -> Iterator[bytes]:
     """Yield answer metadata and text chunks using the text/event-stream format."""
     metadata = json.dumps({
         "sources": result.get("sources", []),
+        "web_sources": result.get("web_sources", []),
         "refused": result.get("refused", False),
         "reason": result.get("reason"),
     }, ensure_ascii=False)
