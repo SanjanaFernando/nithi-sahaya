@@ -23,9 +23,9 @@ function appendUserMessage(question) {
 function makeSourcePanel(records, webSources = []) {
   const panel = document.createElement("section");
   panel.className = "source-panel";
-  panel.setAttribute("aria-label", "Sources used for this answer");
+  panel.setAttribute("aria-label", "References for this answer");
   const heading = document.createElement("h3");
-  heading.textContent = "Sources used in this answer";
+  heading.textContent = "References for this answer";
   panel.append(heading);
 
   const seen = new Set();
@@ -36,18 +36,18 @@ function makeSourcePanel(records, webSources = []) {
     card.className = "source-card";
     card.dataset.sourceId = record.id;
     const title = document.createElement("h4");
-    title.textContent = `${escapeText(record.act_name || record.source_file || "Source")} · Section ${escapeText(record.section_number || "")}`;
+    title.textContent = `${escapeText(record.act_name || "Legal document")} · Section ${escapeText(record.section_number || "")}`;
     const subtitle = document.createElement("p");
     subtitle.className = "source-subtitle";
-    subtitle.textContent = `${escapeText(record.source_file || "")} · page ${escapeText(record.source_page ?? "not listed")}`;
+    subtitle.textContent = `Source PDF · page ${escapeText(record.source_page ?? "not listed")}`;
     const quote = document.createElement("blockquote");
-    quote.textContent = escapeText(record.text || "Section text was not included in the API response.");
+    quote.textContent = escapeText(record.text || "This section text is not available.");
     card.append(title, subtitle, quote);
     panel.append(card);
   }
   if (webSources.length) {
     const webHeading = document.createElement("h3");
-    webHeading.textContent = "Google Search references";
+    webHeading.textContent = "Online references";
     panel.append(webHeading);
     for (const source of webSources) {
       if (!source || typeof source.url !== "string" || !/^https?:\/\//i.test(source.url)) continue;
@@ -68,6 +68,7 @@ function renderAnswer(answerNode, answer, records, webSources = []) {
   const sourceUrls = new Map(webSources.filter((item) => item && typeof item.url === "string").map((item) => [item.url, item]));
   const citationPattern = /\[(CITE|WEB):([^\]]+)\]/g;
   const headingPattern = /(^|\n)(A\. Simple answer|B\. Legal basis|C\. What to do next)(?=\n|$)/g;
+  const friendlyHeadings = { "A. Simple answer": "Short answer", "B. Legal basis": "What the law says", "C. What to do next": "What you can do" };
   const appendText = (value) => {
     let textCursor = 0;
     let headingMatch;
@@ -77,7 +78,7 @@ function renderAnswer(answerNode, answer, records, webSources = []) {
       answerNode.append(document.createTextNode(value.slice(textCursor, headingStart)));
       const heading = document.createElement("strong");
       heading.className = "answer-heading";
-      heading.textContent = headingMatch[2];
+      heading.textContent = friendlyHeadings[headingMatch[2]] || headingMatch[2];
       answerNode.append(heading);
       textCursor = headingPattern.lastIndex;
     }
@@ -95,7 +96,7 @@ function renderAnswer(answerNode, answer, records, webSources = []) {
       button.className = "citation-link";
       const sourceRecord = records.find((item) => item && item.id === id);
       button.textContent = `§ ${(sourceRecord && sourceRecord.section_number) || "Source"}`;
-      button.setAttribute("aria-label", `Show cited section ${button.textContent}`);
+      button.setAttribute("aria-label", `Show the cited section ${button.textContent}`);
       button.addEventListener("click", () => {
         const message = answerNode.closest(".assistant-message");
         const panel = message && message.querySelector(".source-panel");
@@ -115,12 +116,12 @@ function renderAnswer(answerNode, answer, records, webSources = []) {
       link.href = id;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
-      link.textContent = "Web source";
-      link.setAttribute("aria-label", `Open web citation: ${sourceUrls.get(id).title || id}`);
+      link.textContent = "Open reference";
+      link.setAttribute("aria-label", `Open reference: ${sourceUrls.get(id).title || id}`);
       answerNode.append(link);
     } else {
       // Never present an ID as a valid citation unless the API returned its source.
-      answerNode.append(document.createTextNode("[citation unavailable]"));
+      answerNode.append(document.createTextNode("[source unavailable]"));
     }
     cursor = citationPattern.lastIndex;
   }
@@ -152,7 +153,7 @@ function addAssistantMessage({ answer = "", records = [], web_sources = [], refu
   if (refused) {
     const refusal = document.createElement("span");
     refusal.className = "refusal-label";
-    refusal.textContent = reason === "corpus_update_required" ? "Source needs an update" : "Unable to answer safely";
+    refusal.textContent = reason === "corpus_update_required" ? "This source may need an update" : reason === "emergency_safety_concern" ? "Get urgent help" : "Please check with an official source";
     meta.append(refusal);
   } else {
     const feedback = document.createElement("div");
@@ -181,11 +182,11 @@ function addAssistantMessage({ answer = "", records = [], web_sources = [], refu
     sourceToggle.type = "button";
     sourceToggle.className = "source-toggle";
     sourceToggle.setAttribute("aria-expanded", "false");
-    sourceToggle.textContent = `View sources (${sourceCount})`;
+    sourceToggle.textContent = `View references (${sourceCount})`;
     sourceToggle.addEventListener("click", () => {
       sourcePanel.classList.toggle("open");
       sourceToggle.setAttribute("aria-expanded", String(sourcePanel.classList.contains("open")));
-      sourceToggle.textContent = `${sourcePanel.classList.contains("open") ? "Hide" : "View"} sources (${sourceCount})`;
+      sourceToggle.textContent = `${sourcePanel.classList.contains("open") ? "Hide" : "View"} references (${sourceCount})`;
     });
     meta.append(sourceToggle);
   }
@@ -219,7 +220,7 @@ function parseEvent(block, state) {
       state.refused = Boolean(metadata.refused);
       state.reason = typeof metadata.reason === "string" ? metadata.reason : "";
     } catch {
-      throw new Error("The answer service returned invalid source information.");
+      throw new Error("We couldn't prepare an answer just now. Please try again.");
     }
   } else if (data === "[DONE]") {
     state.done = true;
@@ -228,7 +229,7 @@ function parseEvent(block, state) {
       const message = JSON.parse(data);
       if (typeof message.text === "string") state.answer += message.text;
     } catch {
-      throw new Error("The answer service returned an unreadable response.");
+      throw new Error("We couldn't prepare an answer just now. Please try again.");
     }
   }
 }
@@ -241,7 +242,7 @@ async function ask(question, language, addUserBubble = true) {
   messages.append(loading);
   const loadingMessage = loading.querySelector(".loading-copy");
   const slowRequestTimer = window.setTimeout(() => {
-    if (loadingMessage) loadingMessage.textContent = "Gemini is taking longer than expected. This request will time out automatically.";
+    if (loadingMessage) loadingMessage.textContent = "This is taking a little longer. Please keep waiting while we prepare your answer.";
   }, 8000);
   starters.hidden = true;
   sendButton.disabled = true;
@@ -253,13 +254,12 @@ async function ask(question, language, addUserBubble = true) {
       body: JSON.stringify({ question, language }),
     });
     if (!response.ok) {
-      let detail = "The answer service is unavailable. Please try again shortly.";
+      let detail = "We couldn't get your answer just now. Please try again shortly.";
       try {
-        const body = await response.json();
+        await response.json();
         if (response.status === 429) detail = "Too many questions in a short time. Wait a moment, then try again.";
         else if (response.status === 422) detail = "Please enter a question between 2 and 4,000 characters.";
-        else if (response.status === 503) detail = "The answer service is temporarily unavailable. Check back shortly.";
-        else if (typeof body.detail === "string") detail = body.detail;
+        else if (response.status === 503) detail = "We couldn't get your answer just now. Please try again shortly.";
       } catch { /* Keep the safe generic message. */ }
       throw new Error(detail);
     }
@@ -282,12 +282,12 @@ async function ask(question, language, addUserBubble = true) {
       const fullResponse = await response.text();
       for (const block of fullResponse.replace(/\r\n/g, "\n").split("\n\n")) parseEvent(block, state);
     }
-    if (!state.answer) throw new Error("The answer service returned an empty response. Please try again.");
+    if (!state.answer) throw new Error("We couldn't prepare an answer just now. Please try again.");
     loading.remove();
     addAssistantMessage(state);
   } catch (error) {
     loading.remove();
-    addAssistantMessage({ answer: error instanceof Error ? error.message : "The service could not complete this request.", records: [], refused: true, reason: "service_error", retryQuestion: question, retryLanguage: language });
+    addAssistantMessage({ answer: error instanceof Error ? error.message : "We couldn't prepare an answer just now. Please try again.", records: [], refused: true, reason: "service_error", retryQuestion: question, retryLanguage: language });
   } finally {
     window.clearTimeout(slowRequestTimer);
     sendButton.disabled = false;

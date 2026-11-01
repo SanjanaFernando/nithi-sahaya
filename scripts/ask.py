@@ -53,6 +53,14 @@ CLEAR_NON_LABOUR = re.compile(
     r"weather|recipe|football|homework)\b",
     re.IGNORECASE,
 )
+SMALLTALK = re.compile(
+    r"\s*(?:(?:hi|hello|hey|good morning|good afternoon|good evening|good night)"
+    r"(?:\s+(?:there|srilaw))?(?:\s*,?\s+how are you(?: doing)?)?|"
+    r"how are you(?: doing)?|how's it going|"
+    r"what's up|thank you|thanks|thanks a lot|who are you|what is your name|"
+    r"what's your name|nice to meet you|bye|goodbye)[.!?,\s]*\s*",
+    re.IGNORECASE,
+)
 
 
 @dataclass
@@ -210,9 +218,8 @@ class AnswerEngine:
     def low_confidence_response(results: list[SearchResult]) -> dict:
         return {
             "answer": (
-                "I’m not sure this collection contains enough information to answer "
-                "that question reliably. Please contact the Department of Labour, the "
-                "Legal Aid Commission, or a qualified lawyer."
+                "The documents available here may not cover this question well enough. "
+                "Please contact the Department of Labour, the Legal Aid Commission, or a qualified lawyer for guidance."
             ),
             "sources": [],
             "refused": True, "reason": "low_retrieval_confidence",
@@ -246,7 +253,11 @@ class AnswerEngine:
     ) -> str:
         citation_rule = "Return only the JSON object described below. Never invent record IDs or web URLs."
         if strict:
-            citation_rule += " If any statement cannot be tied to a supplied record ID or returned web URL, omit it or refuse."
+            citation_rule += (
+                " If any statement cannot be tied to a supplied record ID or returned web URL, omit it or refuse."
+                if not retrieval_low_confidence else
+                " Never invent record IDs or web URLs; for this knowledge-base gap, use the cautious alternative-answer instructions if no source is available."
+            )
         freshness = []
         for result in results:
             record = result.record
@@ -270,8 +281,12 @@ class AnswerEngine:
         freshness_context = "\n".join(freshness) or "No law-check metadata is available for these sources."
         retrieval_note = (
             "The local knowledge-base search did not find sufficiently relevant passages. "
-            "Do not cite or rely on unrelated local passages. Use Google Search only if it "
-            "finds relevant authoritative sources; otherwise refuse safely."
+            "Do not cite or rely on unrelated local passages. Give a useful alternative "
+            "Gemini answer based on relevant authoritative Google Search results when "
+            "available. If none are available, provide a cautious general overview, "
+            "identify it as not verified against the knowledge base, and direct the "
+            "user to confirm current legal details with an official source. Do not say "
+            "that you cannot answer."
             if retrieval_low_confidence else ""
         )
         return f"""You are Lanka Labour AI, a Sri Lankan labour-law information assistant.
@@ -343,8 +358,12 @@ Required JSON schema (no markdown fences):
 }}
 Every non-empty statement item MUST cite one or more exact knowledge-base IDs
 or exact web URLs supplied by Google Search. If neither source supports a
-reliable answer, set refuse=true and provide a safe referral in refusal_text;
-leave statement arrays empty. Do not put legal claims in freshness_warning.
+reliable answer for a knowledge-base gap, answer cautiously from general
+knowledge and leave source_ids and web_urls empty. Clearly state that the
+alternative is not verified against the knowledge base. For other cases, if
+neither source supports a reliable answer, set refuse=true and provide a safe
+referral in refusal_text; leave statement arrays empty. Do not put legal claims
+in freshness_warning.
 
 AI-ASSISTED CURRENT-LAW CHECK NOTES (not a legal determination):
 {freshness_context}
@@ -402,20 +421,39 @@ USER QUESTION:
                 return self.generate(prompt, use_google_search=False)
             raise GeminiRequestFailure("answer_generation", getattr(exc, "code", None), str(exc)) from exc
 
+    def generate_smalltalk(self, message: str, language: str) -> str:
+        prompt = (
+            "You are SriLaw AI, a friendly assistant. Reply naturally and briefly to this "
+            "casual greeting or social message in " + language + ". Do not turn it into a "
+            "legal answer, mention the knowledge base, or claim personal feelings or experiences.\n\n"
+            "User: " + message
+        )
+        try:
+            response = self.client.models.generate_content(
+                model=self.chat_model,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    thinking_config=types.ThinkingConfig(thinking_level=self.thinking_level),
+                ),
+            )
+            answer = (response.text or "").strip()
+            return answer or "Hi! How can I help you today?"
+        except Exception as exc:
+            raise GeminiRequestFailure("smalltalk_generation", getattr(exc, "code", None), str(exc)) from exc
+
     @staticmethod
     def fallback(results: list[SearchResult]) -> dict:
         return {
             "answer": (
-                "I could not produce a safely verified answer from the retrieved legal "
-                "sections. Please contact the Department of Labour, the Legal Aid Commission, "
-                "or a qualified lawyer."
+                "Please confirm this with the Department of Labour, the Legal Aid Commission, or a qualified lawyer. "
+                "The available legal sources do not provide enough support for a reliable answer."
             ),
             "sources": [r.record for r in results],
             "refused": True, "reason": "citation_validation_failed",
         }
 
     @staticmethod
-    def render_structured_answer(raw: str, results: list[SearchResult], web_sources: list[dict] | None = None) -> str | None:
+    def render_structured_answer(raw: str, results: list[SearchResult], web_sources: list[dict] | None = None, allow_uncited: bool = False) -> str | None:
         """Validate model-provided source IDs and render resolvable citations."""
         try:
             data = json.loads(raw)
@@ -437,7 +475,7 @@ USER QUESTION:
                 text = item["text"].strip()
                 ids = item.get("source_ids")
                 urls = item.get("web_urls", [])
-                if not text or not isinstance(ids, list) or not isinstance(urls, list) or not (ids or urls):
+                if not text or not isinstance(ids, list) or not isinstance(urls, list) or (not (ids or urls) and not allow_uncited):
                     return None
                 if any(not isinstance(source_id, str) or source_id not in allowed for source_id in ids):
                     return None
@@ -452,20 +490,24 @@ USER QUESTION:
             return None
         rendered.append(warning.strip())
         answer = "\n\n".join(rendered)
-        return answer if AnswerEngine.citation_valid(answer, results, web_sources) else None
+        return answer if allow_uncited or AnswerEngine.citation_valid(answer, results, web_sources) else None
 
     def ask(self, question: str, language: str = "English", k: int = 8) -> dict:
         if EMERGENCY_TERMS.search(question):
             return self.emergency_response()
+        if SMALLTALK.fullmatch(question):
+            return {
+                "answer": self.generate_smalltalk(question, language),
+                "sources": [], "refused": False, "reason": "smalltalk",
+            }
         in_scope, scope_reason = self.check_scope(question)
         if not in_scope:
             unavailable = scope_reason.startswith("scope_check_unavailable:")
             return {
                 "answer": (
-                    "I cannot safely determine that this question is within this Sri Lankan labour-law "
-                    "assistant's scope. Please ask a qualified professional in the relevant area. "
-                    "AI-generated answers may be wrong or incomplete and may not reflect a later Act, "
-                    "amendment, or Gazette notice; verify current law with an official source or a qualified lawyer."
+                    "SriLaw AI focuses on Sri Lankan labour law, so this topic may be outside its scope. "
+                    "Please check with an official source or a qualified professional for guidance. "
+                    "AI-generated information may be incomplete or may not reflect recent changes to the law."
                 ),
                 "sources": [],
                 "refused": True,
@@ -473,15 +515,13 @@ USER QUESTION:
             }
         retrieved = self.retrieve(question, k)
         retrieval_low_confidence = not retrieved or retrieved[0].score < self.min_score
-        if retrieval_low_confidence and not self.google_search_enabled:
-            return self.low_confidence_response(retrieved)
         results = [] if retrieval_low_confidence else retrieved
 
         raw, web_sources = self.generate(
             self.prompt(question, language, results, retrieval_low_confidence=retrieval_low_confidence),
             use_google_search=self.google_search_enabled,
         )
-        answer = self.render_structured_answer(raw, results, web_sources)
+        answer = self.render_structured_answer(raw, results, web_sources, allow_uncited=retrieval_low_confidence)
         if answer is None:
             raw, web_sources = self.generate(
                 self.prompt(
@@ -493,9 +533,24 @@ USER QUESTION:
                 ),
                 use_google_search=self.google_search_enabled,
             )
-            answer = self.render_structured_answer(raw, results, web_sources)
+            answer = self.render_structured_answer(raw, results, web_sources, allow_uncited=retrieval_low_confidence)
         if answer is None:
-            return self.low_confidence_response(retrieved) if retrieval_low_confidence else self.fallback(results)
+            if retrieval_low_confidence:
+                return {
+                    "answer": (
+                        "The current knowledge base did not find relevant supporting documents. "
+                        "Please check an official source or contact the Department of Labour, "
+                        "the Legal Aid Commission, or a qualified lawyer for guidance on this question."
+                    ),
+                    "sources": [], "refused": False, "reason": "alternative_generation_unavailable",
+                }
+            return self.fallback(results)
+        if retrieval_low_confidence:
+            answer = (
+                "The current knowledge base did not find relevant supporting documents. "
+                "Alternative Gemini answer (not verified against the knowledge base):\n\n"
+                + answer
+            )
         cited_ids = set(CITATION.findall(answer))
         cited_urls = set(WEB_CITATION.findall(answer))
         cited_records = [r.record for r in results if r.record.get("id") in cited_ids]
