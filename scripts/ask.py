@@ -198,13 +198,13 @@ class AnswerEngine:
         }
 
     def check_scope(self, question: str) -> tuple[bool, str]:
-        """Use fast local topic checks; fail closed without a separate model call."""
+        """Reject clearly unrelated topics; defer ambiguous intent to grounded classification."""
         normalized = question.casefold()
         if CLEAR_NON_LABOUR.search(normalized) and not LABOUR_INTENT.search(normalized):
             return False, "matched a clearly unrelated topic"
         if LABOUR_INTENT.search(normalized) or UNPAID_WAGES_INTENT.search(normalized) or LOCAL_LABOUR_TERMS.search(question):
             return True, "matched a local labour-law topic phrase"
-        return False, "no supported labour-law topic phrase was detected"
+        return True, "ambiguous intent deferred to grounded classification"
 
     @staticmethod
     def low_confidence_response(results: list[SearchResult]) -> dict:
@@ -275,6 +275,15 @@ class AnswerEngine:
             if retrieval_low_confidence else ""
         )
         return f"""You are Lanka Labour AI, a Sri Lankan labour-law information assistant.
+
+First determine whether the user's intent is about a Sri Lankan workplace,
+employment relationship, worker entitlement, employer obligation, or labour-law
+complaint. Interpret ordinary typos, misspellings, and imperfect grammar from
+context. Do not require exact legal vocabulary. If the intent is clearly outside
+Sri Lankan labour law, or cannot reasonably be understood as a labour-law
+question, set refuse=true and give a brief referral; do not answer another legal
+area. For unclear but plausibly labour-related questions, ask one concise
+clarifying question instead of making up the situation.
 
 Use the retrieved source records and Google Search results together. Never invent
 law, section numbers, deadlines, amounts, coverage rules, or procedures. Treat the
