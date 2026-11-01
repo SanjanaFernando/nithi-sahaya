@@ -42,9 +42,11 @@ a { color: inherit; }
 .intro-copy { margin: 0; max-width: 600px; color: var(--ink-soft); line-height: 1.65; font-size: 14px; }
 .legal-notice, .contact-note { margin: 24px 0 30px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; background: var(--warning); border: 1px solid #eadcc4; border-radius: 12px; color: #665137; font-size: 11px; line-height: 1.55; }
 .legal-notice strong, .contact-note strong { color: #4f3d23; }
-.coverage-note { display: inline-flex; align-items: center; gap: 8px; margin: 14px 0 4px; padding: 8px 11px; border: 1px solid #dce3ea; border-radius: 999px; background: rgba(255,255,255,.72); color: var(--ink-soft); font-size: 10px; }
+.coverage-note { display: inline-flex; align-items: center; gap: 10px; margin: 14px 0 4px; padding: 10px 14px; border: 1px solid #dce3ea; border-radius: 999px; background: rgba(255,255,255,.72); color: var(--ink-soft); font-size: 15px; }
 .coverage-note strong { color: var(--green); }
-.coverage-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px var(--green-pale); }
+.coverage-dot { width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px var(--green-pale); animation: coverage-pointer-blink 1.2s ease-in-out infinite; }
+@keyframes coverage-pointer-blink { 50% { opacity: .25; box-shadow: 0 0 0 6px var(--green-pale); } }
+@media (prefers-reduced-motion: reduce) { .coverage-dot { animation: none; } }
 .notice-icon { width: 21px; height: 21px; flex: 0 0 21px; border: 1px solid #bc9868; color: #785d37; border-radius: 50%; text-align: center; line-height: 19px; font: 700 12px/19px Georgia, serif; }
 .messages { display: grid; gap: 20px; }
 .welcome-card, .assistant-message, .user-message { background: var(--white); border: 1px solid var(--line); border-radius: 15px; box-shadow: 0 7px 24px rgba(16,42,67,.045); }
@@ -195,7 +197,7 @@ footer a { text-decoration: none; color: var(--green); }
 .eyebrow, .section-label, .message-kicker { font-size: 11px; }
 .intro-copy { font-size: 16px; }
 .legal-notice, .contact-note { font-size: 13px; }
-.coverage-note { font-size: 12px; }
+.coverage-note { font-size: 15px; }
 .welcome-card p:last-child { font-size: 14px; }
 .starter-area .section-label, .scope-card .section-label, .contact-card .section-label { font-size: 10px; }
 .starter-card small { font-size: 10px; }
