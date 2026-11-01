@@ -30,6 +30,13 @@ LABOUR_INTENT = re.compile(
     r"sevaka|vetan|wetan|padi|niwadu|sramaya)\b",
     re.IGNORECASE,
 )
+UNPAID_WAGES_INTENT = re.compile(
+    r"\b(unpaid|underpaid|short[- ]paid|withheld\s+(?:pay|wages?|salary)|"
+    r"(?:not|never)\s+(?:been\s+|getting\s+|being\s+)?pa(?:i|y)ed|"
+    r"(?:haven't|havent|hasn't|hasnt)\s+been\s+pa(?:i|y)ed|"
+    r"missing\s+(?:pay|wages?|salary)|salary\s+(?:not\s+paid|delay\w*))\b",
+    re.IGNORECASE,
+)
 LOCAL_LABOUR_TERMS = re.compile(
     r"\u0dc3\u0dda\u0dc0\u0d9a|\u0d9a\u0db8\u0dca\u0d9a\u0dbb\u0dd4|"
     r"\u0dbb\u0dd0\u0d9a\u0dd2\u0dba\u0dcf|\u0dc0\u0dd0\u0da9|"
@@ -140,6 +147,8 @@ class AnswerEngine:
     def retrieve(self, question: str, k: int = 8) -> list[SearchResult]:
         try:
             retrieval_query = question
+            if UNPAID_WAGES_INTENT.search(question):
+                retrieval_query += " unpaid wages salary non-payment wage complaint Labour Department Commissioner of Labour"
             if re.search(r"\bETF\b", question, re.IGNORECASE) and not re.search(r"\bEPF\b", question, re.IGNORECASE):
                 retrieval_query += " Employees' Trust Fund Act"
                 if re.search(r"\b(age|claim|withdraw|benefit|retire)\w*\b", question, re.IGNORECASE):
@@ -193,7 +202,7 @@ class AnswerEngine:
         normalized = question.casefold()
         if CLEAR_NON_LABOUR.search(normalized) and not LABOUR_INTENT.search(normalized):
             return False, "matched a clearly unrelated topic"
-        if LABOUR_INTENT.search(normalized) or LOCAL_LABOUR_TERMS.search(question):
+        if LABOUR_INTENT.search(normalized) or UNPAID_WAGES_INTENT.search(normalized) or LOCAL_LABOUR_TERMS.search(question):
             return True, "matched a local labour-law topic phrase"
         return False, "no supported labour-law topic phrase was detected"
 

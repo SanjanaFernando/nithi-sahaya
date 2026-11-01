@@ -145,7 +145,8 @@ footer a { text-decoration: none; color: var(--green); }
 .contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
 .contact-card { min-height: 315px; padding: 22px; background: var(--white); border: 1px solid var(--line); border-radius: 15px; box-shadow: 0 10px 35px rgba(16,42,67,.04); }
 .contact-card.contact-featured { background: var(--green-deep); color: #f7f4e9; border-color: var(--green-deep); }
-.contact-icon { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 19px; border-radius: 12px 12px 12px 4px; color: var(--green-deep); background: var(--green-pale); font: 20px Georgia, serif; }
+.contact-icon { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 19px; border-radius: 12px 12px 12px 4px; color: var(--green-deep); background: var(--green-pale); }
+.contact-icon svg { width: 21px; height: 21px; }
 .contact-featured .contact-icon { color: #f2c18e; background: rgba(255,255,255,.11); }
 .contact-card .section-label { color: #82928a; font-size: 9px; }
 .contact-featured .section-label { color: #bdd2c4; }
