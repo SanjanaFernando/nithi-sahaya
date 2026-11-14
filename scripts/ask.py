@@ -464,8 +464,12 @@ USER QUESTION:
                 text = item["text"].strip()
                 ids = item.get("source_ids")
                 urls = item.get("web_urls", [])
-                if not text or not isinstance(ids, list) or not isinstance(urls, list) or (not (ids or urls) and not allow_uncited):
+                if not text or not isinstance(ids, list) or not isinstance(urls, list):
                     return None
+                if not (ids or urls) and not allow_uncited:
+                    # Drop a single uncited statement (often a generic "consult a lawyer"
+                    # step) instead of discarding an otherwise fully cited answer.
+                    continue
                 if any(not isinstance(source_id, str) or source_id not in allowed for source_id in ids):
                     return None
                 if any(not isinstance(url, str) or url not in allowed_web for url in urls):
