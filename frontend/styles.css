@@ -101,7 +101,7 @@ footer a:hover { text-decoration: underline; }
 .starter-card small { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .1em; }
 .starter-card strong { font: 400 15px/1.35 var(--font-display); }
 
-.composer { padding: var(--space-3) 14px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.composer { margin-top: 20px; padding: var(--space-3) 14px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
 .composer:focus-within { border-color: var(--focus); box-shadow: 0 0 0 3px rgba(154, 107, 18, .18); }
 .composer textarea { width: 100%; min-height: 58px; max-height: 180px; resize: vertical; padding: 5px 2px; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: var(--text-lg); line-height: 1.5; }
 .composer textarea::placeholder { color: var(--muted); }
