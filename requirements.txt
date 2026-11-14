@@ -1,9 +1,8 @@
-pymupdf
-google-genai
-faiss-cpu
-numpy
-python-dotenv
-fastapi
-uvicorn
-ocrmypdf
-
+# Runtime dependencies for the API (backend/main.py and scripts/ask.py).
+# Versions are the ones verified locally; update deliberately and re-test.
+fastapi==0.159.1
+uvicorn==0.54.0
+google-genai==2.32.0
+faiss-cpu==1.15.1
+numpy==2.5.4
+python-dotenv==1.2.4

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import re
-import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -53,7 +52,6 @@ SCOPE_MARKER = re.compile(
     r"\bcovered\s+employment\b|\bcoverage\s+of\b",
     re.I,
 )
-STOP_WORDS = {"act", "ordinance", "regulations", "regulation", "of", "the", "and", "for", "no"}
 FORM_DISPOSITIONS = {
     "prescribed_form_field",
     "schedule_quantity_row",
@@ -112,13 +110,6 @@ ACT_TOPIC_BY_SOURCE = {
 
 def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
-
-
-def act_topic(act_name: str) -> str:
-    normalized = unicodedata.normalize("NFKD", act_name).encode("ascii", "ignore").decode().lower()
-    words = re.findall(r"[a-z]+", normalized)
-    words = [word for word in words if word not in STOP_WORDS]
-    return "_".join(words) or "act_specific_provision"
 
 
 def scope_metadata(record: dict, form_record_ids: set[str]) -> tuple[str, str, str]:

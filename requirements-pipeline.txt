@@ -1,0 +1,4 @@
+# Offline corpus tools (PDF extraction, OCR). Not needed to run the API.
+-r requirements.txt
+pymupdf==2.0
+ocrmypdf==17.13.0

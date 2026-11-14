@@ -1,6 +1,15 @@
 "use strict";
 
-const API_BASE = document.documentElement.dataset.apiBase || "http://127.0.0.1:8000";
+// The production API URL is set on <html data-api-base>. A page served from this machine talks to a local API.
+const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1"]);
+const API_BASE = (LOCAL_HOSTS.has(window.location.hostname)
+  ? "http://127.0.0.1:8000"
+  : document.documentElement.dataset.apiBase || "").replace(/\/$/, "");
+// Covers a cold start on the free host plus one answer and one stricter retry on the server.
+const REQUEST_TIMEOUT_MS = 180000;
+const MAX_QUESTION_LENGTH = 4000;
+const ANSWER_LANG = { English: "en", Sinhala: "si", Tamil: "ta" };
+const GENERIC_ERROR = "We couldn't prepare an answer just now. Please try again.";
 const form = document.querySelector("#ask-form");
 const questionInput = document.querySelector("#question");
 const languageInput = document.querySelector("#language");
@@ -8,8 +17,9 @@ const sendButton = document.querySelector("#send-button");
 const charCount = document.querySelector("#char-count");
 const messages = document.querySelector("#messages");
 const starters = document.querySelector("#starter-area");
+const formError = document.querySelector("#form-error");
 
-function escapeText(value) {
+function asText(value) {
   return String(value ?? "");
 }
 
@@ -36,12 +46,12 @@ function makeSourcePanel(records, webSources = []) {
     card.className = "source-card";
     card.dataset.sourceId = record.id;
     const title = document.createElement("h4");
-    title.textContent = `${escapeText(record.act_name || "Legal document")} · Section ${escapeText(record.section_number || "")}`;
+    title.textContent = `${asText(record.act_name || "Legal document")} · Section ${asText(record.section_number || "")}`;
     const subtitle = document.createElement("p");
     subtitle.className = "source-subtitle";
-    subtitle.textContent = `Source PDF · page ${escapeText(record.source_page ?? "not listed")}`;
+    subtitle.textContent = `Source PDF · page ${asText(record.source_page ?? "not listed")}`;
     const quote = document.createElement("blockquote");
-    quote.textContent = escapeText(record.text || "This section text is not available.");
+    quote.textContent = asText(record.text || "This section text is not available.");
     card.append(title, subtitle, quote);
     panel.append(card);
   }
@@ -128,15 +138,17 @@ function renderAnswer(answerNode, answer, records, webSources = []) {
   appendText(answer.slice(cursor));
 }
 
-function addAssistantMessage({ answer = "", records = [], web_sources = [], refused = false, reason = "", retryQuestion = "", retryLanguage = "English" }) {
+function addAssistantMessage({ answer = "", records = [], web_sources = [], refused = false, reason = "", language = "English", retryQuestion = "" }) {
   const article = document.createElement("article");
   article.className = "assistant-message";
   const header = document.createElement("div");
   header.className = "assistant-header";
-  const avatar = document.createElement("span");
+  const avatar = document.createElement("img");
   avatar.className = "assistant-avatar";
-  avatar.setAttribute("aria-hidden", "true");
-  avatar.innerHTML = '<img src="compliant.png" alt="">';
+  avatar.src = "favicon.svg";
+  avatar.alt = "";
+  avatar.width = 34;
+  avatar.height = 34;
   const name = document.createElement("div");
   const strong = document.createElement("strong");
   strong.textContent = "SriLaw AI";
@@ -147,33 +159,17 @@ function addAssistantMessage({ answer = "", records = [], web_sources = [], refu
 
   const answerNode = document.createElement("div");
   answerNode.className = "assistant-answer";
+  if (reason !== "service_error") answerNode.lang = ANSWER_LANG[language] || "en";
   renderAnswer(answerNode, answer, records, web_sources);
   const meta = document.createElement("div");
   meta.className = "answer-meta";
+  const actions = document.createElement("div");
+  actions.className = "answer-actions";
   if (refused) {
     const refusal = document.createElement("span");
     refusal.className = "refusal-label";
     refusal.textContent = reason === "corpus_update_required" ? "This source may need an update" : reason === "emergency_safety_concern" ? "Get urgent help" : "Please check with an official source";
     meta.append(refusal);
-  } else {
-    const feedback = document.createElement("div");
-    feedback.className = "feedback";
-    feedback.append(document.createTextNode("Was this helpful?"));
-    for (const [label, symbol] of [["Yes", "👍"], ["No", "👎"]]) {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.textContent = symbol;
-      button.setAttribute("aria-label", label === "Yes" ? "This answer was helpful" : "This answer was not helpful");
-      button.addEventListener("click", () => {
-        feedback.replaceChildren();
-        const note = document.createElement("span");
-        note.className = "feedback-note";
-        note.textContent = "Thanks. This feedback is not sent or saved.";
-        feedback.append(note);
-      }, { once: true });
-      feedback.append(button);
-    }
-    meta.append(feedback);
   }
   const sourcePanel = makeSourcePanel(records, web_sources);
   if (records.length || web_sources.length) {
@@ -188,17 +184,23 @@ function addAssistantMessage({ answer = "", records = [], web_sources = [], refu
       sourceToggle.setAttribute("aria-expanded", String(sourcePanel.classList.contains("open")));
       sourceToggle.textContent = `${sourcePanel.classList.contains("open") ? "Hide" : "View"} references (${sourceCount})`;
     });
-    meta.append(sourceToggle);
+    actions.append(sourceToggle);
   }
   if (reason === "service_error" && retryQuestion) {
     const retryButton = document.createElement("button");
     retryButton.type = "button";
     retryButton.className = "retry-button";
     retryButton.textContent = "Try again";
-    retryButton.addEventListener("click", () => ask(retryQuestion, retryLanguage, false), { once: true });
-    meta.append(retryButton);
+    retryButton.addEventListener("click", () => {
+      article.remove();
+      ask(retryQuestion, language, false);
+    }, { once: true });
+    actions.append(retryButton);
   }
-  article.append(header, answerNode, meta, sourcePanel);
+  if (actions.childElementCount) meta.append(actions);
+  article.append(header, answerNode);
+  if (meta.childElementCount) article.append(meta);
+  article.append(sourcePanel);
   messages.append(article);
   return article;
 }
@@ -220,7 +222,7 @@ function parseEvent(block, state) {
       state.refused = Boolean(metadata.refused);
       state.reason = typeof metadata.reason === "string" ? metadata.reason : "";
     } catch {
-      throw new Error("We couldn't prepare an answer just now. Please try again.");
+      throw new Error(GENERIC_ERROR);
     }
   } else if (data === "[DONE]") {
     state.done = true;
@@ -229,7 +231,7 @@ function parseEvent(block, state) {
       const message = JSON.parse(data);
       if (typeof message.text === "string") state.answer += message.text;
     } catch {
-      throw new Error("We couldn't prepare an answer just now. Please try again.");
+      throw new Error(GENERIC_ERROR);
     }
   }
 }
@@ -238,30 +240,38 @@ async function ask(question, language, addUserBubble = true) {
   if (addUserBubble) appendUserMessage(question);
   const loading = document.createElement("article");
   loading.className = "assistant-message";
-  loading.innerHTML = '<div class="assistant-header"><span class="assistant-avatar" aria-hidden="true"><img src="compliant.png" alt=""></span><div><strong>SriLaw AI</strong><small>Searching local law and current sources…</small></div></div><div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span><span class="loading-copy">Finding relevant law and preparing your answer</span><span class="typing-indicator" aria-hidden="true"><i></i><i></i><i></i></span></div>';
+  loading.innerHTML = '<div class="assistant-header"><img class="assistant-avatar" src="favicon.svg" alt="" width="34" height="34"><div><strong>SriLaw AI</strong><small>Searching the law and current sources</small></div></div><div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span><span class="loading-copy">Finding relevant law and preparing your answer</span></div>';
   messages.append(loading);
   const loadingMessage = loading.querySelector(".loading-copy");
   const slowRequestTimer = window.setTimeout(() => {
-    if (loadingMessage) loadingMessage.textContent = "This is taking a little longer. Please keep waiting while we prepare your answer.";
+    if (loadingMessage) loadingMessage.textContent = "This is taking a little longer. The service may be starting up; please keep waiting.";
   }, 8000);
+  const controller = new AbortController();
+  const timeoutTimer = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
   starters.hidden = true;
   sendButton.disabled = true;
+  messages.setAttribute("aria-busy", "true");
 
   try {
-    const response = await fetch(`${API_BASE.replace(/\/$/, "")}/ask`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
-      body: JSON.stringify({ question, language }),
-    });
+    let response;
+    try {
+      response = await fetch(`${API_BASE}/ask`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
+        body: JSON.stringify({ question, language }),
+        signal: controller.signal,
+      });
+    } catch (networkError) {
+      throw new Error(networkError && networkError.name === "AbortError"
+        ? "The answer took too long. Please try again, or ask a shorter question."
+        : "We couldn't reach the answer service. Check your connection and try again.");
+    }
     if (!response.ok) {
-      let detail = "We couldn't get your answer just now. Please try again shortly.";
-      try {
-        await response.json();
-        if (response.status === 429) detail = "Too many questions in a short time. Wait a moment, then try again.";
-        else if (response.status === 422) detail = "Please enter a question between 2 and 4,000 characters.";
-        else if (response.status === 503) detail = "We couldn't get your answer just now. Please try again shortly.";
-      } catch { /* Keep the safe generic message. */ }
-      throw new Error(detail);
+      const messagesByStatus = {
+        422: "Please enter a question between 2 and 4,000 characters.",
+        429: "Too many questions in a short time. Wait a minute, then try again.",
+      };
+      throw new Error(messagesByStatus[response.status] || "We couldn't get your answer just now. Please try again shortly.");
     }
     const state = { answer: "", records: [], web_sources: [], refused: false, reason: "", done: false };
     if (response.body && typeof response.body.getReader === "function" && typeof TextDecoder !== "undefined") {
@@ -282,14 +292,17 @@ async function ask(question, language, addUserBubble = true) {
       const fullResponse = await response.text();
       for (const block of fullResponse.replace(/\r\n/g, "\n").split("\n\n")) parseEvent(block, state);
     }
-    if (!state.answer) throw new Error("We couldn't prepare an answer just now. Please try again.");
+    if (!state.answer) throw new Error(GENERIC_ERROR);
     loading.remove();
-    addAssistantMessage(state);
+    addAssistantMessage({ ...state, language });
   } catch (error) {
     loading.remove();
-    addAssistantMessage({ answer: error instanceof Error ? error.message : "We couldn't prepare an answer just now. Please try again.", records: [], refused: true, reason: "service_error", retryQuestion: question, retryLanguage: language });
+    const message = error instanceof Error && error.name !== "AbortError" ? error.message : "The answer took too long. Please try again.";
+    addAssistantMessage({ answer: message, refused: true, reason: "service_error", language, retryQuestion: question });
   } finally {
     window.clearTimeout(slowRequestTimer);
+    window.clearTimeout(timeoutTimer);
+    messages.removeAttribute("aria-busy");
     sendButton.disabled = false;
     questionInput.focus();
     messages.scrollIntoView({ behavior: "smooth", block: "end" });
@@ -298,22 +311,38 @@ async function ask(question, language, addUserBubble = true) {
 
 if (form) form.addEventListener("submit", (event) => {
   event.preventDefault();
+  if (sendButton.disabled) return;
   const question = questionInput.value.trim();
-  if (question.length < 2 || question.length > 4000 || sendButton.disabled) return;
-  const language = languageInput.value;
+  if (question.length < 2 || question.length > MAX_QUESTION_LENGTH) {
+    showFormError(question.length < 2 ? "Please type your question first." : "Please shorten your question to 4,000 characters or fewer.");
+    return;
+  }
+  showFormError("");
   questionInput.value = "";
-  charCount.textContent = "0 / 4000";
-  ask(question, language);
+  updateCharCount();
+  ask(question, languageInput.value);
 });
 
+function showFormError(message) {
+  formError.textContent = message;
+  formError.hidden = !message;
+  questionInput.setAttribute("aria-invalid", String(Boolean(message)));
+}
+
+function updateCharCount() {
+  charCount.textContent = `${questionInput.value.length} / ${MAX_QUESTION_LENGTH}`;
+}
+
 if (questionInput) questionInput.addEventListener("input", () => {
-  charCount.textContent = `${questionInput.value.length} / 4000`;
+  updateCharCount();
+  if (!formError.hidden) showFormError("");
 });
 
 document.querySelectorAll(".starter-card").forEach((button) => {
   button.addEventListener("click", () => {
     questionInput.value = button.dataset.question || "";
-    charCount.textContent = `${questionInput.value.length} / 4000`;
+    updateCharCount();
+    showFormError("");
     questionInput.focus();
   });
 });

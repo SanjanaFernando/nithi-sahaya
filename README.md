@@ -20,6 +20,8 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+`requirements.txt` holds only what the API needs at runtime. To run the offline PDF extraction and OCR scripts as well, install `requirements-pipeline.txt` instead.
+
 If PowerShell blocks environment activation, you can skip activation and use `.venv\Scripts\python.exe` in place of `python` in the commands below.
 
 ### 3. Configure the API key
@@ -51,9 +53,18 @@ Open a second PowerShell terminal at the repository root. Serve the `frontend` f
 python -m http.server 3000 --bind 127.0.0.1 --directory frontend
 ```
 
-Visit [http://localhost:3000](http://localhost:3000). The default API address is `http://127.0.0.1:8000`, and `.env.example` allows this frontend origin through CORS.
+Visit [http://localhost:3000](http://localhost:3000). When the page is served from `localhost` or `127.0.0.1` it calls the local API at `http://127.0.0.1:8000`; anywhere else it calls the URL in the `data-api-base` attribute of `frontend/index.html`. `.env.example` allows the local frontend origin through CORS.
 
 Stop either server with `Ctrl+C` in its terminal.
+
+## Deploying
+
+- **Frontend:** deploy the `frontend/` folder as a static site. Set `data-api-base` in `frontend/index.html` to the HTTPS API URL. `404.html` is the not-found page, and `robots.txt` allows crawling.
+- **Backend:** install `requirements.txt` and start with
+  `uvicorn backend.main:app --host 0.0.0.0 --port $PORT --no-access-log --proxy-headers --forwarded-allow-ips="*"`.
+  The proxy flags let the rate limiter see each visitor's address behind the host's load balancer; without them every visitor shares one limit. Only use `--forwarded-allow-ips="*"` when the service is reachable solely through the host's proxy.
+- Set `GEMINI_API_KEY` as a host secret and `CORS_ORIGINS` to the exact frontend origin, for example `https://your-frontend-domain`. `*` is ignored.
+- Run a single worker: the rate limiter and answer cache are held in process memory.
 
 ## Troubleshooting
 

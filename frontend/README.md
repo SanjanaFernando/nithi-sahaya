@@ -1,8 +1,9 @@
 # Nithi Sahaya frontend
 
 This is a static, dependency-free frontend. It keeps chat state in memory only;
-questions and feedback are not written to browser storage. API requests go to
-`http://127.0.0.1:8000` by default and use the existing backend SSE endpoint.
+questions are not written to browser storage. When served from `localhost` or
+`127.0.0.1`, API requests go to `http://127.0.0.1:8000`; otherwise they go to the
+URL in the `data-api-base` attribute on `<html>` in `index.html`.
 
 ## Run locally
 
@@ -22,7 +23,7 @@ Open `http://localhost:3000`, which matches the default CORS origin in `.env.exa
 
 The contact page links to the Department of Labour's office directories, the
 Legal Aid Commission contact page, and the Ministry of Justice Labour Tribunal
-directory. Those links were checked on 25 October 2026. The project owner is
+directory. Those links were checked on 31 October 2026. The project owner is
 responsible for checking them monthly.
 
 ## Pilot limitations
@@ -35,7 +36,6 @@ responsible for checking them monthly.
   retry by default; users can retry after a transient error. Remote service
   latency can still vary. Repeated identical questions may use the server's
   answer cache.
-- The feedback buttons only acknowledge the click in the current page. They do
-  not submit or store a vote.
+- Requests time out in the browser after 180 seconds with a retry option.
 - Check Sinhala/Tamil rendering and performance on a physical older Android
   device and a slow mobile connection before public release.

@@ -215,17 +215,6 @@ class AnswerEngine:
         return True, "ambiguous intent deferred to grounded classification"
 
     @staticmethod
-    def low_confidence_response(results: list[SearchResult]) -> dict:
-        return {
-            "answer": (
-                "The documents available here may not cover this question well enough. "
-                "Please contact the Department of Labour, the Legal Aid Commission, or a qualified lawyer for guidance."
-            ),
-            "sources": [],
-            "refused": True, "reason": "low_retrieval_confidence",
-        }
-
-    @staticmethod
     def context(results: list[SearchResult]) -> str:
         blocks = []
         for number, result in enumerate(results, start=1):
@@ -289,7 +278,7 @@ class AnswerEngine:
             "that you cannot answer."
             if retrieval_low_confidence else ""
         )
-        return f"""You are Lanka Labour AI, a Sri Lankan labour-law information assistant.
+        return f"""You are SriLaw AI, a Sri Lankan labour-law information assistant.
 
 First determine whether the user's intent is about a Sri Lankan workplace,
 employment relationship, worker entitlement, employer obligation, or labour-law
@@ -500,9 +489,8 @@ USER QUESTION:
                 "answer": self.generate_smalltalk(question, language),
                 "sources": [], "refused": False, "reason": "smalltalk",
             }
-        in_scope, scope_reason = self.check_scope(question)
+        in_scope, _ = self.check_scope(question)
         if not in_scope:
-            unavailable = scope_reason.startswith("scope_check_unavailable:")
             return {
                 "answer": (
                     "SriLaw AI focuses on Sri Lankan labour law, so this topic may be outside its scope. "
@@ -511,7 +499,7 @@ USER QUESTION:
                 ),
                 "sources": [],
                 "refused": True,
-                "reason": "scope_check_unavailable" if unavailable else "out_of_scope",
+                "reason": "out_of_scope",
             }
         retrieved = self.retrieve(question, k)
         retrieval_low_confidence = not retrieved or retrieved[0].score < self.min_score

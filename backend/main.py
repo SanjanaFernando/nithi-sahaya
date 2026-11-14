@@ -12,7 +12,7 @@ import time
 from collections import deque
 from dataclasses import dataclass
 from functools import lru_cache
-from typing import Iterator
+from typing import Iterator, Literal
 
 from fastapi import FastAPI, HTTPException, Request as FastAPIRequest
 from fastapi.middleware.cors import CORSMiddleware
@@ -50,12 +50,17 @@ class SlidingWindowLimiter:
             if len(bucket) >= self.limit:
                 return False
             bucket.append(now)
+            # Drop idle clients so the table does not grow without bound.
+            if len(self.requests) > 10_000:
+                for key in [key for key, times in self.requests.items() if not times or now - times[-1] >= self.window_seconds]:
+                    del self.requests[key]
             return True
 
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=2, max_length=4000)
-    language: str = Field(default="English", min_length=2, max_length=32)
+    # The value is inserted into the model prompt, so only accept the languages the UI offers.
+    language: Literal["English", "Sinhala", "Tamil"] = "English"
 
 
 def cache_key(question: str, language: str, k: int) -> str:
@@ -86,8 +91,13 @@ def get_engine() -> AnswerEngine:
 
 
 app = FastAPI(title="Nithi Sahaya API", version="1.0.0")
-origins = [value.strip() for value in os.getenv("CORS_ORIGINS", "").split(",") if value.strip()]
-if origins:
+origins = [value.strip().rstrip("/") for value in os.getenv("CORS_ORIGINS", "").split(",") if value.strip()]
+if "*" in origins:
+    logger.warning("Ignoring '*' in CORS_ORIGINS; list the exact frontend origins instead.")
+    origins = [value for value in origins if value != "*"]
+if not origins:
+    logger.warning("CORS_ORIGINS is empty; browsers on other origins cannot call this API.")
+else:
     app.add_middleware(
         CORSMiddleware,
         allow_origins=origins,

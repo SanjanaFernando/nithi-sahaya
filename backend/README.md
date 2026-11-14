@@ -8,7 +8,8 @@ python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --no-access-log
 ```
 
 The API loads the retrieval engine on the first `/ask` request and reuses it.
-`POST /ask` accepts JSON with `question` and optional `language`. It responds
+`POST /ask` accepts JSON with `question` (2-4,000 characters) and optional
+`language` (`English`, `Sinhala` or `Tamil`; other values return HTTP 422). It responds
 as Server-Sent Events: first a `metadata` event
 containing local `sources`, `web_sources`, and refusal status, then `message` events containing text,
 and finally a `[DONE]` event. Generation currently completes before text chunks
@@ -28,7 +29,9 @@ both. Response metadata carries local section text and web links separately so
 the frontend can render each citation type. Set the option to `false` to disable
 Google Search grounding.
 
-Set `CORS_ORIGINS` to a comma-separated list of trusted frontend origins. Rate
+Set `CORS_ORIGINS` to a comma-separated list of trusted frontend origins; `*` is
+ignored. Behind a hosting proxy, start Uvicorn with `--proxy-headers
+--forwarded-allow-ips="*"` so the per-IP rate limit sees real client addresses. Rate
 limits and cached answers are held in process memory, so production should run
 one worker or replace these with shared storage before scaling horizontally.
 The service does not log question text, client addresses, or raw questions in its cache; it
