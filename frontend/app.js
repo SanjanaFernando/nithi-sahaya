@@ -42,17 +42,20 @@ function makeSourcePanel(records, webSources = []) {
   for (const record of records) {
     if (!record || typeof record.id !== "string" || seen.has(record.id)) continue;
     seen.add(record.id);
-    const card = document.createElement("article");
+    // Each reference is its own dropdown: the title is always visible, the section text expands.
+    const card = document.createElement("details");
     card.className = "source-card";
     card.dataset.sourceId = record.id;
+    const summary = document.createElement("summary");
     const title = document.createElement("h4");
     title.textContent = `${asText(record.act_name || "Legal document")} · Section ${asText(record.section_number || "")}`;
     const subtitle = document.createElement("p");
     subtitle.className = "source-subtitle";
     subtitle.textContent = `Source PDF · page ${asText(record.source_page ?? "not listed")}`;
+    summary.append(title, subtitle);
     const quote = document.createElement("blockquote");
     quote.textContent = asText(record.text || "This section text is not available.");
-    card.append(title, subtitle, quote);
+    card.append(summary, quote);
     panel.append(card);
   }
   if (webSources.length) {
@@ -114,6 +117,12 @@ function renderAnswer(answerNode, answer, records, webSources = []) {
         const card = sourceCards.find((item) => item.dataset.sourceId === id);
         if (!panel || !card) return;
         panel.classList.add("open");
+        const toggle = message.querySelector(".source-toggle");
+        if (toggle) {
+          toggle.setAttribute("aria-expanded", "true");
+          toggle.textContent = toggle.textContent.replace(/^View/, "Hide");
+        }
+        card.open = true;
         try { card.scrollIntoView({ behavior: "smooth", block: "center" }); }
         catch { card.scrollIntoView(); }
         card.classList.add("highlight");

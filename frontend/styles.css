@@ -155,7 +155,13 @@ footer a:hover { text-decoration: underline; }
 .source-card { margin-top: var(--space-2); padding: 11px var(--space-3); background: var(--surface-alt); border: 1px solid var(--line); border-radius: var(--radius-sm); scroll-margin: 18px; }
 .source-card.highlight { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-pale); }
 .source-card h4 { margin: 0; color: var(--ink); font-size: var(--text-sm); }
-.source-subtitle { margin: var(--space-1) 0 var(--space-2); color: var(--muted); font-size: var(--text-xs); }
+.source-card summary { position: relative; padding-right: 22px; list-style: none; cursor: pointer; }
+.source-card summary::-webkit-details-marker { display: none; }
+.source-card summary::after { content: ""; position: absolute; top: 4px; right: 2px; width: 7px; height: 7px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform 0.15s ease; }
+.source-card[open] summary::after { top: 7px; transform: rotate(-135deg); }
+.source-card summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.source-subtitle { margin: var(--space-1) 0 0; color: var(--muted); font-size: var(--text-xs); }
+.source-card[open] .source-subtitle { margin-bottom: var(--space-2); }
 .source-card blockquote { margin: 0; padding-left: 10px; border-left: 2px solid var(--accent-line); color: var(--ink-soft); font-size: var(--text-xs); line-height: 1.55; white-space: pre-wrap; }
 .web-source-link { display: block; width: fit-content; margin: 7px 0; color: var(--ink); font-size: var(--text-xs); font-weight: 700; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
 
